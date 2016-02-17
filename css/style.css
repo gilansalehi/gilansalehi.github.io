@@ -458,7 +458,7 @@ ul, li {
 
 .skills-list {
   display: block;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   vertical-align: bottom;
 }
@@ -466,7 +466,7 @@ ul, li {
 .skills-list > li {
   display: block;
   float: left;
-  width: 80px;
+  width: 100px;
   height: 160px;
   margin: 20px;
   vertical-align: bottom;
@@ -475,7 +475,7 @@ ul, li {
 
 .skills-list > li > img {
   display: block;
-  width: 80px;
+  width: 100px;
   height: auto;
   vertical-align: bottom;
 }
