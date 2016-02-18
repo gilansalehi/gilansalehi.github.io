@@ -448,11 +448,7 @@ body {
 		color: white;
 	}
 
-.title-row:3 {
-  color: #ffaa00
-}
-
-ul, li {
+ul {
   list-style: none;
 }
 
@@ -460,30 +456,26 @@ ul, li {
   display: block;
   max-width: 900px;
   margin: auto;
-  vertical-align: bottom;
 }
 
 .skills-list > li {
   display: block;
   float: left;
   width: 100px;
-  height: 160px;
+  height: 170px;
   margin: 20px;
   vertical-align: bottom;
-  text-align: center;
 }
 
 .skills-list > li > img {
   display: block;
   width: 100px;
-  height: auto;
-  vertical-align: bottom;
+  height: 100px;
 }
 
 .skills-list > li > h3 {
   display: block;
   margin-top: 10px;
-  vertical-align: bottom;
 }
 
 
