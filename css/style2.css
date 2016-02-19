@@ -1,0 +1,286 @@
+/*RESET*/
+
+html, body, nav, ul, li, a, div, h2, p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  font-family: Century, serif;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*CLEARFIX*/
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*BODY*/
+body {
+    font-family: sans-serif;
+    position: relative;
+}
+
+/*NAVBAR*/
+.nav-div {
+  display: block;
+  width: 600px;
+  margin: auto;
+  color: #333;
+  font-size: 14px;
+}
+
+nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #aaa;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: top 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.nav-up {
+  top: -40px;
+}
+
+nav > ul {
+  display: block;
+  float: right;
+}
+
+nav > ul > li {
+  display: block;
+  float: left;
+}
+
+nav a {
+  display: block;
+  padding: 10px 20px;
+}
+
+nav a:hover {
+  background-color: #ffaa00;
+  color: white;
+}
+
+.nav-first {
+  border-bottom-left-radius: 5px;
+}
+
+.nav-last {
+  border-bottom-right-radius: 5px;
+}
+
+.nav-scroll {
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  font-size: 36px;
+  bottom: 110px;
+  right: 110px;
+  color: red;
+}
+
+.hide {
+  display: none;
+}
+
+/*CONTENT*/
+
+/*HOME*/
+.slide1  {
+  background-image: url("../images/New-York.jpg");
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 1000px;
+}
+
+.profile {
+  display: block;
+  width: 80%;
+  height: 80%;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 150px;
+  border: 2px solid #ffaa00;
+  margin: auto;
+}
+
+.welcome {
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  text-align: center;
+  z-index: 1;
+}
+
+.welcome > h2 {
+  /*font-family: Garamond, serif;*/
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 68px;
+  color: #ffaa00;
+}
+
+.welcome > p {
+  color: #fff;
+  padding: 10px 20px;
+  font-family: Cambria, serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/*ABOUT*/
+.slide2 {
+  background: #ffaa00;
+  padding: 40px;
+  text-align: center;
+}
+
+.slide2 > h2 {
+  margin: 20px;
+}
+
+.slide2 > p {
+  font-family: Century, serif;
+  font-size: 20px;
+  padding: 20px;
+  max-width: 800px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  margin: 20px auto 50px auto;
+}
+
+.slide2 > p > a {
+  font-family: Century, serif;
+  font-size: 20px;
+}
+
+/*PROJECTS*/
+.slide3 {
+  background: #2f2f2f;
+  padding: 40px;
+  color: white;
+  text-align: center;
+}
+
+.slide3 > h2 {
+  font-family: Century, serif;
+  margin: 20px;
+}
+
+.slide3 > p {
+  font-family: Century, serif;
+  font-size: 20px;
+  max-width: 800px;
+  padding: 20px 20px 20px 20px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.slide3 > p > a {
+    text-decoration: underline;
+}
+
+
+.project-list {
+  display: block;
+  max-width: 1210px;
+  margin: 20px auto 40px auto;
+}
+
+.project-list > li {
+  display: block;
+  float: left;
+  max-width: 400px;
+}
+
+.thumb {
+  width: 400px;
+  height: 400px;
+}
+
+/*SKILLS*/
+.slide4 {
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+.slide4 > h2 {
+  margin: 20px;
+}
+
+.skills-list {
+  display: block;
+  max-width: 880px;
+  margin: auto;
+  text-align: center;
+}
+
+.skills-list > li {
+  display: block;
+  float: left;
+  margin: 20px;
+  font-family: sans-serif;
+}
+
+.skills-list > li > img {
+  width: 100px;
+  height: 100px;
+}
+
+/*CONTACT*/
+.slide5 {
+  background: #34495e;
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+.slide5 > h2 {
+  margin: 20px;
+}
+
+.contact-info {
+  display: block;
+  max-width: 880px;
+  margin: auto;
+}
+
+.contact-info > li {
+  display: block;
+  float: left;
+  height: 40px;
+  margin: 20px;
+}
+
+.icon {
+  display: block;
+  width: 60px;
+  height: 60px;
+}

@@ -216,7 +216,7 @@ body {
 }
 
 #slide-1 {
-	background-image: url('../images/New-York.jpg');
+	background-image: url('../images/clouds.jpg');
 	color: #ffffff;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
@@ -234,6 +234,7 @@ body {
 
 #slide-1 h1 {
 	padding-top: 130px;
+  color: #fff;
 }
 
 @media (max-width: 991px) {
