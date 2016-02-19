@@ -278,7 +278,7 @@ nav a:hover {
 
 .contact-info {
   display: block;
-  max-width: 400px;
+  max-width: 300px;
   margin: auto;
   text-align: left;
 }
@@ -286,7 +286,7 @@ nav a:hover {
 .contact-info > li {
   position: relative;
   height: 40px;
-  width: 400px;
+  width: 300px;
   font-size: 20px;
 }
 
@@ -295,7 +295,7 @@ nav a:hover {
 .fa {
   position: absolute;
   bottom: 0;
-  right: 350px;
+  right: 280px;
   font-family: sans-serif;
   font: normal normal normal 30px/1 FontAwesome !important;
 }
@@ -315,5 +315,5 @@ nav a:hover {
 .contact-text {
   position: absolute;
   bottom: 0;
-  left: 80px;
+  left: 50px;
 }
