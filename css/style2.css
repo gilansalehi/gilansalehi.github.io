@@ -5,7 +5,7 @@ html, body, nav, ul, li, a, div, h2, p {
   padding: 0;
   border: 0;
 
-  font-family: Century, serif;
+  font-family: inherit;
   text-align: inherit;
   text-decoration: inherit;
   color: inherit;
@@ -31,7 +31,7 @@ img {
 
 /*BODY*/
 body {
-    font-family: sans-serif;
+    font-family: Century, serif;
     position: relative;
 }
 
@@ -48,6 +48,7 @@ nav {
   display: block;
   position: fixed;
   top: 0;
+  font-family: sans-serif;
   text-transform: uppercase;
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #aaa;
@@ -91,13 +92,14 @@ nav a:hover {
 
 .nav-scroll {
   display: block;
-  width: 100px;
-  height: 100px;
-  position: fixed;
+  width: 60px;
+  height: 60px;
+  position: absolute;
   font-size: 36px;
-  bottom: 110px;
-  right: 110px;
-  color: red;
+  bottom: 0;
+  right: 0;
+  margin: 60px;
+  color: #fa0;
 }
 
 .hide {
@@ -254,6 +256,7 @@ nav a:hover {
   float: left;
   margin: 20px;
   font-family: sans-serif;
+  font-size: 14px;
 }
 
 .skills-list > li > img {
@@ -275,19 +278,42 @@ nav a:hover {
 
 .contact-info {
   display: block;
-  max-width: 880px;
+  max-width: 400px;
   margin: auto;
+  text-align: left;
 }
 
 .contact-info > li {
-  display: block;
-  float: left;
+  position: relative;
   height: 40px;
-  margin: 20px;
+  width: 400px;
+  font-size: 20px;
 }
 
-.icon {
-  display: block;
-  width: 60px;
-  height: 60px;
+.address {margin-top: 20px;}
+
+.fa {
+  position: absolute;
+  bottom: 0;
+  right: 350px;
+  font-family: sans-serif;
+  font: normal normal normal 30px/1 FontAwesome !important;
+}
+
+.fa-mobile {
+  font: normal normal normal 40px/1 FontAwesome !important;
+}
+
+.fa-envelope {
+  font: normal normal normal 26px/1 FontAwesome !important;
+}
+
+.fa-home {
+  font: normal normal normal 32px/1 FontAwesome !important;
+}
+
+.contact-text {
+  position: absolute;
+  bottom: 0;
+  left: 80px;
 }
