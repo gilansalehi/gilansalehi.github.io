@@ -292,7 +292,7 @@ nav a:hover {
 
 .address {margin-top: 20px;}
 
-.contact-info > li > .fa {
+.fa-mobile, .fa-envelope, .fa-home, .fa-github, .fa-linkedin {
   position: absolute;
   bottom: 0;
   right: 280px;
@@ -309,7 +309,7 @@ nav a:hover {
 }
 
 .fa-home {
-  font: normal normal normal 32px/1 FontAwesome !important;
+  font: normal normal normal 34px/1 FontAwesome !important;
 }
 
 .contact-text {
