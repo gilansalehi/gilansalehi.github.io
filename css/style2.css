@@ -95,7 +95,7 @@ nav a:hover {
   width: 60px;
   height: 60px;
   position: absolute;
-  font-size: 36px;
+  font-size: 48px;
   bottom: 0;
   right: 0;
   margin: 60px;
@@ -292,7 +292,7 @@ nav a:hover {
 
 .address {margin-top: 20px;}
 
-.fa {
+.contact-info > li > .fa {
   position: absolute;
   bottom: 0;
   right: 280px;
