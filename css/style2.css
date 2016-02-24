@@ -217,6 +217,7 @@ nav a:hover {
 .project-list > li {
   display: block;
   float: left;
+  position: relative;
   max-width: 400px;
 }
 
@@ -228,10 +229,29 @@ nav a:hover {
   border: 2px solid #ffaa00;
 }
 
+
 .thumb {
   width: 396px;
   height: 396px;
 }
+
+.img-hover-info {
+  display: none;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  top: 75%;
+  width: 100%;
+  background: #fa0;
+  padding: 10px 0px;
+  font-family: sans-serif;
+  font-size: 24px;
+}
+
+.project-list > li > a:hover > .img-hover-info {
+  display: block;
+}
+
 
 /*SKILLS*/
 .slide4 {
