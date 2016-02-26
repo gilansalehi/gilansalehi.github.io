@@ -188,7 +188,7 @@ nav a:hover {
 /*ABOUT*/
 .slide2 {
   background: #ffaa00;
-  padding: 40px;
+  padding: 40px 0;
   text-align: center;
 }
 
@@ -214,7 +214,7 @@ nav a:hover {
 /*PROJECTS*/
 .slide3 {
   background: #2f2f2f;
-  padding: 40px;
+  padding: 40px 0;
   color: white;
   text-align: center;
 }
@@ -224,46 +224,55 @@ nav a:hover {
   margin: 20px;
 }
 
-.slide3 > p {
-  font-family: Century, serif;
-  font-size: 20px;
-  max-width: 800px;
-  padding: 20px 20px 20px 20px;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+.project-gallery {
+  display: block;
   margin: auto;
-  margin-bottom: 40px;
-}
-
-.slide3 > p > a {
-    text-decoration: underline;
+  max-width: 820px;
+  text-align: center;
 }
 
 .project-list {
   display: block;
-  max-width: 1210px;
-  margin: 20px auto 40px auto;
+  margin: 10px;
+  text-align: center;
+}
+
+.project-description {
+  display: block;
+  color: black;
+  height: 360px;
+  width: 360px;
+  font-family: Century, serif;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.project-description > a {
+  text-decoration: underline;
 }
 
 .project-list > li {
-  display: block;
+  display: inline-block;
   float: left;
   position: relative;
+  height: auto;
   max-width: 400px;
+  background-color: #fff;
 }
 
-.project-list > li > a > img {
+/*.project-list > li > a > img {
   border: 2px solid #333;
 }
 
 .project-list > li > a > img:hover {
   border: 2px solid #ffaa00;
-}
+}*/
 
 
 .thumb {
-  width: 396px;
-  height: 396px;
+  display: block;
+  width: 400px;
+  height: 400px;
 }
 
 .img-hover-info {
@@ -287,7 +296,7 @@ nav a:hover {
 /*SKILLS*/
 .slide4 {
   background: #fff;
-  padding: 40px;
+  padding: 40px 0;
   text-align: center;
 }
 
