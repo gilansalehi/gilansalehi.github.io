@@ -154,6 +154,37 @@ nav a:hover {
   font-weight: 500;
 }
 
+.resume-icon {
+  display: block;
+  text-align: center;
+  color: #fa0;
+  font-size: 120px;
+}
+
+.fa-file-text {
+  display: block;
+}
+
+.fa-file-text:hover {
+  text-shadow: 2px 2px 2px white, -2px -2px 2px white, -2px 2px 2px white, 2px -2px 2px white;
+}
+
+.icon-container {
+  position: relative;
+}
+
+.styling-label {
+  display: block;
+  font-family: Cambria, serif;
+  font-size: 20px;
+  color: #fff;
+  padding: 5px;
+}
+
+.styling-label:hover {
+  text-decoration: underline;
+}
+
 /*ABOUT*/
 .slide2 {
   background: #ffaa00;
