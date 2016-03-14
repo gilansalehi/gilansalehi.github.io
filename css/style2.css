@@ -239,12 +239,13 @@ nav a:hover {
 
 .project-description {
   display: block;
-  color: black;
+  color: white;
   height: 360px;
   width: 360px;
   font-family: Century, serif;
   font-size: 20px;
-  padding: 20px;
+  padding: 18px;
+  border: 2px solid #5f5f5f;
 }
 
 .project-description > a {
@@ -257,7 +258,8 @@ nav a:hover {
   position: relative;
   height: auto;
   max-width: 400px;
-  background-color: #fff;
+  color: #fff;
+  background-color: #3f3f3f;
 }
 
 /*.project-list > li > a > img {
