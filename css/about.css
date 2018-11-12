@@ -1,0 +1,23 @@
+
+.slide--2 {
+  background: #fa0;
+  padding: 2.5em 0;
+  text-align: center;
+  color: black;
+}
+
+.about__text {
+  color: black;
+  font-family: Century, serif;
+  font-size: 1.25rem;
+  padding: 1.5em;
+  max-width: 40rem;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  margin: 1.5em auto 3.125em auto;
+}
+
+.slide2 > p > a {
+  font-family: Century, serif;
+  font-size: 20px;
+}

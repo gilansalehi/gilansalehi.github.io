@@ -1,21 +1,24 @@
 
 /*HOME*/
 .slide--1 {
-  background-image: url("../images/New-York.jpg");
+  color: currentColor;
+  background-image: 
+    url("../images/New-York.jpg"),
+    linear-gradient(currentColor, purple);
   background-size: cover;
   position: relative;
   width: 100vw;
   height: auto;
-  min-height: 90vh;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  padding: 16em 0 4em;
 }
 
 .profile {
   display: block;
-  padding: 16em 1em 4em;
   text-align: center;
+  padding: 0 1em;
   z-index: 1;
   max-width: 400px;
 }
@@ -27,30 +30,50 @@
   max-width: 300px;
   max-height: 300px;
   border-radius: 50%;
-  border: 2px solid #ffaa00;
+  border: 2px solid currentColor;
   margin: auto;
 }
 
 .profile__title {
-  margin-top: .5em;
+  color: currentColor;
   font-family: sans-serif;
   font-size: 4rem;
-  color: #ffaa00;
+  margin-top: .5em;
 }
 
 .profile__subtitle {
   color: #ffffff;
-  padding: 0.5em 2em;
+  padding: 0.5em 0;
   font-family: Cambria, serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
-.resume-icon {
+.profile__resume-link--icon:visited {
+  color: currentColor;
+}
+.profile__resume-link--text:visited {
+  color: #ffffff;
+}
+
+.profile__resume-link--icon {
   display: block;
   text-align: center;
-  color: #fa0;
-  font-size: 120px;
+  color: currentColor;
+  font-size: 6rem;
+}
+
+.profile__resume-link--text {
+  display: block;
+  font-family: Cambria, serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+  padding: .5em 0;
+  text-decoration: none;
+}
+
+.profile__resume-link--text:hover {
+  text-decoration: underline;
 }
 
 .fa-file-text {
@@ -58,21 +81,5 @@
 }
 
 .fa-file-text:hover {
-  text-shadow: 2px 2px 2px white, -2px -2px 2px white, -2px 2px 2px white, 2px -2px 2px white;
-}
-
-.icon-container {
-  position: relative;
-}
-
-.styling-label {
-  display: block;
-  font-family: Cambria, serif;
-  font-size: 20px;
-  color: #fff;
-  padding: 5px;
-}
-
-.styling-label:hover {
-  text-decoration: underline;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white, -1px 1px 1px white, 1px -1px 1px white;
 }

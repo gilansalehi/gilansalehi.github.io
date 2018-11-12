@@ -1,8 +1,19 @@
 * {
   margin: 0;
   padding: 0;
+  color: inherit;
 }
 
+html {
+  color: #fa0;
+    /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
+  font-size: calc(14px + 3 * ((100vw - 320px) / 1000));
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 
 ul, li {
   list-style: none;
