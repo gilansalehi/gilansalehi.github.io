@@ -1,0 +1,7 @@
+@import 'reset.css';
+@import 'hero.css';
+@import 'style2.css';
+
+.slide {
+  display: block;
+}

@@ -1,15 +1,12 @@
 /*RESET*/
-
 html, body, nav, ul, li, a, div, h2, p {
   margin: 0;
   padding: 0;
   border: 0;
-
   font-family: inherit;
   text-align: inherit;
   text-decoration: inherit;
   color: inherit;
-
   background: transparent;
 }
 
@@ -45,7 +42,7 @@ body {
 }
 
 nav {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   font-family: sans-serif;
@@ -107,83 +104,6 @@ nav a:hover {
 }
 
 /*CONTENT*/
-
-/*HOME*/
-.slide1  {
-  background-image: url("../images/New-York.jpg");
-  background-size: cover;
-  position: relative;
-  width: 100%;
-  height: auto;
-  min-height: 1000px;
-}
-
-.profile {
-  display: block;
-  width: 80%;
-  height: 80%;
-  max-width: 300px;
-  max-height: 300px;
-  border-radius: 150px;
-  border: 2px solid #fa0;
-  margin: auto;
-}
-
-.welcome {
-  display: block;
-  position: absolute;
-  top: 25%;
-  left: 10%;
-  text-align: center;
-  z-index: 1;
-}
-
-.welcome > h2 {
-  /*font-family: Garamond, serif;*/
-  margin-top: 10px;
-  font-family: sans-serif;
-  font-size: 68px;
-  color: #ffaa00;
-}
-
-.welcome > p {
-  color: #fff;
-  padding: 10px 20px;
-  font-family: Cambria, serif;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.resume-icon {
-  display: block;
-  text-align: center;
-  color: #fa0;
-  font-size: 120px;
-}
-
-.fa-file-text {
-  display: block;
-}
-
-.fa-file-text:hover {
-  text-shadow: 2px 2px 2px white, -2px -2px 2px white, -2px 2px 2px white, 2px -2px 2px white;
-}
-
-.icon-container {
-  position: relative;
-}
-
-.styling-label {
-  display: block;
-  font-family: Cambria, serif;
-  font-size: 20px;
-  color: #fff;
-  padding: 5px;
-}
-
-.styling-label:hover {
-  text-decoration: underline;
-}
 
 /*ABOUT*/
 .slide2 {
