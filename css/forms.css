@@ -8,3 +8,6 @@ input, select {
   font-size: 1rem;
 }
 
+[tabindex] {
+  outline: none;
+}

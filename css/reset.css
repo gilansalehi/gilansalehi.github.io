@@ -7,7 +7,6 @@
 
 html {
   color: #fa0;
-    /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
   font-size: calc(14px + 3 * ((100vw - 320px) / 1000));
 }
 
@@ -29,4 +28,17 @@ img {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #999;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #666;
 }

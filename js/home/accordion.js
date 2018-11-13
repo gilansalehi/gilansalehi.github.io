@@ -5,17 +5,17 @@ export default class Accordion extends Component {
     super(options);
 
     this.bindEventListeners.bind(this)();
-    this.$container.setAttribute('tabindex', '0');
+    q('.accordion__title').map(el => el.setAttribute('tabindex', '0'));
   }
 
   bindEventListeners() {
-    this.on('keyup', '.accordion', evt => {
+    this.on('keyup', '.accordion__title', evt => {
       if ( evt.key === 'Enter' ) {
-        evt.delegateTarget.classList.toggle('open');
+        evt.currentTarget.classList.toggle('open');
       }
     })
 
-    this.on('click', '.accordion > li:first-child', evt => {
+    this.on('click', '.accordion__title', evt => {
       evt.currentTarget.classList.toggle('open');
     });
   }

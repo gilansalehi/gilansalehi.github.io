@@ -22,6 +22,7 @@
 .nav__icon hr {
   all: unset;
   border: 1px solid black;
+  background: black;
   transition: all .5s ease-in-out;
   width: 20px;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
@@ -30,18 +31,19 @@
 .nav__icon:hover hr,
 .nav__icon:focus hr {
   border: 1px solid currentColor;
+  background: currentColor;
 }
 
-.nav.open .nav__icon {
-  background-color: transparent;
+.nav.open .nav__icon hr {
+  box-shadow: none;
 }
-
 .nav.open .nav__icon hr:nth-child(1) {
   transform: translateY(7px) rotate(225deg);
 }
 .nav.open .nav__icon hr:nth-child(2) {
   width: 0;
   border: 2px solid transparent;
+  background: transparent;
   transform: rotate(225deg);
 }
 .nav.open .nav__icon hr:nth-child(3) {
@@ -84,9 +86,11 @@ nav a {
   display: block;
   padding: 1em;
   text-decoration: none;
+  border-left: 1px solid transparent;
+  outline: none;
 }
 
-nav a:hover {
-  background-color: #ffaa00;
-  color: white;
+nav a:hover,
+nav a:focus {
+  border-left-color: #ffaa00;
 }

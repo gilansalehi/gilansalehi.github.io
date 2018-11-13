@@ -1,9 +1,14 @@
 .accordion {
-  border-left: 1px solid currentColor;
+  border-left: 1px solid transparent;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.accordion:hover {
-  cursor: pointer;
+.accordion:hover,
+.accordion:focus,
+.accordion:focus-within,
+.accordion.open {
+  border-left-color: currentColor;
 }
 
 .accordion > li {
