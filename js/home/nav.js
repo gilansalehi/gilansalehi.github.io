@@ -52,7 +52,7 @@ export default class Nav extends Component {
 
   setThemeColor(value) {
     q('html')[0].setAttribute('style', `color: ${value}`);
-    q('meta[name="theme-color"]')[0].setAttribute('value', value);
+    q('meta[name="theme-color"]')[0].setAttribute('content', value);
   }
 
   update() {
