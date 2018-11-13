@@ -3,7 +3,7 @@
 .slide--1 {
   color: currentColor;
   background-image:
-    /* url("../images/New-York.jpg"), */
+    url("../images/New-York.jpg"),
     linear-gradient(currentColor, purple);
   background-size: cover;
   position: relative;
