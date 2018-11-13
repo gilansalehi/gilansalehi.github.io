@@ -8,10 +8,17 @@ input, select {
   font-size: 1rem;
 }
 
-input:focus, select:focus {
+input:focus, select:focus, input:hover, select:hover {
   outline: none;
   border-bottom-color: currentColor;
 }
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 
 label {
   width: 100%;
