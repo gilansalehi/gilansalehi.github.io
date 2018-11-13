@@ -22,20 +22,37 @@
   <header class="nav">
     <div class="nav__icon"
       style="top: 0; left: 0;"
+      tabindex="0"
     >
       <hr>
       <hr>
       <hr>
     </div>
     <nav class="nav__menu">
-      <ul>
+      <ul class="nav__menu__list">
+        <li><span class="nav__menu__list-item nav__menu__list-item--spacer"> </span></li>
         <li><a href="#home" class="nav-first">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a class="nav-last" href="./images/Salehi_Resume_2017.pdf">Resume</a></li>
-        <li><a g-click="reposition">Site Settings</a></li>
+        <li>
+          <ul class="accordion">
+            <li class="accordion__title">Preferences <span class="accordion__arrow">⯆</span></li>
+            <li>
+              <select g-select="reposition" style="background-color: #333;">
+                <option selected>Top Left</option>
+                <option>Top Right</option>
+                <option>Bottom Left</option>
+                <option>Bottom Right</option>
+              </select>
+            </li>
+            <li>Theme Color</li>
+          </ul>
+        </li>
+
+        <li><span class="nav__menu__list-item nav__menu__list-item--spacer"> </span></li>
       </ul>
     </nav>
   </header>

@@ -5,8 +5,9 @@ export default class Nav extends Component {
   constructor(options = {}) {
     super(options);
     this.$container = q('header')[0];
-    this.$el = q('.nav__icon')[0];
+    this.$icon = q('.nav__icon')[0];
     this.$menu = q('.nav__menu')[0];
+    this.$list = q('.nav__menu__list')[0];
     this._state = {
       vPos: 'top',
       hPos: 'left',
@@ -17,35 +18,41 @@ export default class Nav extends Component {
   }
 
   bindEventListeners() {
-    const self = this;
     const {
       $container,
-      $el,
+      $icon,
       $menu,
     } = this;
 
     this.on('click', '.nav__icon', evt => {
       $container.classList.toggle('open');
     });
+    this.on('keyup', '.nav__icon', evt => {
+      if ( evt.key === "Enter" ) {
+        $container.classList.toggle('open');
+      }
+    });
 
-    q('[g-click]').map(el => el.addEventListener('click', evt => {
-      const currentTarget = evt.currentTarget;
-      const action = self.getAttribute('g-click');
-      debugger;
-    }));
+    this.on('change', '[g-select]', function(evt) {
+      const action = evt.delegateTarget.getAttribute('g-select');
+      const [vPos, hPos] = evt.delegateTarget.value.toLowerCase().split(' ');
+      this[action]({ vPos, hPos });
+    }, this);
   }
 
   reposition(options) {
-    this._state = { ...this._state, ...options };
-    const { hPos, vPos } = this._state;
-    const { $el, $menu } = this;
-    $el.setAttribute('style', `${vPos}: 0; ${hPos}: 0;`);
-    $menu.setAttribute('style', `${vPos}: 20px; ${hPos}: 20px;`);
-    this.update();
+    this.setState({...options });
   }
 
   update() {
-
+    const { hPos, vPos } = this._state;
+    const { $icon, $menu, $list } = this;
+    $icon.setAttribute('style', `${vPos}: 0; ${hPos}: 0;`);
+    $menu.setAttribute('style', `${vPos}: 0; ${hPos}: 0;`);
+    $list.setAttribute('style', `
+      justify-content: ${vPos == 'top' ? 'flex-start' : 'flex-end'};
+      text-align: ${hPos};
+    `);
   }
 
 }
