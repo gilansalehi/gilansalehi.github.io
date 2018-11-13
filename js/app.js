@@ -1,4 +1,5 @@
 import { q } from './util/utils.js';
+import Nav from './home/nav.js';
 
 window.q = q;
 
@@ -9,4 +10,6 @@ window.addEventListener('load', function (e) {
     block: 'end',
     inline: 'start',
   });
+
+  const nav = new Nav();
 });

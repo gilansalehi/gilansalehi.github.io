@@ -1,1 +1,1 @@
-export const q = x => [...document.querySelectorAll(x)];
+export const q = selector => [...document.querySelectorAll(selector)];
