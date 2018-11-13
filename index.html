@@ -41,14 +41,20 @@
           <ul class="accordion">
             <li class="accordion__title">Preferences <span class="accordion__arrow">⯆</span></li>
             <li>
-              <select g-select="reposition" style="background-color: #333;">
-                <option selected>Top Left</option>
-                <option>Top Right</option>
-                <option>Bottom Left</option>
-                <option>Bottom Right</option>
-              </select>
+              <label>Menu Position:
+                <select g-select="reposition" style="background-color: #333;">
+                  <option selected>Top Left</option>
+                  <option>Top Right</option>
+                  <option>Bottom Left</option>
+                  <option>Bottom Right</option>
+                </select>
+              </label>
             </li>
-            <li>Theme Color</li>
+            <li>
+              <label>Theme Color:
+                <input g-input="setThemeColor" type="color" value="#ffaa00" default="#ffaa00">
+              </label>
+            </li>
           </ul>
         </li>
 

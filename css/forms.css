@@ -2,10 +2,19 @@ input, select {
   background: transparent;
   border: none;
   width: 100%;
-  border-bottom: 1px solid currentColor;
+  border-bottom: 1px solid #666;
   cursor: pointer;
   outline-color: currentColor;
   font-size: 1rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-bottom-color: currentColor;
+}
+
+label {
+  width: 100%;
 }
 
 [tabindex] {

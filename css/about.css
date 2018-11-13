@@ -1,8 +1,11 @@
 
 .slide--2 {
-  background: #fa0;
+  background: currentColor;
   padding: 2.5em 0;
   text-align: center;
+}
+
+.about__title {
   color: black;
 }
 

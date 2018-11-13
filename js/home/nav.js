@@ -38,10 +38,20 @@ export default class Nav extends Component {
       const [vPos, hPos] = evt.delegateTarget.value.toLowerCase().split(' ');
       this[action]({ vPos, hPos });
     }, this);
+
+    this.on('change', '[g-input]', function(evt) {
+      const action = evt.delegateTarget.getAttribute('g-input');
+      const value = evt.delegateTarget.value;
+      this[action](value);
+    })
   }
 
   reposition(options) {
     this.setState({...options });
+  }
+
+  setThemeColor(value) {
+    q('html')[0].setAttribute('style', `color: ${value}`);
   }
 
   update() {
