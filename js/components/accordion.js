@@ -1,4 +1,4 @@
-import Component from '../util/component.js';
+import Component from './component.js';
 
 export default class Accordion extends Component {
   constructor(options = {}) {

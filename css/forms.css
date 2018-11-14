@@ -6,6 +6,7 @@ input, select {
   cursor: pointer;
   outline-color: currentColor;
   font-size: 1rem;
+  border-radius: 0;
 }
 
 input:focus, select:focus, input:hover, select:hover {

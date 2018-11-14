@@ -82,6 +82,19 @@
   display: block;
 }
 
+.nav__close {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.nav.open .nav__close {
+  display: block;
+}
+
 nav a {
   display: block;
   padding: 1em;

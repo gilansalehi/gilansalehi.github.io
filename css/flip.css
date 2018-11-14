@@ -1,0 +1,45 @@
+/* entire container, keeps perspective */
+.flip__container {
+	perspective: 1000px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	background: #333;
+	overflow-y: hidden;
+}
+
+/* flip the pane when clicked */
+.flip__container.show-back .flip__content {
+	transform: rotateY(180deg);
+}
+
+/* flip speed goes here */
+.flip__content {
+	min-height: 200px;
+	transition: 0.2s;
+	transform-style: preserve-3d;
+	position: relative;
+	width: 100%;
+}
+
+/* hide back of pane during swap */
+.flip__content--front,
+.flip__content--back {
+	backface-visibility: hidden;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+/* front pane, placed above back */
+.flip__content--front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.flip__content--back {
+	transform: rotateY(180deg);
+}

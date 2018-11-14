@@ -1,10 +1,12 @@
 @import 'reset.css';
+@import 'forms.css';
+@import 'flip.css';
+@import 'grid.css';
 @import 'nav.css';
 @import 'hero.css';
 @import 'about.css';
 @import 'projects.css';
 @import 'accordion.css';
-@import 'forms.css';
 @import 'style2.css';
 
 .slide {

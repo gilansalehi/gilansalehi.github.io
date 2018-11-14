@@ -1,5 +1,5 @@
 import { q } from '../util/utils.js';
-import Component from '../util/component.js';
+import Component from './component.js';
 
 export default class Nav extends Component {
   constructor(options = {}) {
@@ -32,6 +32,9 @@ export default class Nav extends Component {
         $container.classList.toggle('open');
       }
     });
+    this.on('click', '.nav__close', evt => {
+      $container.classList.remove('open');
+    })
 
     this.on('change', '[g-select]', function(evt) {
       const action = evt.delegateTarget.getAttribute('g-select');

@@ -61,6 +61,7 @@
   text-align: center;
   color: currentColor;
   font-size: 6rem;
+  text-decoration: none;
 }
 
 .profile__resume-link--text {
@@ -68,7 +69,6 @@
   font-family: Cambria, serif;
   font-size: 1.5rem;
   color: #ffffff;
-  padding: .5em 0;
   text-decoration: none;
 }
 
