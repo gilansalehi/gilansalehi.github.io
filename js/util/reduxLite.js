@@ -51,12 +51,6 @@ const createStore = (rootReducer, initialState, options = {}) => {
 			Object.entries(this.components).map(([component, fn]) => {
 				q(`[component="${component}"]`).map(el => fn(el, state));
 			});
-			Object.entries(this.templates).map(([templateName, templateObject]) => {
-				q(`[template="${templateName}"]`).map(el => {
-					debugger;
-					el.innerHTML = templateObject.render();
-				});
-			});
 		},
 	};
 	return Object.assign(store, options);

@@ -20,6 +20,10 @@ window.addEventListener('load', function (e) {
   app.on('keyup', '.accordion', evt => {
     evt.key === 'Enter' && evt.delegateTarget.classList.toggle('open')
   });
+  app.on('click', '.flip__container', (evt, data) => {
+    data.target.classList.toggle('show-front');
+    data.target.classList.toggle('show-back');
+  });
   // accessibility:
   q('.accordion__title').map(el => el.setAttribute('tabindex', '0'));
 
@@ -32,6 +36,12 @@ window.addEventListener('load', function (e) {
     behavior: 'smooth',
     block: 'end',
     inline: 'start',
+  });
+
+  Object.entries(app.templates).map(([templateName, templateObject]) => {
+    q(`[template="${templateName}"]`).map(el => {
+      el.innerHTML = templateObject.render();
+    });
   });
 
   app.update();

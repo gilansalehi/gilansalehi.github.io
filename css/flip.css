@@ -5,6 +5,7 @@
 	flex-shrink: 0;
 	background: #333;
 	overflow-y: hidden;
+	height: 100%;
 }
 
 /* flip the pane when clicked */
