@@ -1,11 +1,13 @@
 @import 'reset.css';
 @import 'forms.css';
-@import 'flip.css';
 @import 'grid.css';
+@import 'flex.css';
+@import 'flip.css';
 @import 'nav.css';
 @import 'hero.css';
 @import 'about.css';
 @import 'projects.css';
+@import 'skills.css';
 @import 'accordion.css';
 @import 'style2.css';
 

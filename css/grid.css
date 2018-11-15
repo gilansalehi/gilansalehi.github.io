@@ -1,6 +1,39 @@
 .grid {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 400px auto;
+	grid-template-columns: repeat(auto-fill, 125px);
+	grid-auto-rows: repeat(auto-fill, 125px);
 	grid-auto-flow: dense;
+	justify-content: stretch;
 }
+
+.grid--skills {
+	grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+}
+
+.span-2 {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+.span-2-rows { grid-row: span 2; }
+.span-2-cols { grid-column: span 2; }
+
+.span-3 {
+	grid-column: span 3;
+	grid-row: span 3;
+}
+.span-3-rows { grid-row: span 3; }
+.span-3-cols { grid-column: span 3; }
+
+.span-4 {
+	grid-column: span 4;
+	grid-row: span 4;
+}
+.span-4-rows { grid-row: span 4; }
+.span-4-cols { grid-column: span 4; }
+
+.span-5 {
+	grid-column: span 5;
+	grid-row: span 5;
+}
+.span-5-rows { grid-row: span 5; }
+.span-5-cols { grid-column: span 5; }

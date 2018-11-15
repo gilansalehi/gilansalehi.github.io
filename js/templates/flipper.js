@@ -1,7 +1,7 @@
 import { template } from '../util/reduxLite.js';
 
 export default template`
-	<div class="flip__container show-front grid-height-3 grid-width-3" on-click="FLIP">
+	<div class="flip__container" on-click="FLIP">
 		<div class="flip__content">
 			<div class="flip__content--front">
 				<!-- front -->

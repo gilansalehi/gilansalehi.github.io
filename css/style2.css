@@ -10,35 +10,6 @@
 
 
 /*SKILLS*/
-.slide4 {
-  background: #fff;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.slide4 > h2 {
-  margin: 20px;
-}
-
-.skills-list {
-  display: block;
-  max-width: 880px;
-  margin: auto;
-  text-align: center;
-}
-
-.skills-list > li {
-  display: block;
-  float: left;
-  margin: 20px;
-  font-family: sans-serif;
-  font-size: 14px;
-}
-
-.skills-list > li > img {
-  width: 100px;
-  height: 100px;
-}
 
 /*CONTACT*/
 .slide5 {
