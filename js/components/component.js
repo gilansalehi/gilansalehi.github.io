@@ -6,7 +6,10 @@ export default class Component {
 
   on(eventType, delegateSelector, callback, thisArg = this) {
     this.$container.addEventListener(eventType, event => {
-      const delegateTarget = q(delegateSelector).filter(el => el.contains(event.target))[0];
+      const delegateTarget = [
+        ...thisArg.$container.querySelectorAll(delegateSelector)
+      ].filter(el => el.contains(event.target))[0];
+
       if ( delegateTarget ) {
         event.delegateTarget = delegateTarget;
         callback.bind(thisArg)(event);
@@ -15,11 +18,12 @@ export default class Component {
   }
 
   setState(options) {
-    this._state = { ...this._state, ...options };
+    this._state = { ...this._state, ...options, _lastChanged: Object.keys(options) };
     this.update();
   }
 
   update() {
+    console.warn('A component\'s update function was invoked without being defined');
     // defined by inheritor classes
   }
 }

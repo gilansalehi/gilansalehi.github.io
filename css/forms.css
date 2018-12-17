@@ -4,14 +4,14 @@ input, select {
   width: 100%;
   border-bottom: 1px solid #666;
   cursor: pointer;
-  outline-color: currentColor;
+  outline-color: var(--theme-color-1);
   font-size: 1rem;
   border-radius: 0;
 }
 
 input:focus, select:focus, input:hover, select:hover {
   outline: none;
-  border-bottom-color: currentColor;
+  border-bottom-color: var(--theme-color-1);
 }
 
 select {

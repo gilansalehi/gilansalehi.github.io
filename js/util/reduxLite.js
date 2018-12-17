@@ -1,6 +1,8 @@
+import Template from './template.js';
 // REDUX LITE:
+
 window.uuid = 0;
-window.templateArgs = {};
+
 const combineReducers = obj => {
 	return function (state, action) {
 		let nextState = {};
@@ -8,10 +10,10 @@ const combineReducers = obj => {
 			if (state) {
 				nextState[key] = obj[key](state[key], action);
 			} else {
-				// handle init:
-				nextState[key] = obj[key](undefined, {});
+				nextState[key] = obj[key](undefined, {}); // handle init:
 			}
 		});
+		// handle flag for stale reducers
 		return nextState;
 	}
 };
@@ -49,6 +51,7 @@ const createStore = (rootReducer, initialState, options = {}) => {
 		},
 		update: function(state) {
 			Object.entries(this.components).map(([component, fn]) => {
+				if (state === undefined) return;
 				q(`[component="${component}"]`).map(el => fn(el, state));
 			});
 		},
@@ -62,26 +65,12 @@ const deriveInitialState = (rootNode, selector) => {
 	// TODO;
 };
 const template = (fragments, ...args) => {
-	const temp = document.createElement('template');
-	const templateId = window.uuid++;
-	let templateString = '';
-	for (var i = 0; i < fragments.length; i++) {
-		templateString += fragments[i];
-		templateString += `|||${templateId}__${i}|||`;
-	}
-	const templateArgs = args.concat('').map(arg => x => arg);
-
-	return {
-		id: templateId,
-		templateString,
-		templateArgs,
-		render(templateArgs) {
-			return this.templateString.split('|||').map(function(item, idx) {
-				return !(idx % 2) ? item : this.templateArgs[Math.floor(idx / 2)]();
-			}.bind(this)).join('');
-		},
-	};
+	var temp = new Template(fragments, args);
+	return temp;
 }
+
+const txt = (string) => newString => newString === string ? string : newString;
+const attr = (string) => newString => newString === string ? string : newString;
 
 export {
 	chain,
@@ -89,6 +78,7 @@ export {
 	combineReducers,
 	createStore,
 	template,
+	txt,
 	deriveInitialState,
 };
 

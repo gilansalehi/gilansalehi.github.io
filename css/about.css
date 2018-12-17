@@ -1,6 +1,6 @@
 
 .slide--2 {
-  background: currentColor;
+  background: var(--theme-color-1);
   padding: 2.5em 0;
   text-align: center;
 }

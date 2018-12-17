@@ -8,7 +8,7 @@
 .accordion:focus,
 .accordion:focus-within,
 .accordion.open {
-  border-left-color: currentColor;
+  border-left-color: var(--theme-color-1);
 }
 
 .accordion > li {

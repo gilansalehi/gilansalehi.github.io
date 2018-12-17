@@ -14,59 +14,53 @@ export default class Nav extends Component {
       open: false,
     };
 
-    this.bindEventListeners.bind(this)()
+    this.bindEventListeners.bind(this)();
   }
 
   bindEventListeners() {
-    const {
-      $container,
-      $icon,
-      $menu,
-    } = this;
+    const { $container } = this;
 
-    this.on('click', '.nav__icon', evt => {
-      $container.classList.toggle('open');
-    });
-    this.on('keyup', '.nav__icon', evt => {
-      if ( evt.key === "Enter" ) {
-        $container.classList.toggle('open');
-      }
-    });
-    this.on('click', '.nav__close', evt => {
-      $container.classList.remove('open');
-    })
+    this.on('click', '.nav__icon', e => $container.classList.toggle('open'));
+    this.on('keyup', '.nav__icon', e => e.key === "Enter" && $container.classList.toggle('open'));
+    this.on('click', '.nav__close', e => $container.classList.remove('open'));
 
-    this.on('change', '[g-select]', function(evt) {
-      const action = evt.delegateTarget.getAttribute('g-select');
-      const [vPos, hPos] = evt.delegateTarget.value.toLowerCase().split(' ');
+    this.on('change', '[g-select]', function(e) {
+      const action = e.delegateTarget.getAttribute('g-select');
+      const [vPos, hPos] = e.delegateTarget.value.toLowerCase().split(' ');
       this[action]({ vPos, hPos });
     }, this);
 
-    this.on('change', '[g-input]', function(evt) {
-      const action = evt.delegateTarget.getAttribute('g-input');
-      const value = evt.delegateTarget.value;
+    this.on('change', '[g-input]', function(e) {
+      const action = e.delegateTarget.getAttribute('g-input');
+      const value = e.delegateTarget.value;
       this[action](value);
-    })
+    });
   }
 
   reposition(options) {
     this.setState({...options });
   }
 
-  setThemeColor(value) {
-    q('html')[0].setAttribute('style', `color: ${value}`);
-    q('meta[name="theme-color"]')[0].setAttribute('content', value);
+  setThemeColor(data) {
+    q('html')[0].style.setProperty('--theme-color-1', data);
+    q('meta[name="theme-color"]')[0].setAttribute('content', data['primary']);
+  }
+  setThemeColor2(data) {
+    q('html')[0].style.setProperty('--theme-color-2', data);
+  }
+  setThemeColor3(data) {
+    q('html')[0].style.setProperty('--theme-color-3', data);
   }
 
   update() {
     const { hPos, vPos } = this._state;
     const { $icon, $menu, $list } = this;
-    $icon.setAttribute('style', `${vPos}: 0; ${hPos}: 0;`);
-    $menu.setAttribute('style', `${vPos}: 0; ${hPos}: 0;`);
-    $list.setAttribute('style', `
-      justify-content: ${vPos == 'top' ? 'flex-start' : 'flex-end'};
+    $icon.style.cssText = `${vPos}: 0; ${hPos}: 0;`;
+    $menu.style.cssText = `${vPos}: 0; ${hPos}: 0;`;
+    $list.style.cssText = `
+      justify-content: ${vPos === 'top' ? 'flex-start' : 'flex-end'};
       text-align: ${hPos};
-    `);
+    `;
   }
 
 }

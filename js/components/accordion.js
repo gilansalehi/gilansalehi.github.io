@@ -13,7 +13,7 @@ export default class Accordion extends Component {
       if ( evt.key === 'Enter' ) {
         evt.currentTarget.classList.toggle('open');
       }
-    })
+    });
 
     this.on('click', '.accordion__title', evt => {
       evt.currentTarget.classList.toggle('open');

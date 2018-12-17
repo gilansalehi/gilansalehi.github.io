@@ -15,7 +15,6 @@
 }
 
 .skills__list > li {
-	grid-column: span 2;
 	flex-basis: 125px;
 	display: flex;
 	margin: 1em;
@@ -31,4 +30,5 @@
 
 .skills__name {
 	padding: 1em;
+	font-weight: bold;
 }

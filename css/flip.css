@@ -3,7 +3,7 @@
 	perspective: 1000px;
 	flex-grow: 0;
 	flex-shrink: 0;
-	background: #333;
+	background: var(--theme-color-3);
 	overflow-y: hidden;
 	height: 100%;
 }

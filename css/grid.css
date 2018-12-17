@@ -7,7 +7,7 @@
 }
 
 .grid--skills {
-	grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .span-2 {

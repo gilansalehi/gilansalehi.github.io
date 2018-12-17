@@ -1,10 +1,10 @@
 
 /*HOME*/
 .slide--1 {
-  color: currentColor;
+  color: var(--theme-color-1);
   background-image:
     url("../images/New-York.jpg"),
-    linear-gradient(currentColor, purple);
+    linear-gradient(var(--theme-color-1, #fa0),var(--theme-color-2, #808));
   background-size: cover;
   position: relative;
   width: 100vw;
@@ -30,12 +30,12 @@
   max-width: 300px;
   max-height: 300px;
   border-radius: 50%;
-  border: 2px solid currentColor;
+  border: 2px solid var(--theme-color-1);
   margin: auto;
 }
 
 .profile__title {
-  color: currentColor;
+  color: var(--theme-color-1);
   font-family: sans-serif;
   font-size: 4rem;
   margin-top: .5em;
@@ -50,7 +50,7 @@
 }
 
 .profile__resume-link--icon:visited {
-  color: currentColor;
+  color: var(--theme-color-1);
 }
 .profile__resume-link--text:visited {
   color: #ffffff;
@@ -59,7 +59,7 @@
 .profile__resume-link--icon {
   display: block;
   text-align: center;
-  color: currentColor;
+  color: var(--theme-color-1);
   font-size: 6rem;
   text-decoration: none;
 }
