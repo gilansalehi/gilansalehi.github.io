@@ -7,8 +7,6 @@ window.q = q;
 
 window.addEventListener('load', function (e) {
   var provider = window.app = createStore(rootReducer);
-  // accessibility:
-  q('.accordion__title').map(el => el.setAttribute('tabindex', '0'));
 
   // if nav cared about app state we'd subscribe to the store here too, but it doesn't.
   const nav = new Nav({ $container: q('.nav')[0] });
