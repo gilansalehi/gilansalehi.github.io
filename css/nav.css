@@ -107,3 +107,11 @@ nav a:hover,
 nav a:focus {
   border-left-color: var(--theme-color-1);
 }
+
+.theme-color-setter {
+  flex-direction: column;
+}
+
+.theme-color-setter-options {
+  display: flex;
+}
