@@ -38,7 +38,7 @@
   box-shadow: none;
 }
 .nav.open .nav__icon hr:nth-child(1) {
-  transform: translateY(7px) rotate(225deg);
+  transform: translateY(7.5px) rotate(225deg);
 }
 .nav.open .nav__icon hr:nth-child(2) {
   width: 0;
@@ -47,7 +47,7 @@
   transform: rotate(225deg);
 }
 .nav.open .nav__icon hr:nth-child(3) {
-  transform: translateY(-7px) rotate(315deg);
+  transform: translateY(-7.5px) rotate(315deg);
 }
 
 .nav__menu {
