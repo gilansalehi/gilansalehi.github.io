@@ -39,17 +39,17 @@ const createStore = (rootReducer, initialState, options = {}) => {
 		state: rootReducer(initialState, {}),
 		dispatch(action) {
 			const { state, rootReducer, queue } = this;
+			this.prevState = state;
 			this.state = rootReducer(state, action);
-
 			queue.push(action);
 			window.setTimeout(function () {
 				if (this.queue.length) {
 					this.queue = [];
-					this.update(this.state);
+					this.update(this.state, this.prevState);
 				}
 			}.bind(this), 0);
 		},
-		update: function(state) {
+		update: function(state, prevState) {
 			Object.entries(this.components).map(([component, fn]) => {
 				if (state === undefined) return;
 				q(`[component="${component}"]`).map(el => fn(el, state));

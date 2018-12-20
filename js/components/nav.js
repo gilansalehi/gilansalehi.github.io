@@ -52,7 +52,7 @@ export default class Nav extends Component {
     q('html')[0].style.setProperty('--theme-color-3', data);
   }
 
-  update() {
+  update(props, oldProps) {
     const { hPos, vPos } = this._state;
     const { $icon, $menu, $list } = this;
     $icon.style.cssText = `${vPos}: 0; ${hPos}: 0;`;

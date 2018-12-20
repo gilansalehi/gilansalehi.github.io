@@ -2,6 +2,7 @@ export default class Component {
   constructor(options = {}) {
     this.$container = options.$container || document;
     this._state = options._state || {};
+    // this._children = [];
   }
 
   on(eventType, delegateSelector, callback, thisArg = this) {
@@ -20,6 +21,7 @@ export default class Component {
   setState(options) {
     this._state = { ...this._state, ...options, _lastChanged: Object.keys(options) };
     this.update();
+    // this._children.map(child => child.update());
   }
 
   update() {

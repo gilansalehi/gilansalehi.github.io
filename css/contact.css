@@ -1,0 +1,60 @@
+.slide--5 {
+	background-color: #34495e;
+	color: white;
+  position: relative;
+  width: 100vw;
+  height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2em 0;
+}
+
+.contact__title {
+	display: flex;
+	justify-content: center;
+}
+
+.contact__github-link {
+	margin: auto;
+}
+
+.contact__list {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+	text-align: left;
+	padding: 2em 0;
+}
+
+
+.contact__list-item {
+	position: relative;
+  height: 40px;
+  width: 300px;
+	font-size: 20px;
+}
+
+.contact__text {
+	display: inline-block;
+}
+
+.fa-mobile, .fa-envelope, .fa-home, .fa-github, .fa-linkedin {
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	text-align: center;
+}
+.fa-mobile:before, .fa-envelope:before, .fa-home:before, .fa-github:before, .fa-linkedin:before {
+	width: 20px;
+	height: 20px;
+}
+
+.fa-mobile:before {
+	font-size: 1.5em;
+}
+
+.fa-envelope:before {
+	font-size: .9em;
+}
