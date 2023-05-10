@@ -17,16 +17,17 @@
 
 <body>
 <!-- NAVBAR -->
-  <header class="nav">
+  <header class="nav" data-binding="header:nav">
     <div class="nav__icon"
       style="top: 0; left: 0;"
       tabindex="0"
+      data-binding="nav:icon"
     >
       <hr>
       <hr>
       <hr>
     </div>
-    <nav class="nav__menu">
+    <nav class="nav__menu" data-binding="nav:menu">
       <ul class="nav__menu__list">
         <li><span class="nav__menu__list-item nav__menu__list-item--spacer"> </span></li>
         <li><a href="#home" class="nav-first">Home</a></li>
@@ -36,32 +37,28 @@
         <li><a href="#contact">Contact</a></li>
         <li><a class="nav-last" href="./images/Gilan_Salehi_2023.pdf">Resume</a></li>
         <li>
-          <ul class="accordion">
-            <li class="accordion__title">Preferences <span class="accordion__arrow i icon-chevron-down"></span></li>
-            <li>
+          <details class="accordion">
+            <summary class="accordion__title">Preferences</summary>
               <label>Menu Position:
-                <select g-select="reposition" style="background-color: #333; padding: 4px 0;">
+                <select data-binding="nav:pos" style="background-color: #333; padding: 4px 0;">
                   <option selected>Top Left</option>
                   <option>Top Right</option>
                   <option>Bottom Left</option>
                   <option>Bottom Right</option>
                 </select>
               </label>
-            </li>
-            <li class="theme-color-setter">
-              <div>Theme Color</div>
+              <label>Theme Color</label>
               <div class="theme-color-setter-options">
-                  <input g-input="setThemeColor" type="color" value="#ffaa00" default="#ffaa00">
-                  <input g-input="setThemeColor2" type="color" value="#800080" default="#800080">
-                  <input g-input="setThemeColor3" type="color" value="#333333" default="#333333">
+                  <input type="color" value="#ffaa00" default="#ffaa00" data-binding="colorPicker1">
+                  <input type="color" value="#800080" default="#800080" data-binding="colorPicker2">
+                  <input type="color" value="#333333" default="#333333" data-binding="colorPicker3">
               </div>
-            </li>
-          </ul>
+          </details>
         </li>
         <li><span class="nav__menu__list-item nav__menu__list-item--spacer"> </span></li>
       </ul>
     </nav>
-    <span class="nav__close"></span>
+    <span class="nav__close" data-binding="nav:close"></span>
   </header>
 
 <!-- PROFILE -->

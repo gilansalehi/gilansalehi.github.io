@@ -51,19 +51,21 @@
 }
 
 .nav__menu {
-  display: none;
   width: 240px;
+  display: flex;
   position: fixed;
   font-family: sans-serif;
   text-transform: uppercase;
   background-color: var(--theme-color-3);
   transition: all 0.2s ease-in-out;
   z-index: 10;
+  max-height: 0;
+  overflow: hidden;
   /* box-shadow: 0 0 100vw 100vw rgba(0, 0, 0, 0.5); */
 }
 
 .nav.open .nav__menu {
-  display: flex;
+  max-height: 100vh;
 }
 
 .nav__menu__list {
@@ -95,12 +97,17 @@
   display: block;
 }
 
-nav a {
+nav a,
+nav details {
   display: block;
   padding: 1em;
   text-decoration: none;
   border-left: 1px solid transparent;
   outline: none;
+}
+
+nav summary {
+  margin-left: -1em;
 }
 
 nav a:hover,

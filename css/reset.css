@@ -5,18 +5,15 @@
   box-sizing: border-box;
 }
 
-html {
+body {
+  font-family: Century, serif;
+  position: relative;
   --theme-color-1: #fa0;
   --theme-color-2: #808;
   --theme-color-3: #333;
   color: var(--theme-color-1);
   background-color: var(--theme-color-3);
   font-size: calc(14px + 3 * ((100vw - 320px) / 1000));
-}
-
-body {
-  font-family: Century, serif;
-  position: relative;
 }
 
 html, body {
