@@ -51,7 +51,7 @@ colorPicker1.addEventListener('change', setThemeColor1);
 colorPicker2.addEventListener('change', setThemeColor2);
 colorPicker3.addEventListener('change', setThemeColor3);
 menuPositioner.addEventListener('change', setMenuPosition);
-
+    
 export default function init() {
     return {
         themeColor1,

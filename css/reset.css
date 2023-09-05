@@ -8,7 +8,7 @@
 body {
   font-family: Century, serif;
   position: relative;
-  --theme-color-1: #fa0;
+  --theme-color-1: #4CCFEB;
   --theme-color-2: #808;
   --theme-color-3: #333;
   color: var(--theme-color-1);
@@ -31,6 +31,25 @@ img {
   object-fit: cover;
 }
 
+hr {
+  margin: 0.5rem 2rem;
+}
+
+/* #pages */
+main article {
+  display: none !important;
+  padding: 1rem;
+  margin: auto;
+  min-height: 100vh;
+  padding: 4rem 0;
+  transition: height .15s ease-out;
+}
+
+main article:target {
+  display: block !important;
+}
+
+/* scrollbars */
 ::-webkit-scrollbar {
   width: 4px;
 }
@@ -43,3 +62,4 @@ img {
 ::-webkit-scrollbar-thumb {
   background-color: #666;
 }
+

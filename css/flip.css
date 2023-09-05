@@ -3,9 +3,10 @@
 	perspective: 1000px;
 	flex-grow: 0;
 	flex-shrink: 0;
-	background: var(--theme-color-3);
+	background: transparent;
 	overflow-y: hidden;
 	height: 100%;
+	cursor: pointer;
 }
 
 /* flip the pane when clicked */

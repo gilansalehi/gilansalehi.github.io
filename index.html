@@ -12,11 +12,11 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
-  <script type="module" src="js/app.js"></script>
+  <script type="module" defer src="js/app.js"></script>
 </head>
 
 <body>
-<!-- NAVBAR -->
+  <!-- NAVBAR -->
   <header class="nav" data-binding="header:nav">
     <div class="nav__icon"
       style="top: 0; left: 0;"
@@ -32,10 +32,9 @@
         <li><span class="nav__menu__list-item nav__menu__list-item--spacer"> </span></li>
         <li><a href="#home" class="nav-first">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a class="nav-last" href="./images/Gilan_Salehi_2023.pdf">Resume</a></li>
+        <li><a href="#projects" data-loader='{ "url": "./projects.html", "target": "main" }'>Projects</a></li>
+        <li><a href="#skills" data-loader='{ "url": "./skills.html", "target": "main" }'>Skills</a></li>
+        <li><a href="#contact" data-loader='{ "url": "./contact.html", "target": "main" }'>Contact</a></li>
         <li>
           <details class="accordion">
             <summary class="accordion__title">Preferences</summary>
@@ -49,7 +48,7 @@
               </label>
               <label>Theme Color</label>
               <div class="theme-color-setter-options">
-                  <input type="color" value="#ffaa00" default="#ffaa00" data-binding="colorPicker1">
+                  <input type="color" value="#4CCFEB" default="#4CCFEB" data-binding="colorPicker1">
                   <input type="color" value="#800080" default="#800080" data-binding="colorPicker2">
                   <input type="color" value="#333333" default="#333333" data-binding="colorPicker3">
               </div>
@@ -61,124 +60,29 @@
     <span class="nav__close" data-binding="nav:close"></span>
   </header>
 
-<!-- PROFILE -->
-  <section class="slide slide--1" id="home">
-    <div class="profile">
-      <img class="profile__image" src="./images/profile.jpg">
-      <h1 class="profile__title">Gilan Salehi</h1>
-      <h2 class="profile__subtitle">Web Developer  |  <strong>New York City</strong></h2>
-      <div class="profile__resume-links">
-        <a class="profile__resume-link profile__resume-link--icon" href="./images/Gilan_Salehi_2023.pdf"><i class="icon-file-text"></i></a>
-        <a class="profile__resume-link profile__resume-link--text" href="./images/Gilan_Salehi_2023.pdf">Resume</a>
+  <main>
+  <!-- PROFILE -->
+    <section class="slide slide--1" id="home">
+      <div class="profile">
+        <img class="profile__image" src="./images/profile.jpg">
+        <h1 class="profile__title">Gilan Salehi</h1>
+        <h2 class="profile__subtitle">Web Developer  <br><hr class=""> <strong>New York City</strong></h2>
       </div>
-    </div>
-  </section>
+    </section>
 
-<!-- ABOUT -->
-  <section id="about" class="slide slide--2 about">
-    <h2 class="about__title">About Me</h2>
-    <p class="about__text">
-      Hi.  I'm a web developer based in New York City.  I'm experienced with Ruby, Rails, JavaScript, and React.
-      I love building modular, scalable code, and finding elegant solutions to challenging problems.  I live for the perfect puzzle.
-      <br><br>
-      When I'm not coding, I enjoy
-      <a>hiking</a>,
-      <a>chess</a>, and making
-      <a href="http://www.apricity.nyc">music</a>.
-    </p>
-  </section>
-
-<!-- PROJECTS -->
-  <section id="projects" class="slide slide--3 projects">
-    <h2 class="projects__title">Projects</h2>
-
-    <div class="projects__gallery">
-      <article class="project">
-        <p class="project__description">
-          <br><br>Check out <a href="http://www.scry61.com">Scry61</a>, a collector's site for Magic enthusiasts, featuring an instantly searchable database of 16,796 cards and a companion deck-builder app.
-          <br><br>View on <a href="https://github.com/gilansalehi/scry61">Github</a>
-        </p>
-        <a class="project__link" href="http://www.scry61.com">
-          <div class="img-hover-info" title="Akroma, Angel of Keyword Soup">Scry1</div>
-          <img class="project__link__image" src="images/portfolio/Angels.png" alt="Scry61: Angels">
-        </a>
-      </article>
-      <article class="project">
-        <p class="project__description">
-          <br><br>Navigate the <a href="http://www.gilansalehi.com/Asteroids2">Gauntlet Run</a>, facing down alien spaceships in an asteroid field.
-          <br><br>View on <a href="https://github.com/gilansalehi/Asteroids2">Github</a>
-        </p>
-        <a class="project__link" href="http://www.gilansalehi.com/Asteroids2">
-          <div class="img-hover-info" title="Never tell me the odds">Gauntlet Run</div>
-          <img class="project__link__image" src="images/portfolio/gauntlet-run-preview.png" alt="Gauntlet Run">
-        </a>
-      </article>
-      <article class="project">
-        <div  class="project__description">
-          <br><br>Battle <a href="https://github.com/gilansalehi/chess.git">GemChess</a>, my original chess engine written in Ruby.  Go ahead—see if you can beat it!
-          <br><br>View on <a href="https://github.com/gilansalehi/chess.git">Github</a>
-        </div>
-        <a class="project__link" href="https://github.com/gilansalehi/chess.git">
-          <div class="img-hover-info" title="Nxc7+!">GemChess</div>
-          <img class="project__link__image" src="images/portfolio/gemchess.png" alt="Github: GemChess">
-        </a>
-      </article>
-    </div>
-  </section>
-
-<!-- SKILLS -->
-  <section id="skills" class="slide slide--4">
-    <h2>Skills</h2>
-    <ul class="skills__list grid grid--skills">
-      <li><img src="images/svgs/git-icon.svg"><figcaption class="skills__name">Git</figcaption></li>
-      <li><img src="images/svgs/css3.svg"><figcaption class="skills__name">CSS3</figcaption></li>
-      <li><img src="images/svgs/es6.svg"><figcaption class="skills__name">ES6</figcaption></li>
-      <li><img src="images/svgs/html5.svg" style="transform: translateY(-20%) scale(1.4);"><figcaption class="skills__name">HTML5</figcaption></li>
-      <li><img src="images/svgs/github-1.svg"><figcaption class="skills__name">Github</figcaption></li>
-      <li class="span-2-cols"><img src="images/svgs/jquery-1.svg"><figcaption class="skills__name">jQuery</figcaption></li>
-      <li><img src="images/svgs/js.svg"><figcaption class="skills__name">JS</figcaption></li>
-      <li><img src="images/svgs/node.svg"><figcaption class="skills__name">node</figcaption></li>
-      <li><img src="images/svgs/postgresql.svg"><figcaption class="skills__name">PostgreSQL</figcaption></li>
-      <li><img src="images/svgs/rails.svg"><figcaption class="skills__name">Rails</figcaption></li>
-      <li><img src="images/svgs/ruby.svg"><figcaption class="skills__name">Ruby</figcaption></li>
-      <li><img src="images/svgs/react.svg"><figcaption class="skills__name">React</figcaption></li>
-      <li><img src="images/svgs/redux.svg"><figcaption class="skills__name">Redux</figcaption></li>
-      <li class="span-2-cols"><img src="images/svgs/npm.svg"><figcaption class="skills__name">npm</figcaption></li>
-      <li><img src="images/svgs/webpack-icon.svg"><figcaption class="skills__name">Webpack</figcaption></li>
-    </ul>
-  </section>
-
-<!-- CONTACT -->
-  <section id="contact" class=" slide--5">
-    <h2 class="contact__title">Contact</h2>
-
-    <ul class="contact__list contact-info group">
-      <li class="contact__list-item">
-        <i class="fa fa-mobile"></i>
-        <div class="contact__text">540.239.4103</div>
-      </li>
-      <li class="contact__list-item">
-        <i class="fa fa-envelope"></i>
-        <div class="contact__text">gilansalehi@gmail.com</div>
-      </li>
-      <li class="contact__list-item">
-        <i class="fa fa-home"></i>
-        <div class="contact__text">162 e 90th St. #5w</div>
-      </li>
-      <li class="contact__list-item">
-        <i class="fa fa-github"></i>
-        <div class="contact__text"><a href="https://www.github.com/gilansalehi">github.com/gilansalehi</a></div>
-      </li>
-      <li class="contact__list-item">
-        <i class="fa fa-linkedin"></i>
-        <div class="contact__text"><a href="https://www.linkedin.com/in/gilansalehi">linkedin.com/in/gilansalehi</a></div>
-      </li>
-    </ul>
-
-    <br>
-    <br>
-    <a class="contact__github-link" href="https://github.com/gilansalehi/gilansalehi.github.io">View this site on GitHub</a>
-  </section>
-
+  <!-- ABOUT -->
+    <article id="about" class="slide slide--2 about">
+      <h2 class="about__title">About Me</h2>
+      <p class="about__text">
+        Hi.  I'm a web developer based in New York City.  I'm experienced with Ruby, Rails, JavaScript, and React.
+        I love building modular, scalable code, and finding elegant solutions to challenging problems.  I live for the perfect puzzle.
+        <br><br>
+        When I'm not coding, I enjoy
+        <a>hiking</a>,
+        <a>chess</a>, and making
+        <a href="http://www.apricity.nyc">music</a>.
+      </p>
+    </article>
+  </main>
 </body>
 </html>
