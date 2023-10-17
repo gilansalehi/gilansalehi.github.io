@@ -47,7 +47,7 @@ export async function load(url, { container = document, callback = false }) {
   }).then(function (htmlString) {
     var parser = new DOMParser();
     var html = parser.parseFromString(htmlString, 'text/html');
-    let contents = document.adoptNode(html.firstChild.lastChild.firstChild);
+    let contents = document.adoptNode(html.body.firstChild);
     if (container) { container.appendChild(contents); }
     if (callback) { callback() }
     return contents
