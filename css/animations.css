@@ -1,0 +1,7 @@
+.animation {
+    transition: all .35s ease-out;
+}
+
+.animation.loading {
+    transform: translateY(-1000px);
+}

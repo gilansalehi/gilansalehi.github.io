@@ -1,0 +1,42 @@
+#resume {
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    max-width: 1200px;
+}
+
+#resume .centered {
+    text-align: center;
+}
+
+#resume h1 {
+    font-size: 2rem;
+}
+#resume h3 {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin: .5rem 0;
+}
+#resume strong {
+    font-weight: 600;
+}
+
+#resume h5 {
+    border-bottom: 1px solid;
+    margin: .5rem 0;
+}
+
+#resume dl {
+    display: flex;
+    justify-content: space-around;
+}
+
+#resume dd { margin-left: .5rem}
+
+#resume section {
+    margin: 1rem;
+}
+
+#resume ul li {
+    list-style: disc;
+    margin-left: 1rem;
+}

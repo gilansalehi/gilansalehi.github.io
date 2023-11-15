@@ -50,7 +50,7 @@ export async function load(url, { container = document, callback = false }) {
     let contents = document.adoptNode(html.body.firstChild);
     if (container) { container.appendChild(contents); }
     if (callback) { callback() }
-    return contents
+    return contents;
   }).catch(function (err) {
     console.warn('Something went wrong.', err);
   });

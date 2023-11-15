@@ -5,6 +5,12 @@
 .flex--wrap {
 	flex-wrap: wrap;
 }
+.flex--break {
+	flex-basis: 100%;
+}
+.nowrap {
+	white-space: nowrap;
+}
 
 .flex-grow--1 {
 	flex-grow: 1;

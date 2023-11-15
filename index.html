@@ -29,15 +29,15 @@
     </div>
     <nav class="nav__menu" data-binding="nav:menu">
       <ul class="nav__menu__list">
-        <li><span class="nav__menu__list-item nav__menu__list-item--spacer"> </span></li>
         <li><a href="#home" class="nav-first">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#resume" data-loader='{ "url": "./resume.html", "target": "main" }'>Resume</a></li>
         <li><a href="#projects" data-loader='{ "url": "./projects.html", "target": "main" }'>Projects</a></li>
         <li><a href="#skills" data-loader='{ "url": "./skills.html", "target": "main" }'>Skills</a></li>
         <li><a href="#contact" data-loader='{ "url": "./contact.html", "target": "main" }'>Contact</a></li>
         <li>
-          <details class="accordion">
-            <summary class="accordion__title">Preferences</summary>
+          <details>
+            <summary>Preferences</summary>
               <label>Menu Position:
                 <select data-binding="nav:pos" style="background-color: #333; padding: 4px 0;">
                   <option selected>Top Left</option>
@@ -54,7 +54,6 @@
               </div>
           </details>
         </li>
-        <li><span class="nav__menu__list-item nav__menu__list-item--spacer"> </span></li>
       </ul>
     </nav>
     <span class="nav__close" data-binding="nav:close"></span>
@@ -63,7 +62,7 @@
   <main>
   <!-- PROFILE -->
     <section class="slide slide--1" id="home">
-      <div class="profile">
+      <div class="profile animation loading">
         <img class="profile__image" src="./images/profile.jpg">
         <h1 class="profile__title">Gilan Salehi</h1>
         <h2 class="profile__subtitle">Web Developer  <br><hr class=""> <strong>New York City</strong></h2>
@@ -74,7 +73,7 @@
     <article id="about" class="slide slide--2 about">
       <h2 class="about__title">About Me</h2>
       <p class="about__text">
-        Hi.  I'm a web developer based in New York City.  I'm experienced with Ruby, Rails, JavaScript, and React.
+        Hi.  I'm a web developer based in New York City.  I'm experienced with Ruby, Rails, JavaScript, React, and Node.
         I love building modular, scalable code, and finding elegant solutions to challenging problems.  I live for the perfect puzzle.
         <br><br>
         When I'm not coding, I enjoy

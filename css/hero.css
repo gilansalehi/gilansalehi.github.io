@@ -35,6 +35,11 @@
   margin: auto;
 }
 
+.profile__image:hover {
+  transform: scale(1.05);
+  transition: all .35s ease-out;
+}
+
 .profile__title {
   color: var(--theme-color-1);
   font-family: sans-serif;

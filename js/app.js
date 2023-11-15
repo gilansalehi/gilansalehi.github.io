@@ -14,9 +14,13 @@ window.addEventListener('load', function (e) {
   const flippers = initFlippers();
   const pageIndex = initPages();
 
-  q('.profile')[0].scrollIntoView({
+  q('.slide--1')[0].scrollIntoView({
     behavior: 'smooth',
     block: 'end',
     inline: 'start',
   });
+
+  setTimeout(e => {
+    q('.loading').forEach(el => { el.classList.remove('loading')});
+  }, 500);
 });

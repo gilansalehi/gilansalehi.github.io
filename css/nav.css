@@ -28,6 +28,10 @@
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 
+.nav__icon:hover {
+  background: rgba(0, 0, 0, .25);
+}
+
 .nav__icon:hover hr,
 .nav__icon:focus hr {
   border: 1px solid var(--theme-color-1);
@@ -36,6 +40,8 @@
 
 .nav.open .nav__icon hr {
   box-shadow: none;
+  border: 1px solid var(--theme-color-1);
+  background: var(--theme-color-1);
 }
 .nav.open .nav__icon hr:nth-child(1) {
   transform: translateY(7.5px) rotate(225deg);
@@ -73,15 +79,11 @@
   flex-direction: column;
   height: 100vh;
   width: 100%;
+  padding: 3em 0;
 }
 
 .nav__menu__list > li {
   width: 100%;
-}
-
-.nav__menu__list-item--spacer {
-  height: 2.5em;
-  display: block;
 }
 
 .nav__close {
@@ -107,12 +109,18 @@ nav details {
 }
 
 nav summary {
-  margin-left: -1em;
+  list-style: none;
+}
+nav summary:hover {
+  margin: 0 .5em;
+  transition: margin .15s ease-out;
 }
 
 nav a:hover,
-nav a:focus {
-  border-left-color: var(--theme-color-1);
+nav a:focus,
+nav a:target {
+  transition: margin .15s ease-out;
+  margin: 0 .5em;
 }
 
 .theme-color-setter {
