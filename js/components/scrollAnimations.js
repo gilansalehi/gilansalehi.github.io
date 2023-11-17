@@ -6,7 +6,9 @@ const handleIntersect = (entries, observer) => {
         const element = entry.target;
         const animationClasses = element.dataset.scrollAnimation.split(' ');
 
-        animationClasses.forEach(ac => element.classList.toggle(ac, entry.isIntersecting));
+        animationClasses.forEach(ac => {
+            element.classList.toggle(ac, entry.isIntersecting);
+        });
     });
 };
 

@@ -2,8 +2,7 @@
 /*HOME*/
 .slide--1 {
   color: var(--theme-color-1);
-  background-image:
-    url("../images/New-York.jpg"),
+  background-image: url("../images/Petals.jpg"),
     linear-gradient(var(--theme-color-1, #fa0),var(--theme-color-2, #808));
   background-size: cover;
   position: relative;
@@ -15,6 +14,13 @@
   padding: 16em 0 4em;
   min-height: 100vh;
 }
+
+[data-current-page="home"] .slide--1 { background-image: url("../images/New-York.jpg"); }
+[data-current-page="about"] .slide--1 { background-image: url("../images/Petals.jpg"); }
+[data-current-page="resume"] .slide--1 { background-image: url("../images/Coffee005.webp"); }
+[data-current-page="portfolio"] .slide--1 { background-image: url("../images/Succulent.jpg"); }
+[data-current-page="contact"] .slide--1 { background-image: url("../images/Damavand.jpg"); }
+[data-current-page="skills"] .slide--1 { background-image: url("../images/Sandstone.jpg"); }
 
 .profile {
   display: block;
@@ -77,10 +83,6 @@
   text-decoration: underline;
 }
 
-.fa-file-text {
-  display: block;
-}
-
-.fa-file-text:hover {
-  text-shadow: 1px 1px 1px white, -1px -1px 1px white, -1px 1px 1px white, 1px -1px 1px white;
+.text--outline {
+  text-shadow: -1px 0 0 #000, 1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
 }

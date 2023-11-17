@@ -8,7 +8,7 @@
 body {
   font-family: Century, serif;
   position: relative;
-  --theme-color-1: #4CCFEB;
+  --theme-color-1: #7EE; /* #4ccfeb */
   --theme-color-2: #808;
   --theme-color-3: #333;
   color: var(--theme-color-1);
