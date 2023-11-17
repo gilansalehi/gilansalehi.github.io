@@ -2,6 +2,7 @@
   background: #fff;
   padding: 40px 0;
   text-align: center;
+  color: var(--theme-color-3);
 }
 
 .skills__title {
