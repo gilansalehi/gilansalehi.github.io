@@ -5,6 +5,7 @@ import initPrefs from './components/simplePrefs.js';
 import initFlippers from './components/flipper.js';
 // import initGame from './game/game.js';
 import initPages from './components/pageIndex.js';
+import initScrollAnimations from './components/scrollAnimations.js';
 
 window.q = q;
 
@@ -13,6 +14,7 @@ window.addEventListener('load', function (e) {
   const preferences = initPrefs();
   const flippers = initFlippers();
   const pageIndex = initPages();
+  const observedEls = initScrollAnimations();
 
   q('.slide--1')[0].scrollIntoView({
     behavior: 'smooth',
@@ -20,7 +22,4 @@ window.addEventListener('load', function (e) {
     inline: 'start',
   });
 
-  setTimeout(e => {
-    q('.loading').forEach(el => { el.classList.remove('loading')});
-  }, 500);
 });

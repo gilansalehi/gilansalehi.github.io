@@ -1,7 +1,20 @@
-.animation {
+.animate {
     transition: all .35s ease-out;
 }
 
-.animation.loading {
+.animate.loading {
     transform: translateY(-1000px);
+}
+
+.hover--underline::after {
+    transition: width .35s ease-out;
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    background: var(--theme-color-1);
+}
+.hover--underline:hover::after,
+.hover--underline:focus::after {
+    width: 100%;
 }

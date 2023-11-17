@@ -1,4 +1,5 @@
 import { q, on, load } from '../util/utils.js';
+import initScrollAnimations from './scrollAnimations.js';
 
 export default function initPages() {
     const container = q('main')[0];
@@ -6,7 +7,10 @@ export default function initPages() {
     // load page and attach to main
     on('click', '[data-loader]', function ({ target }) {
         let options = JSON.parse(target.getAttribute('data-loader'));
-        let callback = () => target.click();
+        let callback = () => {
+            target.click();
+            initScrollAnimations();
+        };
 
         load(options.url, { container, callback });
         target.removeAttribute('data-loader');

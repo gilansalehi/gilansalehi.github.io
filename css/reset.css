@@ -35,6 +35,10 @@ hr {
   margin: 0.5rem 2rem;
 }
 
+summary {
+  cursor: pointer;
+}
+
 /* #pages */
 main article {
   display: none !important;
@@ -63,3 +67,6 @@ main article:target {
   background-color: #666;
 }
 
+.overflow--hidden {
+  overflow: hidden;
+}

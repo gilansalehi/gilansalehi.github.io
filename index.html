@@ -10,8 +10,7 @@
   <meta property="og:title" content="Gilan Salehi">
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script type="module" defer src="js/app.js"></script>
 </head>
 
@@ -29,16 +28,16 @@
     </div>
     <nav class="nav__menu" data-binding="nav:menu">
       <ul class="nav__menu__list">
-        <li><a href="#home" class="nav-first">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#resume" data-loader='{ "url": "./resume.html", "target": "main" }'>Resume</a></li>
-        <li><a href="#projects" data-loader='{ "url": "./projects.html", "target": "main" }'>Projects</a></li>
-        <li><a href="#skills" data-loader='{ "url": "./skills.html", "target": "main" }'>Skills</a></li>
-        <li><a href="#contact" data-loader='{ "url": "./contact.html", "target": "main" }'>Contact</a></li>
+        <li><a href="#home" tabindex="0" class="nav-first animate hover--underline">Home</a></li>
+        <li><a href="#about" tabindex="0" class="animate hover--underline">About</a></li>
+        <li><a href="#resume" tabindex="0" class="animate hover--underline" data-loader='{ "url": "./resume.html", "target": "main", "scrollTarget": "#resume" }'>Resume</a></li>
+        <li><a href="#portfolio" tabindex="0" class="animate hover--underline" data-loader='{ "url": "./portfolio.html", "target": "main", "scrollTarget": "#portfolio" }'>Portfolio</a></li>
+        <li><a href="#skills" tabindex="0" class="animate hover--underline" data-loader='{ "url": "./skills.html", "target": "main", "scrollTarget": "#skills" }'>Skills</a></li>
+        <li><a href="#contact" tabindex="0" class="animate hover--underline" data-loader='{ "url": "./contact.html", "target": "main", "scrollTarget": "#contact" }'>Contact</a></li>
         <li>
           <details>
-            <summary>Preferences</summary>
-              <label>Menu Position:
+            <summary class="animate hover--underline">Preferences</summary>
+              <label>Menu Position
                 <select data-binding="nav:pos" style="background-color: #333; padding: 4px 0;">
                   <option selected>Top Left</option>
                   <option>Top Right</option>
@@ -62,7 +61,7 @@
   <main>
   <!-- PROFILE -->
     <section class="slide slide--1" id="home">
-      <div class="profile animation loading">
+      <div class="profile animate__animated animate__bounceInDown">
         <img class="profile__image" src="./images/profile.jpg">
         <h1 class="profile__title">Gilan Salehi</h1>
         <h2 class="profile__subtitle">Web Developer  <br><hr class=""> <strong>New York City</strong></h2>

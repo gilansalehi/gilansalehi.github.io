@@ -28,7 +28,8 @@
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 
-.nav__icon:hover {
+.nav__icon:hover,
+.nav__icon:focus {
   background: rgba(0, 0, 0, .25);
 }
 
@@ -79,7 +80,7 @@
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  padding: 3em 0;
+  padding: 3.5em 0;
 }
 
 .nav__menu__list > li {
@@ -110,18 +111,19 @@ nav details {
 
 nav summary {
   list-style: none;
-}
-nav summary:hover {
-  margin: 0 .5em;
-  transition: margin .15s ease-out;
+  outline: none;
 }
 
-nav a:hover,
-nav a:focus,
-nav a:target {
-  transition: margin .15s ease-out;
-  margin: 0 .5em;
+@media not (prefers-reduced-motion) {
+  nav summary:hover,
+  nav summary:focus,
+  nav a:hover,
+  nav a:focus {
+    transition: margin .15s ease-out;
+    margin: 0 .5em;
+  }
 }
+
 
 .theme-color-setter {
   flex-direction: column;
