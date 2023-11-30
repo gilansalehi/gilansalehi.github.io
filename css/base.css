@@ -1,0 +1,15 @@
+.scroll-watcher {
+    min-height: 1px;
+}
+
+.red {
+    color: red;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.round {
+    border-radius: 50%;
+}

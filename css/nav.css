@@ -14,9 +14,13 @@
   justify-content: space-around;
   align-items: center;
   padding: 1em;
+  margin: .5em;
   border-radius: 50%;
   cursor: pointer;
   box-sizing: content-box;
+  appearance: none;
+  background: rgba(0, 0, 0, 0);
+  border-color: transparent;
 }
 
 .nav__icon hr {
@@ -31,6 +35,7 @@
 .nav__icon:hover,
 .nav__icon:focus {
   background: rgba(0, 0, 0, .25);
+  border-color: var(--theme-color-1);
 }
 
 .nav__icon:hover hr,
@@ -68,11 +73,12 @@
   z-index: 10;
   max-height: 0;
   overflow: hidden;
-  /* box-shadow: 0 0 100vw 100vw rgba(0, 0, 0, 0.5); */
+  visibility: hidden;
 }
 
 .nav.open .nav__menu {
   max-height: 100vh;
+  visibility: visible;
 }
 
 .nav__menu__list {
@@ -80,7 +86,7 @@
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  padding: 3.5em 0;
+  padding: 4em 0;
 }
 
 .nav__menu__list > li {
@@ -123,7 +129,6 @@ nav summary {
     margin: 0 .5em;
   }
 }
-
 
 .theme-color-setter {
   flex-direction: column;

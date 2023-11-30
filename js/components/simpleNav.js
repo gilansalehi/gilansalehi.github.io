@@ -1,28 +1,20 @@
-import { q } from '../util/utils.js';
+import { q, on } from '../util/utils.js';
 
-const menuBtn = q('[data-binding="nav:icon"')[0];
-const menu = q('[data-binding="nav:menu"]')[0];
-const menuWrapper = q('[data-binding="header:nav"]')[0];
-const menuCloseBtn = q('[data-binding="nav:close"]')[0];
+const header = q('[data-ref="menu:wrapper"]')[0];
 
 let open = false;
 
 function toggleMenu() {
     open = !open;
-    menuWrapper.classList.toggle('open', open);
+
+    header.classList.toggle('open', open);
 }
 
-menuBtn.addEventListener('click', toggleMenu);
-menuBtn.addEventListener('keyup', (e) => {
-    if (e.key === 'Enter') { toggleMenu(); }
+on('click', '[data-action="menu:toggle"]', toggleMenu);
+on('keyup', 'body', e => {
+    if (e.key === 'Escape' && open) { toggleMenu(); }
 });
-menuCloseBtn.addEventListener('click', toggleMenu);
 
 export default function init() {
-    return {
-        menuBtn,
-        menu,
-        menuWrapper,
-        open,
-    }
+    return header;
 }

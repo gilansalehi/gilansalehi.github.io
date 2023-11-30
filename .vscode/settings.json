@@ -1,5 +1,6 @@
 {
   "editor.acceptSuggestionOnEnter": "off",
   "auto-close-tag.fullMode": true,
-  "auto-close-tag.SublimeText3Mode": true
+  "auto-close-tag.SublimeText3Mode": true,
+  "editor.parameterHints": false
 }

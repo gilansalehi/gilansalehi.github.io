@@ -1,0 +1,18 @@
+[data-nav-carousel] {
+    display: flex;
+    overflow: scroll;
+    max-width: 66%;
+    margin: auto;
+    gap: 2rem;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior: contain;
+}
+
+[data-nav-carousel] li {
+    white-space: nowrap;
+    scroll-snap-stop: normal;
+    scroll-snap-align: center;
+}
+
+[data-nav-carousel]::-webkit-scrollbar { display: none; } /* webkit */
+[data-nav-carousel] { scrollbar-width: none; } /* firefox */

@@ -1,3 +1,8 @@
+button:active, a:active, summary:active {
+    transform: scale(.97);
+    opacity: .75;
+}
+
 .animate {
     transition: all .35s ease-out;
 }
@@ -14,7 +19,69 @@
     width: 0;
     background: var(--theme-color-1);
 }
+
 .hover--underline:hover::after,
 .hover--underline:focus::after {
     width: 100%;
+}
+
+.hover--shine {
+    overflow: hidden;
+}
+
+.hover--shine:after {
+    content: '';
+    display: block;
+    background-color: white;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .1;
+    left: -100%;
+}
+
+.hover--shine:hover:after {
+    left: 150%;
+}
+
+.hover--glow {
+    position: relative;
+    background: linear-gradient(0deg, #000, #272727);
+    border-radius: 50%;
+}
+
+.hover--glow:before,
+.hover--glow:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, transparent, #fff, transparent);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(.5);
+}
+
+.hover--glow:hover:before,
+.hover--glow:hover:after {
+    animation: steam 20s linear infinite;
+    filter: blur(4px);
+    transform: scale(1);
+}
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }

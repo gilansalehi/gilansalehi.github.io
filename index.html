@@ -16,29 +16,28 @@
 
 <body>
   <!-- NAVBAR -->
-  <header class="nav" data-binding="header:nav">
-    <div class="nav__icon"
+  <header class="nav" data-ref="menu:wrapper">
+    <button class="nav__icon hover--shine" data-action="menu:toggle"
       style="top: 0; left: 0;"
       tabindex="0"
-      data-binding="nav:icon"
     >
       <hr>
       <hr>
       <hr>
-    </div>
-    <nav class="nav__menu" data-binding="nav:menu">
+    </button>
+    <nav class="nav__menu" data-ref="nav:menu">
       <ul class="nav__menu__list">
-        <li><a href="#home" tabindex="0" class="nav-first animate hover--underline">Home</a></li>
-        <li><a href="#about" tabindex="0" class="animate hover--underline">About</a></li>
-        <li><a href="#resume" tabindex="0" class="animate hover--underline" data-loader='{ "url": "./resume.html", "target": "main", "scrollTarget": "#resume" }'>Resume</a></li>
-        <li><a href="#portfolio" tabindex="0" class="animate hover--underline" data-loader='{ "url": "./portfolio.html", "target": "main", "scrollTarget": "#portfolio" }'>Portfolio</a></li>
-        <li><a href="#skills" tabindex="0" class="animate hover--underline" data-loader='{ "url": "./skills.html", "target": "main", "scrollTarget": "#skills" }'>Skills</a></li>
-        <li><a href="#contact" tabindex="0" class="animate hover--underline" data-loader='{ "url": "./contact.html", "target": "main", "scrollTarget": "#contact" }'>Contact</a></li>
+        <li><a href="#home" class="nav-first animate hover--underline">Home</a></li>
+        <li><a href="#about" class="animate hover--underline">About</a></li>
+        <li><a href="#resume" class="animate hover--underline" data-loader='{ "url": "./resume.html", "target": "main" }'>Resume</a></li>
+        <li><a href="#portfolio" class="animate hover--underline" data-loader='{ "url": "./portfolio.html", "target": "main" }'>Portfolio</a></li>
+        <li><a href="#skills" class="animate hover--underline" data-loader='{ "url": "./skills.html", "target": "main" }'>Skills</a></li>
+        <li><a href="#contact" class="animate hover--underline" data-loader='{ "url": "./contact.html", "target": "main" }'>Contact</a></li>
         <li>
           <details>
             <summary class="animate hover--underline">Preferences</summary>
               <label>Menu Position
-                <select data-binding="nav:pos" style="background-color: #333; padding: 4px 0;">
+                <select data-ref="nav:pos" style="background-color: #333; padding: 4px 0;">
                   <option selected>Top Left</option>
                   <option>Top Right</option>
                   <option>Bottom Left</option>
@@ -47,28 +46,32 @@
               </label>
               <label>Theme Color</label>
               <div class="theme-color-setter-options">
-                  <input type="color" value="#77EEEE" default="#77EEEE" data-binding="colorPicker1">
-                  <input type="color" value="#800080" default="#800080" data-binding="colorPicker2">
-                  <input type="color" value="#333333" default="#333333" data-binding="colorPicker3">
+                  <input type="color" value="#77EEEE" default="#77EEEE" data-ref="colorPicker1">
+                  <input type="color" value="#800080" default="#800080" data-ref="colorPicker2">
+                  <input type="color" value="#333333" default="#333333" data-ref="colorPicker3">
               </div>
           </details>
         </li>
       </ul>
     </nav>
-    <span class="nav__close" data-binding="nav:close"></span>
+    <span class="nav__close" data-action="menu:toggle"></span>
   </header>
 
   <main>
-  <!-- PROFILE -->
+    <!-- PROFILE -->
     <section class="slide slide--1" id="home">
-      <div class="profile animate__animated animate__bounceInDown">
-        <img class="profile__image" src="./images/profile.jpg">
-        <h1 class="profile__title text--outline">Gilan Salehi</h1>
+      <div class="profile animate__animated animate__bounceInDown photo animation-root">
+        <div class="profile__image__frame">
+          <img class="profile__image" src="./images/profile.jpg">
+        </div>
+        <h1 class="profile__title text--outline animation-frame animation-frame--radial">Gilan Salehi</h1>
         <h2 class="profile__subtitle text--outline">Web Developer  <br><hr class=""> <strong>New York City</strong></h2>
       </div>
     </section>
 
-  <!-- ABOUT -->
+    <hr class="preload-delete" data-scroll-action='{ "click": "nav ul li:nth-of-type(2) a", "once": true }'></hr>
+
+    <!-- ABOUT -->
     <article id="about" class="slide slide--2 about">
       <h2 class="about__title" data-scroll-animation="animate__fadeInUp">About Me</h2>
       <p class="about__text" data-scroll-animation="animate__fadeInUp">

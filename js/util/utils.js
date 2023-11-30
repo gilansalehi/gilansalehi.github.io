@@ -13,6 +13,15 @@ export const on = function (eventType, delegateSelector, callback, $container = 
   });
 }
 
+// export const init = function (modules) {}
+
+// function _on(eventName, ...options) {
+//   var delegate = options.find(x => typeof x === 'string'); // delegateTarget
+//   var callback = options.find(x => typeof x === 'function'); // middleware
+//   var container = options.find(x => x instanceof Node) || document; // document
+//   on(eventName, delegate, callback, container);
+// };
+
 export const g = function (selector, nodeProps = {}, children = [], ctx = document) {
   let node = ctx.querySelector(selector);
   if (!node) {
@@ -55,6 +64,8 @@ export async function load(url, { container = document, callback = false }) {
     console.warn('Something went wrong.', err);
   });
 }
+
+export const setupModules = modList => modList.forEach(setup => setup());
 
 function _parseSelectorString(str) {
   let [str2, ...nodeClass] = str.split('.');

@@ -1,4 +1,5 @@
 @import 'reset.css';
+@import 'base.css';
 @import 'forms.css';
 @import 'grid.css';
 @import 'flex.css';
@@ -12,6 +13,7 @@
 @import 'contact.css';
 @import 'accordion.css';
 @import 'animations.css';
+@import 'carousels.css';
 @import 'resume.css';
 @import 'style2.css';
 

@@ -1,13 +1,20 @@
+import { q } from '../util/utils.js';
 
 // Function to handle intersection changes
-const handleIntersect = (entries, observer) => {
+const handleIntersect = (entries) => {
     entries.forEach(entry => {
         // Check if the element is intersecting
         const element = entry.target;
-        const action = element.dataset.scrollAction;
+        const animationClasses = element.dataset.scrollAnimation.split(' ');
 
-        action.forEach(ac => {
-            element.click();
+        animationClasses.forEach(ac => {
+            if (entry.isIntersecting) {
+                element.classList.toggle(ac, true);
+            } else {
+                setTimeout(_ => {
+                    element.classList.toggle(ac, false);
+                }, 1500);
+            }
         });
     });
 };
@@ -16,12 +23,11 @@ const observer = new IntersectionObserver(handleIntersect);
 
 export default function initScrollAnimations() {
     // Find and observe all elements with the specified class name
-    let elementsToObserve = document.querySelectorAll('[data-scroll-action]');
+    let elementsToObserve = q('[data-scroll-animation]');
 
     elementsToObserve.forEach(element => {
-        const config = JSON.parse(element.getAttribute('data-scroll-action'));
-        // click & target selector
-        // animate & animation classes
+        const config = element.getAttribute('data-scroll-animation');
+
         if (element.classList.contains('animate__animated')) {
             return; // already being observed
         } else {

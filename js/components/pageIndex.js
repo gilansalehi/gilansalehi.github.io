@@ -1,5 +1,6 @@
 import { q, on, load } from '../util/utils.js';
-import initScrollAnimations from './scrollAnimations.js';
+import initScrollAnimations from '../modules/scrollAnimations.js';
+import initCarousels from '../modules/carousel.js';
 
 export default function initPages() {
     const container = q('main')[0];
@@ -11,7 +12,10 @@ export default function initPages() {
         let callback = () => {
             target.click();
             initScrollAnimations();
+            initCarousels();
         };
+
+        q('.preload-delete').forEach(el => el.parentElement.removeChild(el));
 
         load(options.url, { container, callback });
         target.removeAttribute('data-loader');

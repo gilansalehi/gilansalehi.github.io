@@ -5,12 +5,12 @@ const icon =  q('.nav__icon')[0];
 const menu = q('.nav__menu')[0];
 const menuList = q('.nav__menu__list')[0];
 
-const colorPicker1 = q('[data-binding="colorPicker1"]')[0];
-const colorPicker2 = q('[data-binding="colorPicker2"]')[0];
-const colorPicker3 = q('[data-binding="colorPicker3"]')[0];
-const menuPositioner = q('[data-binding="nav:pos"]')[0];
+const colorPicker1 = q('[data-ref="colorPicker1"]')[0];
+const colorPicker2 = q('[data-ref="colorPicker2"]')[0];
+const colorPicker3 = q('[data-ref="colorPicker3"]')[0];
+const menuPositioner = q('[data-ref="nav:pos"]')[0];
 
-let themeColor1 = '#fa0';
+let themeColor1 = '#7ee';
 let themeColor2 = '#808';
 let themeColor3 = '#333';
 
@@ -51,7 +51,7 @@ colorPicker1.addEventListener('change', setThemeColor1);
 colorPicker2.addEventListener('change', setThemeColor2);
 colorPicker3.addEventListener('change', setThemeColor3);
 menuPositioner.addEventListener('change', setMenuPosition);
-    
+
 export default function init() {
     return {
         themeColor1,
