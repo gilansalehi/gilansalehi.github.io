@@ -7,7 +7,7 @@
     color: var(--theme-color-1);
     background-color: var(--theme-color-3);
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 1200px;
+    max-width: 960px;
 }
 
 #resume .centered {
@@ -15,7 +15,7 @@
 }
 
 #resume h1 {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 #resume h3 {
     font-size: 1.25rem;
@@ -42,7 +42,49 @@
     margin: 1rem;
 }
 
-#resume ul li {
-    list-style: disc;
+#resume .layout--resume-grid {
+    margin: 1rem;
+    display: grid;
+    grid-template-areas:
+        "year title"
+        "year subtitle"
+        "year details";
+    grid-auto-flow: dense;
+    grid-template-columns: 4rem auto;
+
+    .year,
+    .timeline,
+    .end-year,
+    .start-year {
+        grid-area: year;
+        text-align: left;
+        margin: .25rem auto 0 0;
+    }
+    .year {
+        display: flex;
+        flex-direction: column;
+    }
+    .timeline {
+        padding: .5rem;
+        border-right: 1px dotted var(--theme-color-1);
+        flex-basis: 100%;
+    }
+    h3 { grid-area: title; }
+    p { grid-area: subtitle; }
+    ul { grid-area: details; }
+}
+
+#resume ul li:not(.list-style--none) {
+    list-style: none;
     margin-left: 1rem;
+}
+
+#resume ul li.italic {
+    padding: .5rem 0;
+}
+
+#resume ul li:not(.list-style--none)::marker {
+    content: '◆  ';
+    display: block;
+    color: var(--theme-color-1-dark);
 }

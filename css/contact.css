@@ -1,6 +1,6 @@
 .slide--5 {
-	background-color: #34495e;
-	color: white;
+	background-color: var(--theme-color-2-dark);
+	color: var(--theme-color-1);
 	position: relative;
 	width: 100vw;
 	height: auto;
