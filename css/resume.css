@@ -1,5 +1,6 @@
 #resume {
-    color: white;
+    color: var(--theme-color-1);
+    background-color: var(--theme-color-3);
     font-family:Arial, Helvetica, sans-serif;
     max-width: 1200px;
 }
