@@ -107,17 +107,23 @@
 }
 
 nav a,
-nav details {
+nav summary {
   display: block;
-  padding: 1em;
+  padding: 1rem;
   text-decoration: none;
   border-left: 1px solid transparent;
   outline: none;
 }
 
+.nav__details__contents {
+  background-color: var(--theme-color-3-dark);
+  padding: 1rem;
+}
+
 nav summary {
   list-style: none;
   outline: none;
+  background-color: var(--theme-color-3);
 }
 
 @media not (prefers-reduced-motion) {
@@ -136,4 +142,7 @@ nav summary {
 
 .theme-color-setter-options {
   display: flex;
+  justify-content: flex-start;
+  padding: .5rem 0;
+  gap: .5rem;
 }

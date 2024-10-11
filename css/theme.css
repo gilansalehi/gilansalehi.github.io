@@ -1,7 +1,10 @@
 body {
-    --theme-color-1: hsl(0, 50%, 100%);
+    --theme-color-1: hsl(0, 0%, 100%);
     --theme-color-2: hsl(186, 95%, 75%);
     --theme-color-3: hsl(0, 21%, 50%);
+    --theme-color-1-dark: hsl(0, 0%, 90%);
+    --theme-color-2-dark: hsl(186, 95%, 65%);
+    --theme-color-3-dark: hsl(0, 21%, 40%);
 
     color: var(--theme-color-1);
     background-color: var(--theme-color-3);
