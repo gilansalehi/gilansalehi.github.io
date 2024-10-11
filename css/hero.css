@@ -60,11 +60,15 @@
 }
 
 .profile__subtitle {
-  color: #ffffff;
+  color: var(--theme-color-1);
   padding: 0.5em 0;
-  font-family: 'Cambria', serif;
+  font-family: 'Bellefair', serif;
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+.profile__subtitle strong {
+  font-size: 1.125rem;
 }
 
 .profile__resume-link--icon:visited {

@@ -21,6 +21,7 @@
   appearance: none;
   background: rgba(0, 0, 0, 0);
   border-color: transparent;
+  backdrop-filter: blur(5px);
 }
 
 .nav__icon hr {
@@ -29,7 +30,7 @@
   background: black;
   transition: all .5s ease-in-out;
   width: 20px;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25); */
 }
 
 .nav__icon:hover,
@@ -74,6 +75,7 @@
   max-height: 0;
   overflow: hidden;
   visibility: hidden;
+  box-shadow: 0 0 2px 0 var(--theme-color-0);
 }
 
 .nav.open .nav__menu {
