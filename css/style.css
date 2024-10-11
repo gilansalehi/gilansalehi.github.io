@@ -1,5 +1,6 @@
 @import 'reset.css';
 @import 'base.css';
+@import 'theme.css';
 @import 'forms.css';
 @import 'grid.css';
 @import 'flex.css';
@@ -15,5 +16,5 @@
 @import 'animations.css';
 @import 'carousels.css';
 @import 'resume.css';
-@import 'style2.css';
+@import 'pages.css';
 
