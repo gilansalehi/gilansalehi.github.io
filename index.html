@@ -1,13 +1,17 @@
 <!doctype html>
 <html>
+
 <head lang="en">
   <title>Gilan Salehi</title>
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-  <meta name="theme-color" content="#ffaa00" >
+  <meta name="theme-color" content="#ffaa00">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <meta property="og:title" content="Gilan Salehi">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -17,10 +21,7 @@
 <body>
   <!-- NAVBAR -->
   <header class="nav" data-ref="menu:wrapper">
-    <button class="nav__icon hover--shine" data-action="menu:toggle"
-      style="top: 0; left: 0;"
-      tabindex="0"
-    >
+    <button class="nav__icon hover--shine" data-action="menu:toggle" style="top: 0; left: 0;" tabindex="0">
       <hr>
       <hr>
       <hr>
@@ -29,15 +30,20 @@
       <ul class="nav__menu__list">
         <li><a href="#home" class="nav-first animate hover--underline">Home</a></li>
         <li><a href="#about" class="animate hover--underline">About</a></li>
-        <li><a href="#resume" class="animate hover--underline" data-loader='{ "url": "./resume.html", "target": "main" }'>Resume</a></li>
-        <li><a href="#portfolio" class="animate hover--underline" data-loader='{ "url": "./portfolio.html", "target": "main" }'>Portfolio</a></li>
-        <li><a href="#skills" class="animate hover--underline" data-loader='{ "url": "./skills.html", "target": "main" }'>Skills</a></li>
-        <li><a href="#contact" class="animate hover--underline" data-loader='{ "url": "./contact.html", "target": "main" }'>Contact</a></li>
+        <li><a href="#resume" class="animate hover--underline"
+            data-loader='{ "url": "./resume.html", "target": "main" }'>Resume</a></li>
+        <li><a href="#portfolio" class="animate hover--underline"
+            data-loader='{ "url": "./portfolio.html", "target": "main" }'>Portfolio</a></li>
+        <li><a href="#skills" class="animate hover--underline"
+            data-loader='{ "url": "./skills.html", "target": "main" }'>Skills</a></li>
+        <li><a href="#contact" class="animate hover--underline"
+            data-loader='{ "url": "./contact.html", "target": "main" }'>Contact</a></li>
         <li>
           <details>
             <summary class="animate hover--underline">Preferences</summary>
+            <div class="nav__details__contents">
               <label>Menu Position
-                <select data-ref="nav:pos" style="background-color: #333; padding: 4px 0;">
+                <select data-ref="nav:pos">
                   <option selected>Top Left</option>
                   <option>Top Right</option>
                   <option>Bottom Left</option>
@@ -46,10 +52,11 @@
               </label>
               <label>Theme Color</label>
               <div class="theme-color-setter-options">
-                  <input type="color" value="#77EEEE" default="#77EEEE" data-ref="colorPicker1">
-                  <input type="color" value="#800080" default="#800080" data-ref="colorPicker2">
-                  <input type="color" value="#333333" default="#333333" data-ref="colorPicker3">
+                <input type="color" value="#FFFFFF" default="#FFFFFF" data-ref="colorPicker1">
+                <input type="color" value="#82effb" default="#82effb" data-ref="colorPicker2">
+                <input type="color" value="#9a6464" default="#9a6464" data-ref="colorPicker3">
               </div>
+            </div>
           </details>
         </li>
       </ul>
@@ -64,19 +71,27 @@
         <div class="profile__image__frame">
           <img class="profile__image" src="./images/profile.jpg">
         </div>
-        <h1 class="profile__title text--outline animation-frame animation-frame--radial">Gilan Salehi</h1>
-        <h2 class="profile__subtitle text--outline">Web Developer  <br><hr class=""> <strong>New York City</strong></h2>
+        <div class="profile__body">
+          <h1 class="profile__title text--outline animation-frame animation-frame--radial">Gilan Salehi</h1>
+          <h2 class="profile__subtitle text--outline">
+            Web Developer <br>
+            <hr class="">
+            <strong>NEW YORK CITY</strong>
+          </h2>
+        </div>
       </div>
     </section>
 
-    <hr class="preload-delete" data-scroll-action='{ "click": "nav ul li:nth-of-type(2) a", "once": true }'></hr>
+    <hr class="preload-delete" data-scroll-action='{ "click": "nav ul li:nth-of-type(2) a", "once": true }'>
+    </hr>
 
     <!-- ABOUT -->
     <article id="about" class="slide slide--2 about">
       <h2 class="about__title" data-scroll-animation="animate__fadeInUp">About Me</h2>
       <p class="about__text" data-scroll-animation="animate__fadeInUp">
-        Hi.  I'm a web developer based in New York City.  I'm experienced with Ruby, Rails, JavaScript, React, and Node.
-        I love building modular, scalable code, and finding elegant solutions to challenging problems.  I live for the perfect puzzle.
+        Hi. I'm a web developer based in New York City. I'm experienced with Ruby, Rails, JavaScript, React, and Node.
+        I love building modular, scalable code, and finding elegant solutions to challenging problems. I live for the
+        perfect puzzle.
         <br><br>
         When I'm not coding, I enjoy
         <a>hiking</a>,
@@ -86,4 +101,5 @@
     </article>
   </main>
 </body>
+
 </html>

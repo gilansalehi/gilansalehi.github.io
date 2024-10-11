@@ -1,0 +1,15 @@
+body {
+    --theme-color-0: hsl(0, 0, 0);
+    --theme-color-1: hsl(0, 0%, 100%);
+    --theme-color-2: hsl(190, 16%, 64%);
+    --theme-color-3: hsl(0, 21%, 50%);
+    --theme-color-1-dark: hsl(0, 0%, 90%);
+    --theme-color-2-dark: hsl(190, 16%, 54%);
+    --theme-color-3-dark: hsl(0, 21%, 40%);
+
+    --shadow: 0 0 2px 0 var(--theme-color-0);
+
+    color: var(--theme-color-1);
+    background-color: var(--theme-color-2);
+    /* margin-top: 2rem; */
+}
