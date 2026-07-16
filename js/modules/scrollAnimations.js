@@ -1,5 +1,3 @@
-import { q } from '../util/utils.js';
-
 // Function to handle intersection changes
 const handleIntersect = (entries) => {
     entries.forEach(entry => {
@@ -21,13 +19,11 @@ const handleIntersect = (entries) => {
 
 const observer = new IntersectionObserver(handleIntersect);
 
-export default function initScrollAnimations() {
+export default function initScrollAnimations(root = document) {
     // Find and observe all elements with the specified class name
-    let elementsToObserve = q('[data-scroll-animation]');
+    const elementsToObserve = [...root.querySelectorAll('[data-scroll-animation]')];
 
     elementsToObserve.forEach(element => {
-        const config = element.getAttribute('data-scroll-animation');
-
         if (element.classList.contains('animate__animated')) {
             return; // already being observed
         } else {
@@ -39,4 +35,9 @@ export default function initScrollAnimations() {
     return elementsToObserve;
 };
 
+export function disconnectScrollAnimations(root = document) {
+    root.querySelectorAll('[data-scroll-animation]').forEach(element => {
+        observer.unobserve(element);
+    });
+}
 

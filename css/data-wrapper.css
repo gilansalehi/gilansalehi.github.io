@@ -1,0 +1,7 @@
+data-wrapper {
+  display: block;
+}
+
+.page-outlet article {
+  display: block !important;
+}
