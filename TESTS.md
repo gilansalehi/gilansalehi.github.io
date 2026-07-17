@@ -9,6 +9,6 @@
 - Updates menu position and theme colors from Preferences
 - Closes the navigation menu with Escape and the page overlay
 - Initializes scroll animations after each view loads
-- Initializes carousel navigation within its loaded view
+- Smoothly scrolls `#scrolltarget` into view after the Home view loads
 - Preserves visual parity for Home, About, Resume, Portfolio, Skills, and Contact
 - Fails closed when the pinned shim artifact fails integrity validation
