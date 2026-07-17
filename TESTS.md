@@ -22,4 +22,8 @@
 - Restores note index and detail views with browser Back and Forward navigation
 - Returns to the notes index when Field Notes is selected from a note detail view
 - Presents CSBHI in Field Notes while retaining data-wrapper in Portfolio
+- Publishes the four required Open Graph properties with absolute canonical URLs
+- Publishes a handle-free summary card with portrait alternative text
+- Identifies the site as a ProfilePage whose main entity is Gilan Salehi
+- Preserves browser zoom in the viewport metadata
 - Fails closed when the pinned shim artifact fails integrity validation
