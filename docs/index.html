@@ -11,7 +11,7 @@
   <meta name="theme-color" content="#ffaa00">
 
   <link rel="canonical" href="https://www.gilansalehi.com/">
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Gilan Salehi | Front-End Architect &amp; Team Lead">
@@ -71,7 +71,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script type="importmap">
     {
@@ -88,7 +88,12 @@
 </head>
 
 <body>
-  <data-wrapper id="site" src="/views/layout.html"></data-wrapper>
+  <data-wrapper
+    id="site"
+    src="/views/layout.html"
+    data-page="home"
+    data-view="/views/home.html"
+  ></data-wrapper>
 </body>
 
 </html>

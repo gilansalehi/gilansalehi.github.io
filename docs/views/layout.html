@@ -1,45 +1,24 @@
 <script type="module" data-module="@gilansalehi/layout">
   import { action } from 'data-wrapper';
 
-  const routesDef = {
-    home: '/views/home.html',
-    about: '/views/about.html',
-    resume: '/views/resume.html',
-    portfolio: '/views/portfolio.html',
-    notes: '/views/notes.html',
-  };
-
-  const routes = Object.freeze(routesDef);
-
-
-  const hasRoute = page => Object.hasOwn(routes, page);
-
-  const pageFromLocation = () => {
-    const page = new URL(window.location.href).searchParams.get('page') || 'home';
-    return hasRoute(page) ? page : 'home';
-  };
+  const pages = Object.freeze([
+    { name: 'home', path: '/' },
+    { name: 'about', path: '/about/' },
+    { name: 'resume', path: '/resume/' },
+    { name: 'portfolio', path: '/portfolio/' },
+    { name: 'notes', path: '/notes/' },
+  ]);
 
   const sourceEvent = event => event.detail?.originalEvent || event;
 
-  export const pages = Object.entries(routesDef).map(([name, viewUrl]) => {
-    const path = `?page=${name}`;
-    return { name, path };
-  });
-
   export default ({ wrapper, cleanup }) => {
-    let currentPage = pageFromLocation();
+    const currentPage = wrapper.dataset.page || 'home';
+    const currentView = wrapper.dataset.view || '/views/home.html';
     let menuOpen = false;
 
     const updateBody = () => {
       document.body.dataset.currentPage = currentPage;
     };
-
-    const syncRoute = action(() => {
-      currentPage = pageFromLocation();
-      menuOpen = false;
-      updateBody();
-      window.scrollTo({ top: 0 });
-    });
 
     const closeMenu = action(() => {
       menuOpen = false;
@@ -51,10 +30,8 @@
       }
     };
 
-    window.addEventListener('popstate', syncRoute);
     document.body.addEventListener('keyup', handleKeyUp);
     cleanup(() => {
-      window.removeEventListener('popstate', syncRoute);
       document.body.removeEventListener('keyup', handleKeyUp);
       delete document.body.dataset.currentPage;
     });
@@ -62,40 +39,12 @@
     updateBody();
 
     return {
-      get currentView() {
-        return routes[currentPage];
-      },
+      pages,
+      currentView,
 
       get headerStateClass() {
         return `${currentPage}${menuOpen ? ' open' : ''}`;
       },
-
-      navigate: action(event => {
-        const link = event.target.closest('[data-page]');
-        const nextPage = link?.dataset.page;
-
-        if (!hasRoute(nextPage)) {
-          menuOpen = false;
-          return;
-        }
-
-        if (nextPage === currentPage) {
-          menuOpen = false;
-
-          if (link.href !== window.location.href) {
-            window.history.pushState({}, '', link.href);
-            window.dispatchEvent(new PopStateEvent('popstate'));
-          }
-
-          return;
-        }
-
-        window.history.pushState({}, '', link.href);
-        currentPage = nextPage;
-        menuOpen = false;
-        updateBody();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }),
 
       toggleMenu: action(() => {
         menuOpen = !menuOpen;
@@ -152,7 +101,7 @@
   <nav class="nav__menu" data-ref="nav:menu">
     <ul class="nav__menu__list">
       <template *list="pages">
-        <li><a $href="./path" $data-page="./name" @click="navigate?prevent" class="animate hover--underline" $text="./name"></a></li>
+        <li><a $href="./path" class="animate hover--underline" $text="./name"></a></li>
       </template>
       <li>
         <details>

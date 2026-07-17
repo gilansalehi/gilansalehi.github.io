@@ -1,10 +1,12 @@
 # Test Backlog
 
-- Loads each page directly from its `?page=` URL
-- Falls back to Home for unknown and inherited-property `?page=` values
-- Loads the correct data-wrapper view from every navigation link
-- Displays routed article views without requiring a hash `:target`
-- Restores the correct view with browser Back and Forward navigation
+- Loads each page directly from its physical route URL
+- Returns the host's normal 404 response for an unknown physical route
+- Loads the correct data-wrapper view from every ordinary navigation link
+- Displays Field Note articles from their own physical routes
+- Restores the correct document with browser Back and Forward navigation
+- Resolves styles, scripts, images, and views from every nested route
+- Publishes only the contents of `docs/`
 - Preserves the global CSS cascade inside every loaded view
 - Preserves resume visual styling from the original site
 - Updates menu position and theme colors from Preferences
@@ -17,10 +19,10 @@
 - Loads About as a standalone routed view
 - Presents Skills above the project entries within the Portfolio view
 - Keeps the combined Portfolio layout readable across mobile and desktop widths
-- Loads the Field Notes index directly from its `?page=notes` URL
-- Loads known note views and falls back to the index for unknown note slugs
-- Restores note index and detail views with browser Back and Forward navigation
-- Returns to the notes index when Field Notes is selected from a note detail view
+- Loads the Field Notes index directly from `/notes/`
+- Loads Geometric Duality directly from `/notes/geometric-duality/`
+- Restores note index and detail documents with browser Back and Forward navigation
+- Returns to `/notes/` from a Field Note detail view
 - Presents CSBHI in Field Notes while retaining data-wrapper in Portfolio
 - Publishes the four required Open Graph properties with absolute canonical URLs
 - Publishes a handle-free summary card with portrait alternative text
