@@ -88,3 +88,128 @@
     display: block;
     color: var(--theme-color-1-dark);
 }
+
+@page {
+    size: auto;
+    margin: .55in;
+}
+
+@media print {
+    html,
+    body {
+        max-width: none;
+        overflow: visible;
+        color: #171717;
+        background: #fff;
+        font-size: 10pt;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .page-outlet,
+    .resume__wrapper {
+        color: #171717;
+        background: #fff;
+    }
+
+    .page-outlet #resume {
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        color: #171717;
+        background: #fff;
+        font-size: 9.5pt;
+        line-height: 1.35;
+        transition: none;
+    }
+
+    #resume [data-scroll-animation] {
+        opacity: 1;
+        animation: none !important;
+        transform: none !important;
+    }
+
+    #resume h1 {
+        font-size: 24pt;
+        line-height: 1;
+    }
+
+    #resume h3 {
+        margin: .15rem 0;
+        font-size: 11pt;
+        line-height: 1.2;
+        break-after: avoid;
+    }
+
+    #resume h5 {
+        margin: .35rem 0 .2rem;
+        border-color: #9a6464;
+        break-after: avoid;
+    }
+
+    #resume section {
+        margin: .45rem 0;
+    }
+
+    #resume dl {
+        margin: 0;
+    }
+
+    #resume .layout--resume-grid {
+        grid-template-columns: 3.5rem auto;
+        margin: .55rem 0;
+    }
+
+    #resume .layout--resume-grid > p {
+        break-after: avoid;
+    }
+
+    #resume .year {
+        color: #555;
+        font-size: 8.5pt;
+        break-inside: avoid;
+    }
+
+    #resume .timeline {
+        border-color: #9a6464;
+    }
+
+    #resume ul li:not(.list-style--none) {
+        margin-left: .8rem;
+        break-inside: avoid;
+    }
+
+    #resume ul li.italic {
+        padding: .2rem 0;
+    }
+
+    #resume ul li:not(.list-style--none)::marker {
+        color: #9a6464;
+    }
+
+    #resume p,
+    #resume li {
+        orphans: 3;
+        widows: 3;
+    }
+
+    #resume a {
+        color: #171717;
+        text-decoration: none;
+    }
+
+    #resume > section:last-child {
+        font-size: 8.5pt;
+        overflow-wrap: anywhere;
+    }
+
+    #resume > section:last-child a[href^="http"]::after {
+        content: ' (' attr(href) ')';
+        font-size: 8pt;
+        font-weight: 400;
+    }
+}

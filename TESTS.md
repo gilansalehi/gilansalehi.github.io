@@ -26,4 +26,8 @@
 - Publishes a handle-free summary card with portrait alternative text
 - Identifies the site as a ProfilePage whose main entity is Gilan Salehi
 - Preserves browser zoom in the viewport metadata
+- Prints the Resume without navigation, animations, or full-page backgrounds
+- Preserves readable Resume contrast when background printing is disabled
+- Keeps Resume headings and individual bullets from breaking awkwardly across pages
+- Includes external profile destinations in printed Resume output
 - Fails closed when the pinned shim artifact fails integrity validation
