@@ -1,12 +1,16 @@
 <script type="module" data-module="@gilansalehi/layout">
   import { action } from 'data-wrapper';
 
-  const routes = Object.freeze({
+  const routesDef = {
     home: '/views/home.html',
     about: '/views/about.html',
     resume: '/views/resume.html',
     portfolio: '/views/portfolio.html',
-  });
+    notes: '/views/notes.html',
+  };
+
+  const routes = Object.freeze(routesDef);
+
 
   const hasRoute = page => Object.hasOwn(routes, page);
 
@@ -16,6 +20,11 @@
   };
 
   const sourceEvent = event => event.detail?.originalEvent || event;
+
+  export const pages = Object.entries(routesDef).map(([name, viewUrl]) => {
+    const path = `?page=${name}`;
+    return { name, path };
+  });
 
   export default ({ wrapper, cleanup }) => {
     let currentPage = pageFromLocation();
@@ -65,8 +74,19 @@
         const link = event.target.closest('[data-page]');
         const nextPage = link?.dataset.page;
 
-        if (!hasRoute(nextPage) || nextPage === currentPage) {
+        if (!hasRoute(nextPage)) {
           menuOpen = false;
+          return;
+        }
+
+        if (nextPage === currentPage) {
+          menuOpen = false;
+
+          if (link.href !== window.location.href) {
+            window.history.pushState({}, '', link.href);
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }
+
           return;
         }
 
@@ -131,10 +151,9 @@
   </button>
   <nav class="nav__menu" data-ref="nav:menu">
     <ul class="nav__menu__list">
-      <li><a href="?page=home" data-page="home" @click="navigate?prevent" class="nav-first animate hover--underline">Home</a></li>
-      <li><a href="?page=about" data-page="about" @click="navigate?prevent" class="animate hover--underline">About</a></li>
-      <li><a href="?page=resume" data-page="resume" @click="navigate?prevent" class="animate hover--underline">Resume</a></li>
-      <li><a href="?page=portfolio" data-page="portfolio" @click="navigate?prevent" class="animate hover--underline">Portfolio</a></li>
+      <template *list="pages">
+        <li><a $href="./path" $data-page="./name" @click="navigate?prevent" class="animate hover--underline" $text="./name"></a></li>
+      </template>
       <li>
         <details>
           <summary class="animate hover--underline">Preferences</summary>

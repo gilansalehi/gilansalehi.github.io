@@ -17,4 +17,9 @@
 - Loads About as a standalone routed view
 - Presents Skills above the project entries within the Portfolio view
 - Keeps the combined Portfolio layout readable across mobile and desktop widths
+- Loads the Field Notes index directly from its `?page=notes` URL
+- Loads known note views and falls back to the index for unknown note slugs
+- Restores note index and detail views with browser Back and Forward navigation
+- Returns to the notes index when Field Notes is selected from a note detail view
+- Presents CSBHI in Field Notes while retaining data-wrapper in Portfolio
 - Fails closed when the pinned shim artifact fails integrity validation
