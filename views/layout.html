@@ -10,9 +10,11 @@
     contact: '/contact.html',
   });
 
+  const hasRoute = page => Object.hasOwn(routes, page);
+
   const pageFromLocation = () => {
     const page = new URL(window.location.href).searchParams.get('page') || 'home';
-    return routes[page] ? page : 'home';
+    return hasRoute(page) ? page : 'home';
   };
 
   const sourceEvent = event => event.detail?.originalEvent || event;
@@ -25,21 +27,27 @@
       document.body.dataset.currentPage = currentPage;
     };
 
-    const dispatchToHeader = name => {
-      wrapper.querySelector('header')?.dispatchEvent(new CustomEvent(name, { bubbles: true }));
-    };
+    const syncRoute = action(() => {
+      currentPage = pageFromLocation();
+      menuOpen = false;
+      updateBody();
+      window.scrollTo({ top: 0 });
+    });
 
-    const handlePopState = () => dispatchToHeader('routechange');
+    const closeMenu = action(() => {
+      menuOpen = false;
+    });
+
     const handleKeyUp = event => {
       if (event.key === 'Escape' && menuOpen) {
-        dispatchToHeader('closemenu');
+        closeMenu();
       }
     };
 
-    window.addEventListener('popstate', handlePopState);
+    window.addEventListener('popstate', syncRoute);
     document.body.addEventListener('keyup', handleKeyUp);
     cleanup(() => {
-      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('popstate', syncRoute);
       document.body.removeEventListener('keyup', handleKeyUp);
       delete document.body.dataset.currentPage;
     });
@@ -59,7 +67,7 @@
         const link = event.target.closest('[data-page]');
         const nextPage = link?.dataset.page;
 
-        if (!routes[nextPage] || nextPage === currentPage) {
+        if (!hasRoute(nextPage) || nextPage === currentPage) {
           menuOpen = false;
           return;
         }
@@ -71,19 +79,8 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }),
 
-      syncRoute: action(() => {
-        currentPage = pageFromLocation();
-        menuOpen = false;
-        updateBody();
-        window.scrollTo({ top: 0 });
-      }),
-
       toggleMenu: action(() => {
         menuOpen = !menuOpen;
-      }),
-
-      closeMenu: action(() => {
-        menuOpen = false;
       }),
 
       setThemeColor1(event) {
@@ -121,8 +118,6 @@
 <header
   class="nav"
   $class="headerStateClass"
-  @routechange="syncRoute"
-  @closemenu="closeMenu"
   data-ref="menu:wrapper"
 >
   <button

@@ -1,6 +1,7 @@
 # Test Backlog
 
 - Loads each page directly from its `?page=` URL
+- Falls back to Home for unknown and inherited-property `?page=` values
 - Loads the correct data-wrapper view from every navigation link
 - Restores the correct view with browser Back and Forward navigation
 - Preserves the global CSS cascade inside every loaded view
@@ -10,3 +11,4 @@
 - Initializes scroll animations after each view loads
 - Initializes carousel navigation within its loaded view
 - Preserves visual parity for Home, About, Resume, Portfolio, Skills, and Contact
+- Fails closed when the pinned shim artifact fails integrity validation
