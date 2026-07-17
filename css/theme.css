@@ -3,10 +3,10 @@ body {
     --theme-color-1: hsl(0, 0%, 100%);
     --theme-color-2: hsl(190, 16%, 64%);
     --theme-color-3: hsl(0, 21%, 50%);
-    --theme-color-1-dark: hsl(0, 0%, 90%);
-    --theme-color-1-darker: hsl(0, 0, 80%);
-    --theme-color-2-dark: hsl(190, 16%, 54%);
-    --theme-color-3-dark: hsl(0, 21%, 40%);
+    --theme-color-1-dark: color-mix(in srgb, var(--theme-color-1) 90%, black);
+    --theme-color-1-darker: color-mix(in srgb, var(--theme-color-1) 80%, black);
+    --theme-color-2-dark: color-mix(in srgb, var(--theme-color-2) 84%, black);
+    --theme-color-3-dark: color-mix(in srgb, var(--theme-color-3) 80%, black);
 
     --shadow: 0 0 2px 0 var(--theme-color-0);
 

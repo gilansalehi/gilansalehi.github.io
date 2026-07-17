@@ -11,5 +11,7 @@
 - Closes the navigation menu with Escape and the page overlay
 - Initializes scroll animations after each view loads
 - Smoothly scrolls `#scrolltarget` into view after the Home view loads
-- Preserves visual parity for Home, About, Resume, Portfolio, Skills, and Contact
+- Preserves the Home hero and Resume visual design
+- Presents About and Contact together below the Home hero
+- Recolors the About and Contact composition from all three theme controls
 - Fails closed when the pinned shim artifact fails integrity validation
