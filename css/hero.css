@@ -19,7 +19,6 @@
 [data-current-page="about"] .slide--1 { background-image: url("../images/Petals.jpg"); }
 [data-current-page="resume"] .slide--1 { background-image: url("../images/Coffee005.webp"); }
 [data-current-page="portfolio"] .slide--1 { background-image: url("../images/Succulent.jpg"); }
-[data-current-page="skills"] .slide--1 { background-image: url("../images/Sandstone.jpg"); }
 
 .profile {
   display: block;

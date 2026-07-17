@@ -14,4 +14,7 @@
 - Preserves the Home hero and Resume visual design
 - Presents About and Contact together below the Home hero
 - Recolors the About and Contact composition from all three theme controls
+- Loads About as a standalone routed view
+- Presents Skills above the project entries within the Portfolio view
+- Keeps the combined Portfolio layout readable across mobile and desktop widths
 - Fails closed when the pinned shim artifact fails integrity validation

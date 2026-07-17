@@ -1,70 +1,190 @@
 <script type="module" data-module="@gilansalehi/portfolio" src="/js/views/page.js"></script>
 
-<article id="portfolio" class="slide slide--3 projects">
-<h2 class="portfolio__title" data-scroll-animation="animate__fadeInUp">Portfolio</h2>
+<article id="portfolio" class="portfolio">
+  <section class="portfolio__skills" aria-labelledby="skills-title">
+    <div class="portfolio__inner">
+      <header class="portfolio__section-header" data-scroll-animation="animate__fadeInUp">
+        <p class="portfolio__eyebrow">Capabilities</p>
+        <h1 id="skills-title">Skills</h1>
+      </header>
 
-<!-- <section>
-    <ul data-nav-carousel="#portfolio h4">
-    </ul>
-</section> -->
-<section>
-    <div class="foreground" data-scroll-animation="animate__fadeInRight">
-        <h4>Agora Finance</h4>
-        <hr>
-        <p>Agora's web app is built with Preact, Signals, TypeScript, and Bun.  Styling was achieved with a mix of Tailwind and custom css.  Integrations include Auth0, LogRocket, UserSnap, and Persona.</p>
-        <a href="https://app.agora.finance">View Site</a>
+      <ul class="skills__list">
+        <li><img src="images/svgs/git-icon.svg" alt=""><span>Git</span></li>
+        <li><img src="images/svgs/css3.svg" alt=""><span>CSS3</span></li>
+        <li><img src="images/svgs/es6.svg" alt=""><span>ES6</span></li>
+        <li><img src="images/svgs/html5.svg" alt=""><span>HTML5</span></li>
+        <li><img src="images/svgs/github-1.svg" alt=""><span>GitHub</span></li>
+        <li><img src="images/svgs/jquery-1.svg" alt=""><span>jQuery</span></li>
+        <li><img src="images/svgs/js.svg" alt=""><span>JavaScript</span></li>
+        <li><img src="images/svgs/node.svg" alt=""><span>Node.js</span></li>
+        <li><img src="images/svgs/postgresql.svg" alt=""><span>PostgreSQL</span></li>
+        <li><img src="images/svgs/rails.svg" alt=""><span>Rails</span></li>
+        <li><img src="images/svgs/ruby.svg" alt=""><span>Ruby</span></li>
+        <li><img src="images/svgs/react.svg" alt=""><span>React</span></li>
+        <li><img src="images/svgs/redux.svg" alt=""><span>Redux</span></li>
+        <li><img src="images/svgs/npm.svg" alt=""><span>npm</span></li>
+        <li><img src="images/svgs/webpack-icon.svg" alt=""><span>Webpack</span></li>
+      </ul>
     </div>
+  </section>
 
-    <img src="images/portfolio/AgoraWelcome.png" data-scroll-animation="animate__fadeInLeft"/>
-</section>
-<section>
-    <div class="foreground" data-scroll-animation="animate__fadeInRight">
-        <h4>JOANN Fabrics</h4>
-        <hr>
-        <p>JOANN Fabrics runs SFRA with a custom front end built on jQuery, SCSS, BEM, atomic classes, and semantic HTML.</p>
-        <a href="https://www.joann.com">View Site</a>
+  <section class="portfolio__work" aria-labelledby="portfolio-title">
+    <div class="portfolio__inner">
+      <header class="portfolio__section-header portfolio__section-header--work" data-scroll-animation="animate__fadeInUp">
+        <p class="portfolio__eyebrow">Selected work</p>
+        <h2 id="portfolio-title">Portfolio</h2>
+      </header>
+
+      <div class="portfolio__list">
+        <section class="portfolio-entry" data-scroll-animation="animate__fadeInUp">
+          <a class="portfolio-entry__media portfolio-entry__media--data-wrapper" href="https://data-wrapper.org" aria-label="Visit data-wrapper">
+            <img src="images/portfolio/data-wrapper.png" alt="data-wrapper logo">
+          </a>
+          <div class="portfolio-entry__body">
+            <p class="portfolio-entry__type">Open source / Alpha</p>
+            <h3>data-wrapper</h3>
+            <p>Zero-dependency, HTML-first reactivity with one custom element, three wiring tokens, and no build step.</p>
+            <ul class="portfolio-entry__tools" aria-label="Technologies">
+              <li>TypeScript</li>
+              <li>Web Components</li>
+              <li>ES Modules</li>
+            </ul>
+            <div class="portfolio-entry__links">
+              <a href="https://data-wrapper.org">View project</a>
+              <a href="https://github.com/gilansalehi/data-wrapper">Source</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="portfolio-entry" data-scroll-animation="animate__fadeInUp">
+          <a class="portfolio-entry__media" href="https://www.gilansalehi.com/csbhi/" aria-label="Visit CSBHI">
+            <img src="images/portfolio/csbhi-banner.png" alt="Geometric black hole illustration from the CSBHI project">
+          </a>
+          <div class="portfolio-entry__body">
+            <p class="portfolio-entry__type">Independent research</p>
+            <h3>CSBHI</h3>
+            <p>Geometric Duality is a long-form research program exploring whether open questions in cosmology share a single horizon-centered answer.</p>
+            <ul class="portfolio-entry__tools" aria-label="Technologies">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>MathJax</li>
+            </ul>
+            <div class="portfolio-entry__links">
+              <a href="https://www.gilansalehi.com/csbhi/">View project</a>
+              <a href="https://github.com/gilansalehi/csbhi">Source</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="portfolio-entry" data-scroll-animation="animate__fadeInUp">
+          <a class="portfolio-entry__media" href="https://app.agora.finance" aria-label="Visit Agora Finance">
+            <img src="images/portfolio/AgoraWelcome.png" alt="Agora Finance application welcome screen">
+          </a>
+          <div class="portfolio-entry__body">
+            <p class="portfolio-entry__type">Financial technology</p>
+            <h3>Agora Finance</h3>
+            <p>Agora's web app is built with Preact, Signals, TypeScript, and Bun. Styling combines Tailwind and custom CSS, with integrations including Auth0, LogRocket, UserSnap, and Persona.</p>
+            <ul class="portfolio-entry__tools" aria-label="Technologies">
+              <li>Preact</li>
+              <li>TypeScript</li>
+              <li>Bun</li>
+              <li>Tailwind</li>
+            </ul>
+            <div class="portfolio-entry__links"><a href="https://app.agora.finance">View site</a></div>
+          </div>
+        </section>
+
+        <section class="portfolio-entry" data-scroll-animation="animate__fadeInUp">
+          <a class="portfolio-entry__media" href="https://www.joann.com" aria-label="Visit JOANN Fabrics">
+            <img src="images/portfolio/Joann001.webp" alt="JOANN Fabrics website">
+          </a>
+          <div class="portfolio-entry__body">
+            <p class="portfolio-entry__type">E-commerce</p>
+            <h3>JOANN Fabrics</h3>
+            <p>JOANN Fabrics runs SFRA with a custom front end built on jQuery, SCSS, BEM, atomic classes, and semantic HTML.</p>
+            <ul class="portfolio-entry__tools" aria-label="Technologies">
+              <li>SFRA</li>
+              <li>jQuery</li>
+              <li>SCSS</li>
+              <li>BEM</li>
+            </ul>
+            <div class="portfolio-entry__links"><a href="https://www.joann.com">View site</a></div>
+          </div>
+        </section>
+
+        <section class="portfolio-entry" data-scroll-animation="animate__fadeInUp">
+          <a class="portfolio-entry__media" href="https://www.reformation.com" aria-label="Visit Reformation">
+            <img src="images/portfolio/Reformation001.webp" alt="Reformation website">
+          </a>
+          <div class="portfolio-entry__body">
+            <p class="portfolio-entry__type">E-commerce</p>
+            <h3>Reformation</h3>
+            <p>Reformation is built on SFRA with a custom front end utilizing jQuery, SCSS, BEM, atomic classes, and HTML5.</p>
+            <ul class="portfolio-entry__tools" aria-label="Technologies">
+              <li>SFRA</li>
+              <li>jQuery</li>
+              <li>SCSS</li>
+              <li>HTML5</li>
+            </ul>
+            <div class="portfolio-entry__links"><a href="https://www.reformation.com">View site</a></div>
+          </div>
+        </section>
+
+        <section class="portfolio-entry" data-scroll-animation="animate__fadeInUp">
+          <a class="portfolio-entry__media" href="https://www.converse.com" aria-label="Visit Converse">
+            <img src="images/portfolio/Converse001.webp" alt="Converse website">
+          </a>
+          <div class="portfolio-entry__body">
+            <p class="portfolio-entry__type">E-commerce</p>
+            <h3>Converse</h3>
+            <p>Converse runs on Magento with a custom front end built with SCSS, Less, BEM, atomic classes, and semantic HTML.</p>
+            <ul class="portfolio-entry__tools" aria-label="Technologies">
+              <li>Magento</li>
+              <li>SCSS</li>
+              <li>Less</li>
+              <li>BEM</li>
+            </ul>
+            <div class="portfolio-entry__links"><a href="https://www.converse.com">View site</a></div>
+          </div>
+        </section>
+
+        <section class="portfolio-entry" data-scroll-animation="animate__fadeInUp">
+          <a class="portfolio-entry__media" href="https://www.borngroup.com" aria-label="Visit BORN Group">
+            <img src="images/portfolio/BornGroup001.png" alt="BORN Group website">
+          </a>
+          <div class="portfolio-entry__body">
+            <p class="portfolio-entry__type">Agency</p>
+            <h3>BORN Group</h3>
+            <p>BORN's website runs on WordPress, with CSS3, HTML5, and vanilla JavaScript.</p>
+            <ul class="portfolio-entry__tools" aria-label="Technologies">
+              <li>WordPress</li>
+              <li>CSS3</li>
+              <li>HTML5</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="portfolio-entry__links"><a href="https://www.borngroup.com">View site</a></div>
+          </div>
+        </section>
+
+        <section class="portfolio-entry" data-scroll-animation="animate__fadeInUp">
+          <a class="portfolio-entry__media" href="https://www.persado.com" aria-label="Visit Persado">
+            <img src="images/portfolio/Persado001.jpg" alt="Persado platform">
+          </a>
+          <div class="portfolio-entry__body">
+            <p class="portfolio-entry__type">Marketing technology</p>
+            <h3>Persado</h3>
+            <p>Persado's internal platform is built with Ruby on Rails, React, Backbone, Haml, and CSS-in-JS.</p>
+            <ul class="portfolio-entry__tools" aria-label="Technologies">
+              <li>Rails</li>
+              <li>React</li>
+              <li>Backbone</li>
+              <li>Haml</li>
+            </ul>
+            <div class="portfolio-entry__links"><a href="https://www.persado.com">View site</a></div>
+          </div>
+        </section>
+      </div>
     </div>
-
-    <img src="images/portfolio/Joann001.webp" data-scroll-animation="animate__fadeInRight"/>
-</section>
-<section>
-    <div class="foreground" data-scroll-animation="animate__fadeInRight">
-        <h4>Reformation</h4>
-        <hr>
-        <p>Reformation is built on SFRA with a custom front end utilizing jQuery, SCSS, BEM, atomic classes, and HTML5.</p>
-        <a href="https://www.reformation.com">View Site</a>
-    </div>
-
-    <img src="images/portfolio/Reformation001.webp" data-scroll-animation="animate__fadeInLeft" />
-</section>
-<section>
-    <div class="foreground" data-scroll-animation="animate__fadeInLeft">
-        <h4>Converse</h4>
-        <hr>
-        <p>Converse runs on Magento with a custom front end built with SCSS, less, BEM, atomic classes, and semantic HTML.</p>
-        <a href="https://www.converse.com">View Site</a>
-    </div>
-
-    <img src="images/portfolio/Converse001.webp" data-scroll-animation="animate__fadeInRight" />
-</section>
-<section>
-    <div class="foreground" data-scroll-animation="animate__fadeInRight">
-        <h4>BORN Group</h4>
-        <hr>
-        <p>BORN's website runs on Wordpress, with CSS3, HTML5 and vanilla js.</p>
-        <a href="https://www.borngroup.com">View Site</a>
-    </div>
-
-    <img src="images/portfolio/BornGroup001.png" data-scroll-animation="animate__fadeInLeft" />
-</section>
-<section>
-    <div class="foreground" data-scroll-animation="animate__fadeInLeft">
-        <h4>Persado</h4>
-        <hr>
-        <p>Persado's internal platform is built with Ruby on Rails, React, Backbone, haml, and css-in-js.</p>
-        <a href="https://www.persado.com">View Site</a>
-    </div>
-
-    <img src="images/portfolio/Persado001.jpg" data-scroll-animation="animate__fadeInRight" />
-</section>
+  </section>
 </article>
