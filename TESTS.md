@@ -3,6 +3,7 @@
 - Loads each page directly from its `?page=` URL
 - Falls back to Home for unknown and inherited-property `?page=` values
 - Loads the correct data-wrapper view from every navigation link
+- Displays routed article views without requiring a hash `:target`
 - Restores the correct view with browser Back and Forward navigation
 - Preserves the global CSS cascade inside every loaded view
 - Preserves resume visual styling from the original site

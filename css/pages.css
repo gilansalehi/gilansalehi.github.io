@@ -1,13 +1,6 @@
-/* #pages */
-main article {
-    display: none !important;
-    padding: 1rem;
+.page-outlet article {
     margin: auto;
     min-height: 100vh;
     padding: 4rem 0;
     transition: height .15s ease-out;
-}
-
-main article:target {
-    display: block !important;
 }

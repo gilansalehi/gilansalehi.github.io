@@ -16,3 +16,7 @@
     display: block;
     clear: both;
 }
+
+data-wrapper {
+    display: block;
+}

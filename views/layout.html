@@ -3,11 +3,10 @@
 
   const routes = Object.freeze({
     home: '/views/home.html',
-    // about: '/views/about.html',
-    resume: '/resume.html',
-    portfolio: '/portfolio.html',
-    skills: '/skills.html',
-    contact: '/contact.html',
+    resume: '/views/resume.html',
+    portfolio: '/views/portfolio.html',
+    skills: '/views/skills.html',
+    contact: '/views/contact.html',
   });
 
   const hasRoute = page => Object.hasOwn(routes, page);
@@ -134,7 +133,6 @@
   <nav class="nav__menu" data-ref="nav:menu">
     <ul class="nav__menu__list">
       <li><a href="?page=home" data-page="home" @click="navigate?prevent" class="nav-first animate hover--underline">Home</a></li>
-      <!-- <li><a href="?page=about" data-page="about" @click="navigate?prevent" class="animate hover--underline">About</a></li> -->
       <li><a href="?page=resume" data-page="resume" @click="navigate?prevent" class="animate hover--underline">Resume</a></li>
       <li><a href="?page=portfolio" data-page="portfolio" @click="navigate?prevent" class="animate hover--underline">Portfolio</a></li>
       <li><a href="?page=skills" data-page="skills" @click="navigate?prevent" class="animate hover--underline">Skills</a></li>
