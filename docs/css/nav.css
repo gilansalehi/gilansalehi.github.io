@@ -22,6 +22,8 @@
   background: rgba(0, 0, 0, 0);
   border-color: transparent;
   backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
 }
 
 .nav__icon hr {
@@ -76,6 +78,36 @@
   overflow: hidden;
   visibility: hidden;
   box-shadow: 0 0 2px 0 var(--theme-color-0);
+  top: 0;
+  left: 0;
+}
+
+:root[data-menu-position="top-right"] .nav__icon,
+:root[data-menu-position="top-right"] .nav__menu {
+  right: 0;
+  left: auto;
+}
+
+:root[data-menu-position="bottom-left"] .nav__icon,
+:root[data-menu-position="bottom-left"] .nav__menu {
+  top: auto;
+  bottom: 0;
+}
+
+:root[data-menu-position="bottom-right"] .nav__icon,
+:root[data-menu-position="bottom-right"] .nav__menu {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: auto;
+}
+
+:root[data-menu-position^="bottom"] .nav__menu__list {
+  justify-content: flex-end;
+}
+
+:root[data-menu-position$="right"] .nav__menu__list {
+  text-align: right;
 }
 
 .nav.open .nav__menu {
@@ -108,8 +140,8 @@
   display: block;
 }
 
-nav a,
-nav summary {
+.nav__menu a,
+.nav__menu summary {
   display: block;
   padding: 1rem;
   text-decoration: none;
@@ -117,34 +149,18 @@ nav summary {
   outline: none;
 }
 
-.nav__details__contents {
-  background-color: var(--theme-color-3-dark);
-  padding: 1rem;
-}
-
-nav summary {
+.nav__menu summary {
   list-style: none;
   outline: none;
   background-color: var(--theme-color-3);
 }
 
 @media not (prefers-reduced-motion) {
-  nav summary:hover,
-  nav summary:focus,
-  nav a:hover,
-  nav a:focus {
+  .nav__menu summary:hover,
+  .nav__menu summary:focus,
+  .nav__menu a:hover,
+  .nav__menu a:focus {
     transition: margin .15s ease-out;
     margin: 0 .5em;
   }
-}
-
-.theme-color-setter {
-  flex-direction: column;
-}
-
-.theme-color-setter-options {
-  display: flex;
-  justify-content: flex-start;
-  padding: .5rem 0;
-  gap: .5rem;
 }

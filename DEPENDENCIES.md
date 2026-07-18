@@ -1,6 +1,6 @@
 # External Runtime Dependency
 
-The Firefox import-map shim is versioned and integrity-pinned in each route's `docs/**/index.html`. The data-wrapper runtime intentionally uses the unversioned `/dist` artifacts without integrity pins so consuming sites receive compatible framework updates.
+The Firefox import-map shim is versioned and integrity-pinned in every HTML entrypoint under `docs/`. The data-wrapper runtime intentionally uses the unversioned `/dist` artifacts without integrity pins so consuming sites receive compatible framework updates.
 
 | Artifact | SHA-384 |
 | --- | --- |

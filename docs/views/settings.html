@@ -1,0 +1,153 @@
+<script type="module" data-module="@gilansalehi/settings">
+  import { action } from 'data-wrapper';
+
+  const presets = Object.freeze({
+    original: {
+      themeColor1: '#ffffff',
+      themeColor2: '#95adb2',
+      themeColor3: '#9a6565',
+    },
+    harbor: {
+      themeColor1: '#f7f8f5',
+      themeColor2: '#4f9ba8',
+      themeColor3: '#273640',
+    },
+    garden: {
+      themeColor1: '#fff8f2',
+      themeColor2: '#7eaa90',
+      themeColor3: '#a6425c',
+    },
+  });
+
+  const sourceEvent = event => event.detail?.originalEvent || event;
+
+  export default () => {
+    let settings = window.siteSettings.read();
+    let status = '';
+
+    const save = changes => {
+      settings = window.siteSettings.save(changes);
+      status = 'Saved';
+    };
+
+    return {
+      get themeColor1() { return settings.themeColor1; },
+      get themeColor2() { return settings.themeColor2; },
+      get themeColor3() { return settings.themeColor3; },
+      get menuPosition() { return settings.menuPosition; },
+      get reduceMotion() { return settings.reduceMotion; },
+      get status() { return status; },
+
+      setColor: action(event => {
+        const input = sourceEvent(event).target;
+        save({ [input.name]: input.value });
+      }),
+
+      setPreset: action(event => {
+        const name = sourceEvent(event).target.closest('[data-preset]')?.dataset.preset;
+        if (presets[name]) save(presets[name]);
+      }),
+
+      setMenuPosition: action(event => {
+        save({ menuPosition: sourceEvent(event).target.value });
+      }),
+
+      setReduceMotion: action(event => {
+        save({ reduceMotion: sourceEvent(event).target.checked });
+      }),
+
+      resetSettings: action(() => {
+        settings = window.siteSettings.reset();
+        status = 'Defaults restored';
+      }),
+    };
+  };
+</script>
+
+<article id="settings" class="settings">
+  <header class="settings__masthead">
+    <div class="settings__inner">
+      <p class="settings__eyebrow">Personalize</p>
+      <h1>Settings</h1>
+      <p class="settings__lede">Make it yours.</p>
+    </div>
+  </header>
+
+  <div class="settings__inner settings__body">
+    <section class="settings__section" aria-labelledby="theme-settings-title">
+      <header class="settings__section-header">
+        <p class="settings__number" aria-hidden="true"><span>01</span></p>
+        <h2 id="theme-settings-title">Theme</h2>
+      </header>
+
+      <fieldset class="settings__fieldset">
+        <legend>Palette</legend>
+        <div class="settings__presets">
+          <button type="button" data-preset="original" @click="setPreset">
+            <span class="settings__swatches" aria-hidden="true">
+              <i style="--swatch: #ffffff"></i><i style="--swatch: #95adb2"></i><i style="--swatch: #9a6565"></i>
+            </span>
+            Original
+          </button>
+          <button type="button" data-preset="harbor" @click="setPreset">
+            <span class="settings__swatches" aria-hidden="true">
+              <i style="--swatch: #f7f8f5"></i><i style="--swatch: #4f9ba8"></i><i style="--swatch: #273640"></i>
+            </span>
+            Harbor
+          </button>
+          <button type="button" data-preset="garden" @click="setPreset">
+            <span class="settings__swatches" aria-hidden="true">
+              <i style="--swatch: #fff8f2"></i><i style="--swatch: #7eaa90"></i><i style="--swatch: #a6425c"></i>
+            </span>
+            Garden
+          </button>
+        </div>
+      </fieldset>
+
+      <fieldset class="settings__fieldset">
+        <legend>Custom colors</legend>
+        <div class="settings__colors">
+          <label>
+            <span>Surface</span>
+            <input type="color" name="themeColor1" $value="themeColor1" @input="setColor">
+          </label>
+          <label>
+            <span>Accent</span>
+            <input type="color" name="themeColor2" $value="themeColor2" @input="setColor">
+          </label>
+          <label>
+            <span>Anchor</span>
+            <input type="color" name="themeColor3" $value="themeColor3" @input="setColor">
+          </label>
+        </div>
+      </fieldset>
+    </section>
+
+    <section class="settings__section" aria-labelledby="interface-settings-title">
+      <header class="settings__section-header">
+        <p class="settings__number" aria-hidden="true"><span>02</span></p>
+        <h2 id="interface-settings-title">Interface</h2>
+      </header>
+
+      <label class="settings__control">
+        <span>Menu position</span>
+        <select $value="menuPosition" @change="setMenuPosition">
+          <option value="top-left">Top left</option>
+          <option value="top-right">Top right</option>
+          <option value="bottom-left">Bottom left</option>
+          <option value="bottom-right">Bottom right</option>
+        </select>
+      </label>
+
+      <label class="settings__toggle">
+        <span>Reduce motion</span>
+        <input type="checkbox" $checked="reduceMotion" @change="setReduceMotion">
+      </label>
+    </section>
+
+    <footer class="settings__footer">
+      <button type="button" class="settings__reset" @click="resetSettings">Reset defaults</button>
+      <output class="settings__status" aria-live="polite" $text="status"></output>
+    </footer>
+  </div>
+</article>

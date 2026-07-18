@@ -7,9 +7,8 @@
     { name: 'resume', path: '/resume/' },
     { name: 'portfolio', path: '/portfolio/' },
     { name: 'notes', path: '/notes/' },
+    { name: 'settings', path: '/settings/' },
   ]);
-
-  const sourceEvent = event => event.detail?.originalEvent || event;
 
   export default ({ wrapper, cleanup }) => {
     const currentPage = wrapper.dataset.page || 'home';
@@ -50,33 +49,6 @@
         menuOpen = !menuOpen;
       }),
 
-      setThemeColor1(event) {
-        const value = sourceEvent(event).target.value;
-        document.querySelector('meta[name="theme-color"]').setAttribute('content', value);
-        document.body.style.setProperty('--theme-color-1', value);
-      },
-
-      setThemeColor2(event) {
-        document.body.style.setProperty('--theme-color-2', sourceEvent(event).target.value);
-      },
-
-      setThemeColor3(event) {
-        document.body.style.setProperty('--theme-color-3', sourceEvent(event).target.value);
-      },
-
-      setMenuPosition(event) {
-        const [vertical, horizontal] = sourceEvent(event).target.value.toLowerCase().split(' ');
-        const icon = wrapper.querySelector('.nav__icon');
-        const menu = wrapper.querySelector('.nav__menu');
-        const menuList = wrapper.querySelector('.nav__menu__list');
-
-        icon.style.cssText = `${vertical}: 0; ${horizontal}: 0;`;
-        menu.style.cssText = `${vertical}: 0; ${horizontal}: 0;`;
-        menuList.style.cssText = `
-          justify-content: ${vertical === 'top' ? 'flex-start' : 'flex-end'};
-          text-align: ${horizontal};
-        `;
-      },
     };
   };
 </script>
@@ -90,7 +62,6 @@
   <button
     class="nav__icon hover--shine"
     @click="toggleMenu"
-    style="top: 0; left: 0;"
     tabindex="0"
     aria-label="Toggle navigation"
   >
@@ -103,27 +74,6 @@
       <template *list="pages">
         <li><a $href="./path" class="animate hover--underline" $text="./name"></a></li>
       </template>
-      <li>
-        <details>
-          <summary class="animate hover--underline">Preferences</summary>
-          <div class="nav__details__contents">
-            <label>Menu Position
-              <select data-ref="nav:pos" @change="setMenuPosition">
-                <option selected>Top Left</option>
-                <option>Top Right</option>
-                <option>Bottom Left</option>
-                <option>Bottom Right</option>
-              </select>
-            </label>
-            <label>Theme Color</label>
-            <div class="theme-color-setter-options">
-              <input type="color" value="#FFFFFF" default="#FFFFFF" data-ref="colorPicker1" @change="setThemeColor1">
-              <input type="color" value="#82effb" default="#82effb" data-ref="colorPicker2" @change="setThemeColor2">
-              <input type="color" value="#9a6464" default="#9a6464" data-ref="colorPicker3" @change="setThemeColor3">
-            </div>
-          </div>
-        </details>
-      </li>
     </ul>
   </nav>
   <span class="nav__close" @click="toggleMenu"></span>

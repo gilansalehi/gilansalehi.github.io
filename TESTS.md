@@ -9,7 +9,11 @@
 - Publishes only the contents of `docs/`
 - Preserves the global CSS cascade inside every loaded view
 - Preserves resume visual styling from the original site
-- Updates menu position and theme colors from Preferences
+- Updates menu position and theme colors from Settings
+- Restores saved Settings before each route renders
+- Applies Original, Harbor, and Garden theme presets
+- Resets theme, menu position, and motion to their defaults
+- Reduces site animation when the motion setting is enabled
 - Closes the navigation menu with Escape and the page overlay
 - Initializes scroll animations after each view loads
 - Smoothly scrolls `#scrolltarget` into view after the Home view loads
@@ -23,6 +27,11 @@
 - Loads Geometric Duality directly from `/notes/geometric-duality/`
 - Restores note index and detail documents with browser Back and Forward navigation
 - Returns to `/notes/` from a Field Note detail view
+- Publishes a discoverable RSS feed containing every Field Note
+- Lists every public route in the XML sitemap
+- Advertises the sitemap from `robots.txt`
+- Renders the site-native 404 document for an unknown route
+- Prevents the 404 document from being indexed
 - Presents CSBHI in Field Notes while retaining data-wrapper in Portfolio
 - Publishes the four required Open Graph properties with absolute canonical URLs
 - Publishes a handle-free summary card with portrait alternative text

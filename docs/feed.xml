@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gilan Salehi - Field Notes</title>
+    <link>https://www.gilansalehi.com/notes/</link>
+    <description>Essays, working notes, and longer explorations of software, systems, and ideas.</description>
+    <language>en-us</language>
+    <atom:link href="https://www.gilansalehi.com/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Geometric Duality</title>
+      <link>https://www.gilansalehi.com/notes/geometric-duality/</link>
+      <guid isPermaLink="true">https://www.gilansalehi.com/notes/geometric-duality/</guid>
+      <description>A research program exploring whether open questions in cosmology share a single horizon-centered answer.</description>
+    </item>
+  </channel>
+</rss>

@@ -27,7 +27,15 @@ Field Notes pair a physical route with a plain HTML view. To publish a note:
 2. Add its route shell at `docs/notes/your-slug/index.html` and set the shell's
    `data-view` to the article view.
 3. Add its title, summary, and route to `docs/views/notes/index.html`.
+4. Add its public URL to `docs/sitemap.xml` and an item to `docs/feed.xml`.
 
 Use `docs/views/notes/csbhi.html` and
 `docs/notes/geometric-duality/index.html` as templates. Links should use the
 ordinary route form `/notes/your-slug/`.
+
+### Public Site Files
+
+- `docs/404.html` is the GitHub Pages fallback for unknown routes.
+- `docs/robots.txt` advertises `docs/sitemap.xml` to crawlers.
+- `docs/feed.xml` is the manually maintained Field Notes RSS feed.
+- `docs/js/settings.js` restores and persists site preferences before render.
