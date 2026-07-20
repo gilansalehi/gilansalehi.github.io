@@ -56,6 +56,7 @@
 - Reserves intrinsic image space before Portfolio and Projects media loads
 - Lazy-loads below-the-fold Portfolio and Projects media
 - Provides dimensions and alternative text for every content image
+- Loads active content and hero imagery from WebP sources
 - Loads the Field Notes index directly from `/notes/`
 - Loads Geometric Duality directly from `/notes/geometric-duality/`
 - Restores note index and detail documents with browser Back and Forward navigation

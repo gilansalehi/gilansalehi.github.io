@@ -2,7 +2,7 @@
 /*HOME*/
 .slide--1 {
   color: var(--theme-color-1);
-  background-image: url("../images/Petals.jpg"),
+  background-image: url("../images/New-York.webp"),
     linear-gradient(var(--theme-color-1, #fa0),var(--theme-color-2, #808));
   background-size: cover;
   position: relative;
@@ -14,11 +14,6 @@
   padding: 16em 0 4em;
   min-height: 100vh;
 }
-
-[data-current-page="home"] .slide--1 { background-image: url("../images/New-York.jpg"); }
-[data-current-page="about"] .slide--1 { background-image: url("../images/Petals.jpg"); }
-[data-current-page="resume"] .slide--1 { background-image: url("../images/Coffee005.webp"); }
-[data-current-page="portfolio"] .slide--1 { background-image: url("../images/Succulent.jpg"); }
 
 .profile {
   display: block;
