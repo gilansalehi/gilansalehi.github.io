@@ -10,6 +10,9 @@ GitHub Pages publishes the `docs/` directory. Each public route has a complete
 `index.html` document, while shared navigation and page content live in
 `docs/views/` and are loaded by data-wrapper.
 
+See [`ROUTES.md`](ROUTES.md) for the cross-project routing and component
+ownership convention.
+
 ### Local Development
 
 Serve `docs/` as the web root so root-relative view and asset URLs behave like
