@@ -417,13 +417,6 @@
   background-color: #269fe5;
 }
 
-.portfolio-entry__media--data-wrapper img {
-  width: min(46%, 13rem);
-  height: auto;
-  object-fit: contain;
-  image-rendering: pixelated;
-}
-
 .portfolio-entry__media--data-wrapper:hover img,
 .portfolio-entry__media--data-wrapper:focus img {
   transform: scale(1.04);
