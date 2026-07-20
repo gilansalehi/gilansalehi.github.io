@@ -20,7 +20,7 @@ export const TECHNOLOGIES = Object.freeze({
   MAG: 'Magento',
   NOD: 'Node.js',
   NPM: 'npm',
-  NXT: 'Next.js',
+  NXT: 'NextJS',
   PG: 'PostgreSQL',
   PRE: 'Preact',
   RB: 'Ruby',
