@@ -31,7 +31,7 @@
 - Presents six durable capabilities and the curated technical-skill inventory
 - Keeps Capability and Skill evidence visible while switching Expertise tabs
 - Orders Capability evidence before Skill evidence on every Portfolio project
-- Marks Portfolio projects from module-owned capability and skill relationship maps
+- Marks Portfolio projects from the shared capability and skill catalog
 - Previews matching project evidence from taxonomy and project pip hover or focus
 - Pins and clears an evidence highlight by clicking its acronym pip
 - Keeps project evidence labels available through native title tooltips
@@ -45,7 +45,7 @@
 - Accepts project technology lists as arrays of acronym strings
 - Renders project technologies and links through nested lists
 - Alternates Portfolio entry media placement through structural CSS
-- Synchronizes project evidence regardless of sibling component load order
+- Renders project evidence declaratively through nested data-wrapper lists
 - Presents Parker with a replaceable placeholder image and its current technology stack
 - Generates Parker evidence from the capability and skill relationship maps
 - Loads the Field Notes index directly from `/notes/`

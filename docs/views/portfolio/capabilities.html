@@ -1,65 +1,22 @@
 <script type="module" data-module="@gilansalehi/capabilities">
-  import initProjectEvidence from 'site/modules/projectEvidence.js';
+  import { CAPABILITIES } from 'site/modules/evidenceCatalog.js';
+  import {
+    evidenceRows,
+    previewEvidence,
+    restoreEvidence,
+    toggleEvidence,
+  } from 'site/modules/projectEvidence.js';
   import initPage from 'site/views/page.js';
-
-  const CAPABILITIES = [
-    {
-      id: 'architecture',
-      code: 'ARC',
-      tone: 1,
-      title: 'Front-end architecture',
-      description: 'Modular, maintainable systems shaped around browser standards and clear ownership boundaries.',
-      projects: 'data-wrapper parker agora joann persado'.split(' '),
-    },
-    {
-      id: 'frameworks',
-      code: 'UX',
-      tone: 2,
-      title: 'Framework & component design',
-      description: 'Small APIs, reusable components, reactive primitives, and conventions that make other developers effective.',
-      projects: 'data-wrapper parker persado'.split(' '),
-    },
-    {
-      id: 'interfaces',
-      code: 'UI',
-      tone: 3,
-      title: 'Interface engineering',
-      description: 'Responsive, accessible, themeable interfaces that carry design intent cleanly into production.',
-      projects: 'data-wrapper parker agora joann reformation converse born-group persado'.split(' '),
-    },
-    {
-      id: 'modernization',
-      code: 'OPT',
-      tone: 4,
-      title: 'Modernization & performance',
-      description: 'Simpler legacy systems, leaner dependencies, safer build processes, and faster runtime behavior.',
-      projects: 'data-wrapper joann converse'.split(' '),
-    },
-    {
-      id: 'leadership',
-      code: 'LDR',
-      tone: 5,
-      title: 'Technical leadership',
-      description: 'Mentorship, standards, documentation, and coordination across product, design, and engineering.',
-      projects: 'agora joann converse'.split(' '),
-    },
-    {
-      id: 'delivery',
-      code: 'CICD',
-      tone: 6,
-      title: 'Complex delivery',
-      description: 'Large commerce platforms, third-party integrations, replatforming programs, and production launches.',
-      projects: 'agora parker joann reformation converse born-group persado'.split(' '),
-    },
-  ];
 
   export default context => {
     initPage(context);
 
-    return initProjectEvidence(context, CAPABILITIES, {
-      kind: 'capability',
-      label: 'Capabilities',
-    });
+    return {
+      itemView: () => evidenceRows(CAPABILITIES, 'capability'),
+      previewEvidence,
+      restoreEvidence,
+      toggleEvidence,
+    };
   };
 </script>
 

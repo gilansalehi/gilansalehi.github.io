@@ -1,4 +1,12 @@
 <script type="module" data-module="@gilansalehi/projects">
+  import { CAPABILITIES, SKILLS } from 'site/modules/evidenceCatalog.js';
+  import {
+    previewEvidence,
+    projectEvidenceClass,
+    projectEvidenceRows,
+    restoreEvidence,
+    toggleEvidence,
+  } from 'site/modules/projectEvidence.js';
   import { technologyRows } from 'site/modules/technologyCatalog.js';
   import initPage from 'site/views/page.js';
 
@@ -26,7 +34,7 @@
       id: 'parker',
       title: 'Parker',
       type: 'Financial technology / Startup',
-      description: "Built product interfaces for Parker's financial platform with React, TypeScript, Next.js, and Tailwind CSS, introducing CSS custom properties to make the application themeable.",
+      description: "Parker's financial platform is built with with React, TypeScript, Next.js, GraphQL, and Tailwind CSS.",
       href: 'https://www.getparker.com',
       image: {
         src: 'https://picsum.photos/seed/parker-finance/1280/800',
@@ -129,27 +137,28 @@
     },
   ];
 
-  const projects = PROJECTS.map(project => ({
+  const projects = () => PROJECTS.map(project => ({
     ariaLabel: `Visit ${project.title}`,
     mediaClass: '',
     ...project,
+    capabilities: projectEvidenceRows(CAPABILITIES, 'capability', project.id),
+    entryClass: projectEvidenceClass(project.id, {
+      capability: CAPABILITIES,
+      skill: SKILLS,
+    }),
+    skills: projectEvidenceRows(SKILLS, 'skill', project.id),
     technologies: technologyRows(BASE_TECHS.concat(project.technologies)),
   }));
 
   export default context => {
-    const { wrapper } = context;
-
     initPage(context);
 
-    queueMicrotask(() => {
-      if (!wrapper.isConnected) return;
-
-      wrapper.dispatchEvent(new CustomEvent('portfolio-projects-ready', {
-        bubbles: true,
-      }));
-    });
-
-    return { projects };
+    return {
+      projects,
+      previewEvidence,
+      restoreEvidence,
+      toggleEvidence,
+    };
   };
 </script>
 
@@ -164,6 +173,7 @@
       <template *list="projects?key=id">
         <section
           class="portfolio-entry"
+          $class="./entryClass"
           $data-project="./id"
           data-scroll-animation="animate__fadeInUp"
         >
@@ -184,6 +194,52 @@
                 <li $text="./name"></li>
               </template>
             </ul>
+            <div class="portfolio-entry__evidence portfolio-entry__evidence--capability">
+              <span class="portfolio-entry__evidence-label">Capabilities</span>
+              <ul aria-label="Capabilities demonstrated by this project">
+                <template *list="./capabilities?key=id">
+                  <li>
+                    <button
+                      type="button"
+                      $class="./pipClass"
+                      $title="./title"
+                      $aria-label="./buttonLabel"
+                      $aria-pressed="./pressed"
+                      @mouseenter="previewEvidence"
+                      @mouseleave="restoreEvidence"
+                      @focus="previewEvidence"
+                      @blur="restoreEvidence"
+                      @click="toggleEvidence"
+                    >
+                      <span $text="./code" aria-hidden="true"></span>
+                    </button>
+                  </li>
+                </template>
+              </ul>
+            </div>
+            <div class="portfolio-entry__evidence portfolio-entry__evidence--skill">
+              <span class="portfolio-entry__evidence-label">Skills</span>
+              <ul aria-label="Skills demonstrated by this project">
+                <template *list="./skills?key=id">
+                  <li>
+                    <button
+                      type="button"
+                      $class="./pipClass"
+                      $title="./title"
+                      $aria-label="./buttonLabel"
+                      $aria-pressed="./pressed"
+                      @mouseenter="previewEvidence"
+                      @mouseleave="restoreEvidence"
+                      @focus="previewEvidence"
+                      @blur="restoreEvidence"
+                      @click="toggleEvidence"
+                    >
+                      <span $text="./code" aria-hidden="true"></span>
+                    </button>
+                  </li>
+                </template>
+              </ul>
+            </div>
             <div class="portfolio-entry__links">
               <template *list="./links?key=href">
                 <a $href="./href" $text="./label"></a>
