@@ -39,7 +39,7 @@
 - Lists TypeScript, zsh, Bash, and GraphQL in the technical-skill inventory
 - Derives gentle evidence colors from the active site theme
 - Keeps the combined Portfolio layout readable across mobile and desktop widths
-- Renders Portfolio entries from one Projects component data array
+- Renders selected-work entries from collection-owned data arrays
 - Co-locates Portfolio component data and behavior in inline module scripts
 - Resolves project technology acronyms through the shared technology catalog
 - Accepts project technology lists as arrays of acronym strings
@@ -48,6 +48,11 @@
 - Renders project evidence declaratively through nested data-wrapper lists
 - Presents Parker with a replaceable placeholder image and its current technology stack
 - Generates Parker evidence from the capability and skill relationship maps
+- Switches between professional Portfolio and personal Projects with a data-wrapper source outlet
+- Uses native keyboard behavior for the Portfolio and Projects mode control
+- Renders professional work and personal projects through one shared entry-list component
+- Presents data-wrapper, Geometric Duality, and Lorem Appsum in the Projects view
+- Omits empty technology and evidence groups from project entries
 - Loads the Field Notes index directly from `/notes/`
 - Loads Geometric Duality directly from `/notes/geometric-duality/`
 - Restores note index and detail documents with browser Back and Forward navigation
@@ -57,7 +62,7 @@
 - Advertises the sitemap from `robots.txt`
 - Renders the site-native 404 document for an unknown route
 - Prevents the 404 document from being indexed
-- Presents CSBHI in Field Notes while retaining data-wrapper in Portfolio
+- Presents CSBHI in Field Notes while retaining data-wrapper in Projects
 - Publishes the four required Open Graph properties with absolute canonical URLs
 - Publishes a handle-free summary card with portrait alternative text
 - Identifies the site as a ProfilePage whose main entity is Gilan Salehi

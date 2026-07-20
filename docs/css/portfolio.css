@@ -310,6 +310,56 @@
   border-color: color-mix(in srgb, var(--theme-color-1) 45%, transparent);
 }
 
+.portfolio__work-heading {
+  display: flex;
+  gap: 2rem;
+  align-items: end;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.portfolio__tabs {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 1.5rem;
+  padding-bottom: .25rem;
+}
+
+.portfolio__tabs input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.portfolio__tabs label {
+  padding: .4rem 0;
+  border-bottom: 2px solid transparent;
+  color: color-mix(in srgb, var(--theme-color-1) 62%, transparent);
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: border-color .2s ease-out, color .2s ease-out;
+}
+
+.portfolio__tabs label:hover,
+.portfolio__tabs input:focus-visible + label,
+.portfolio__tabs input:checked + label {
+  border-color: var(--theme-color-1);
+  color: var(--theme-color-1);
+}
+
+.portfolio__tabs input:focus-visible + label {
+  outline: 2px solid var(--theme-color-2);
+  outline-offset: 3px;
+}
+
 .portfolio__list {
   border-top: 1px dashed color-mix(in srgb, var(--theme-color-1) 55%, transparent);
 }
@@ -557,6 +607,12 @@
   }
 
   .expertise__heading {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .portfolio__work-heading {
     flex-direction: column;
     gap: 1.5rem;
     align-items: flex-start;

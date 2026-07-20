@@ -7,7 +7,7 @@ export const CAPABILITIES = [
     tone: 1,
     title: 'Front-end architecture',
     description: 'Modular, maintainable systems shaped around browser standards and clear ownership boundaries.',
-    projects: 'data-wrapper parker agora joann'.split(' '),
+    projects: 'data-wrapper lorem-appsum parker agora joann'.split(' '),
   },
   {
     id: 'frameworks',
@@ -15,7 +15,7 @@ export const CAPABILITIES = [
     tone: 2,
     title: 'Framework & component design',
     description: 'Small APIs, reusable components, reactive primitives, and conventions that make other developers effective.',
-    projects: 'data-wrapper parker agora joann persado'.split(' '),
+    projects: 'data-wrapper lorem-appsum parker agora joann persado'.split(' '),
   },
   {
     id: 'interfaces',
@@ -23,7 +23,7 @@ export const CAPABILITIES = [
     tone: 3,
     title: 'Interface engineering',
     description: 'Responsive, accessible, themeable interfaces that carry design intent cleanly into production.',
-    projects: 'data-wrapper parker agora joann reformation converse born-group persado'.split(' '),
+    projects: 'data-wrapper lorem-appsum parker agora joann reformation converse born-group persado'.split(' '),
   },
   {
     id: 'modernization',
@@ -51,7 +51,7 @@ export const CAPABILITIES = [
   },
 ];
 
-const ALL_PROJECTS = 'data-wrapper parker agora joann reformation converse born-group persado'.split(' ');
+const ALL_PROJECTS = 'data-wrapper lorem-appsum parker agora joann reformation converse born-group persado'.split(' ');
 
 export const SKILL_PROJECTS = {
   GIT: ALL_PROJECTS,
@@ -71,14 +71,14 @@ export const SKILL_PROJECTS = {
   RDX: 'persado'.split(' '),
   NPM: 'joann reformation converse persado'.split(' '),
   WPK: 'joann reformation converse persado'.split(' '),
-  TS: 'data-wrapper parker agora'.split(' '),
-  PRE: 'agora'.split(' '),
-  SIG: 'agora'.split(' '),
-  BUN: 'agora'.split(' '),
+  TS: 'data-wrapper lorem-appsum parker agora'.split(' '),
+  PRE: 'lorem-appsum agora'.split(' '),
+  SIG: 'lorem-appsum agora'.split(' '),
+  BUN: 'lorem-appsum agora'.split(' '),
   WC: 'data-wrapper'.split(' '),
   ESM: 'data-wrapper agora'.split(' '),
   SCS: 'joann reformation converse'.split(' '),
-  TWD: 'parker agora'.split(' '),
+  TWD: 'lorem-appsum parker agora'.split(' '),
   ZSH: [],
   BASH: [],
   GQL: [],

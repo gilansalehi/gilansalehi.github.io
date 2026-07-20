@@ -1,0 +1,69 @@
+<script type="module" data-module="@gilansalehi/work">
+  import { action } from 'data-wrapper';
+  import initPage from 'site/views/page.js';
+
+  const PANELS = {
+    portfolio: {
+      title: 'Portfolio',
+      view: '/views/portfolio/portfolio.html',
+    },
+    projects: {
+      title: 'Projects',
+      view: '/views/portfolio/projects.html',
+    },
+  };
+
+  export default context => {
+    let activePanel = 'portfolio';
+
+    initPage(context);
+
+    return {
+      activeTitle: () => PANELS[activePanel].title,
+      activeView: () => PANELS[activePanel].view,
+      portfolioChecked: () => activePanel === 'portfolio',
+      projectsChecked: () => activePanel === 'projects',
+      showPortfolio: action(() => {
+        activePanel = 'portfolio';
+      }),
+      showProjects: action(() => {
+        activePanel = 'projects';
+      }),
+    };
+  };
+</script>
+
+<section class="portfolio__work" aria-labelledby="portfolio-title">
+  <div class="portfolio__inner">
+    <header class="portfolio__section-header portfolio__section-header--work" data-scroll-animation="animate__fadeInUp">
+      <p class="portfolio__eyebrow">Selected work</p>
+      <div class="portfolio__work-heading">
+        <h2 id="portfolio-title" $text="activeTitle"></h2>
+        <div class="portfolio__tabs" aria-label="Selected work view">
+          <input
+            id="portfolio-view"
+            type="radio"
+            name="selected-work-view"
+            value="portfolio"
+            $checked="portfolioChecked"
+            @change="showPortfolio"
+          >
+          <label for="portfolio-view">Portfolio</label>
+          <input
+            id="projects-view"
+            type="radio"
+            name="selected-work-view"
+            value="projects"
+            $checked="projectsChecked"
+            @change="showProjects"
+          >
+          <label for="projects-view">Projects</label>
+        </div>
+      </div>
+    </header>
+
+    <template *src="activeView">
+      <p>Selected work is unavailable.</p>
+    </template>
+  </div>
+</section>

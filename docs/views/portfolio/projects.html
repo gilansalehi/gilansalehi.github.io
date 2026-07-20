@@ -1,13 +1,4 @@
-<script type="module" data-module="@gilansalehi/projects">
-  import { CAPABILITIES, SKILLS } from 'site/modules/evidenceCatalog.js';
-  import {
-    previewEvidence,
-    projectEvidenceClass,
-    projectEvidenceRows,
-    restoreEvidence,
-    toggleEvidence,
-  } from 'site/modules/projectEvidence.js';
-  import { technologyRows } from 'site/modules/technologyCatalog.js';
+<script type="module" data-module="@gilansalehi/personal-projects">
   import initPage from 'site/views/page.js';
 
   const BASE_TECHS = 'HTML CSS JS ES6 GIT'.split(' ');
@@ -24,230 +15,50 @@
         src: '/images/portfolio/data-wrapper.png',
         alt: 'data-wrapper logo',
       },
-      technologies: 'TS WC ESM'.split(' '),
+      technologies: BASE_TECHS.concat('TS WC ESM'.split(' ')),
       links: [
         { label: 'View project', href: 'https://data-wrapper.org' },
         { label: 'Source', href: 'https://github.com/gilansalehi/data-wrapper' },
       ],
     },
     {
-      id: 'parker',
-      title: 'Parker',
-      type: 'Financial technology / Startup',
-      description: "Parker's financial platform is built with with React, TypeScript, Next.js, GraphQL, and Tailwind CSS.",
-      href: 'https://www.getparker.com',
+      id: 'geometric-duality',
+      title: 'Geometric Duality',
+      type: 'Independent research / Ongoing',
+      description: 'A long-form research program exploring whether open questions in cosmology have a single geometric answer.',
+      href: 'https://www.gilansalehi.com/csbhi/',
       image: {
-        src: 'https://picsum.photos/seed/parker-finance/1280/800',
-        alt: "Placeholder image for Parker's financial platform",
+        src: '/images/notes/csbhi-banner.png',
+        alt: 'A geometric illustration of a black hole and its surrounding spacetime',
       },
-      technologies: 'RCT TS NXT TWD GQL'.split(' '),
+      technologies: [],
       links: [
-        { label: 'View site', href: 'https://www.getparker.com' },
+        { label: 'Explore research', href: 'https://www.gilansalehi.com/csbhi/' },
+        { label: 'Field note', href: '/notes/geometric-duality/' },
+        { label: 'Source', href: 'https://github.com/gilansalehi/csbhi' },
       ],
     },
     {
-      id: 'agora',
-      title: 'Agora Finance',
-      type: 'Financial technology',
-      description: "Agora's web app is built with Preact, Signals, TypeScript, and Bun. Styling combines Tailwind and custom CSS, with integrations including Auth0, LogRocket, UserSnap, and Persona.",
-      href: 'https://app.agora.finance',
+      id: 'lorem-appsum',
+      title: 'Lorem Appsum',
+      type: 'Theme system / Experiment',
+      description: 'A self-theming Preact application built with Signals and Bun to prove that a small, standards-minded stack can support radically different visual directions.',
+      href: 'https://lorem-appsum.com/',
       image: {
-        src: '/images/portfolio/AgoraWelcome.png',
-        alt: 'Agora Finance application welcome screen',
+        src: 'https://picsum.photos/seed/lorem-appsum/1280/800',
+        alt: 'Placeholder image for Lorem Appsum',
       },
-      technologies: 'PRE TS BUN TWD BEM'.split(' '),
+      technologies: BASE_TECHS.concat('PRE SIG BUN TS TWD'.split(' ')),
       links: [
-        { label: 'View site', href: 'https://app.agora.finance' },
-      ],
-    },
-    {
-      id: 'joann',
-      title: 'JOANN Fabrics',
-      type: 'E-commerce',
-      description: 'JOANN Fabrics runs SFRA with a custom front end built on jQuery, SCSS, BEM, atomic classes, and semantic HTML.',
-      href: 'https://www.joann.com',
-      image: {
-        src: '/images/portfolio/Joann001.webp',
-        alt: 'JOANN Fabrics website',
-      },
-      technologies: 'SFRA JQ SCS BEM'.split(' '),
-      links: [
-        { label: 'View site', href: 'https://www.joann.com' },
-      ],
-    },
-    {
-      id: 'reformation',
-      title: 'Reformation',
-      type: 'E-commerce',
-      description: 'Reformation is built on SFRA with a custom front end utilizing jQuery, SCSS, BEM, atomic classes, and HTML5.',
-      href: 'https://www.thereformation.com',
-      image: {
-        src: '/images/portfolio/Reformation001.webp',
-        alt: 'Reformation website',
-      },
-      technologies: 'SFCC JQ SCS HTML5'.split(' '),
-      links: [
-        { label: 'View site', href: 'https://www.thereformation.com' },
-      ],
-    },
-    {
-      id: 'converse',
-      title: 'Converse',
-      type: 'E-commerce',
-      description: 'Converse runs on Magento with a custom front end built with SCSS, Less, BEM, atomic classes, and semantic HTML.',
-      href: 'https://www.converse.com',
-      image: {
-        src: '/images/portfolio/Converse001.webp',
-        alt: 'Converse website',
-      },
-      technologies: 'MAG SCS LESS BEM'.split(' '),
-      links: [
-        { label: 'View site', href: 'https://www.converse.com' },
-      ],
-    },
-    {
-      id: 'born-group',
-      title: 'BORN Group',
-      type: 'Agency',
-      description: "BORN's website runs on WordPress, with CSS3, HTML5, and vanilla JavaScript.",
-      href: 'https://www.borngroup.com',
-      image: {
-        src: '/images/portfolio/BornGroup001.png',
-        alt: 'BORN Group website',
-      },
-      technologies: 'WP CSS3 HTML5 JS'.split(' '),
-      links: [
-        { label: 'View site', href: 'https://www.borngroup.com' },
-      ],
-    },
-    {
-      id: 'persado',
-      title: 'Persado',
-      type: 'Marketing technology',
-      description: "Persado's internal platform is built with Ruby on Rails, React, Backbone, Haml, and CSS-in-JS.",
-      href: 'https://www.persado.com',
-      image: {
-        src: '/images/portfolio/Persado001.jpg',
-        alt: 'Persado platform',
-      },
-      technologies: 'RLS RCT BBN HAML'.split(' '),
-      links: [
-        { label: 'View site', href: 'https://www.persado.com' },
+        { label: 'View project', href: 'https://lorem-appsum.com/' },
       ],
     },
   ];
 
-  const projects = () => PROJECTS.map(project => ({
-    ariaLabel: `Visit ${project.title}`,
-    mediaClass: '',
-    ...project,
-    capabilities: projectEvidenceRows(CAPABILITIES, 'capability', project.id),
-    entryClass: projectEvidenceClass(project.id, {
-      capability: CAPABILITIES,
-      skill: SKILLS,
-    }),
-    skills: projectEvidenceRows(SKILLS, 'skill', project.id),
-    technologies: technologyRows(BASE_TECHS.concat(project.technologies)),
-  }));
-
   export default context => {
     initPage(context);
-
-    return {
-      projects,
-      previewEvidence,
-      restoreEvidence,
-      toggleEvidence,
-    };
+    return { entries: PROJECTS };
   };
 </script>
 
-<section class="portfolio__work" aria-labelledby="portfolio-title">
-  <div class="portfolio__inner">
-    <header class="portfolio__section-header portfolio__section-header--work" data-scroll-animation="animate__fadeInUp">
-      <p class="portfolio__eyebrow">Selected work</p>
-      <h2 id="portfolio-title">Portfolio</h2>
-    </header>
-
-    <div class="portfolio__list">
-      <template *list="projects?key=id">
-        <section
-          class="portfolio-entry"
-          $class="./entryClass"
-          $data-project="./id"
-          data-scroll-animation="animate__fadeInUp"
-        >
-          <a
-            class="portfolio-entry__media"
-            $class="./mediaClass"
-            $href="./href"
-            $aria-label="./ariaLabel"
-          >
-            <img $src="./image/src" $alt="./image/alt">
-          </a>
-          <div class="portfolio-entry__body">
-            <p class="portfolio-entry__type" $text="./type"></p>
-            <h3 $text="./title"></h3>
-            <p $text="./description"></p>
-            <ul class="portfolio-entry__tools" aria-label="Technologies">
-              <template *list="./technologies?key=code">
-                <li $text="./name"></li>
-              </template>
-            </ul>
-            <div class="portfolio-entry__evidence portfolio-entry__evidence--capability">
-              <span class="portfolio-entry__evidence-label">Capabilities</span>
-              <ul aria-label="Capabilities demonstrated by this project">
-                <template *list="./capabilities?key=id">
-                  <li>
-                    <button
-                      type="button"
-                      $class="./pipClass"
-                      $title="./title"
-                      $aria-label="./buttonLabel"
-                      $aria-pressed="./pressed"
-                      @mouseenter="previewEvidence"
-                      @mouseleave="restoreEvidence"
-                      @focus="previewEvidence"
-                      @blur="restoreEvidence"
-                      @click="toggleEvidence"
-                    >
-                      <span $text="./code" aria-hidden="true"></span>
-                    </button>
-                  </li>
-                </template>
-              </ul>
-            </div>
-            <div class="portfolio-entry__evidence portfolio-entry__evidence--skill">
-              <span class="portfolio-entry__evidence-label">Skills</span>
-              <ul aria-label="Skills demonstrated by this project">
-                <template *list="./skills?key=id">
-                  <li>
-                    <button
-                      type="button"
-                      $class="./pipClass"
-                      $title="./title"
-                      $aria-label="./buttonLabel"
-                      $aria-pressed="./pressed"
-                      @mouseenter="previewEvidence"
-                      @mouseleave="restoreEvidence"
-                      @focus="previewEvidence"
-                      @blur="restoreEvidence"
-                      @click="toggleEvidence"
-                    >
-                      <span $text="./code" aria-hidden="true"></span>
-                    </button>
-                  </li>
-                </template>
-              </ul>
-            </div>
-            <div class="portfolio-entry__links">
-              <template *list="./links?key=href">
-                <a $href="./href" $text="./label"></a>
-              </template>
-            </div>
-          </div>
-        </section>
-      </template>
-    </div>
-  </div>
-</section>
+<data-wrapper src="/views/portfolio/entries.html?entries=entries"></data-wrapper>
