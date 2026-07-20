@@ -1,3 +1,7 @@
 .pad-sm {
     padding: .5rem;
 }
+
+.titlecase {
+    text-transform: capitalize;
+}

@@ -323,11 +323,11 @@
   border-bottom: 1px dashed color-mix(in srgb, var(--theme-color-1) 55%, transparent);
 }
 
-.portfolio-entry:nth-child(even) {
+.portfolio-entry:nth-of-type(even) {
   grid-template-columns: minmax(18rem, .85fr) minmax(0, 1.15fr);
 }
 
-.portfolio-entry:nth-child(even) .portfolio-entry__media {
+.portfolio-entry:nth-of-type(even) .portfolio-entry__media {
   order: 2;
 }
 
@@ -527,12 +527,12 @@
   }
 
   .portfolio-entry,
-  .portfolio-entry:nth-child(even) {
+  .portfolio-entry:nth-of-type(even) {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  .portfolio-entry:nth-child(even) .portfolio-entry__media {
+  .portfolio-entry:nth-of-type(even) .portfolio-entry__media {
     order: 0;
   }
 

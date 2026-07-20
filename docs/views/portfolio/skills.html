@@ -1,8 +1,58 @@
-<script
-  type="module"
-  data-module="@gilansalehi/skills"
-  src="/js/views/skills.js"
-></script>
+<script type="module" data-module="@gilansalehi/skills">
+  import initProjectEvidence from 'site/modules/projectEvidence.js';
+  import { technologyName } from 'site/modules/technologyCatalog.js';
+  import initPage from 'site/views/page.js';
+
+  const ALL_PROJECTS = 'data-wrapper parker agora joann reformation converse born-group persado'.split(' ');
+
+  const SKILL_PROJECTS = {
+    GIT: ALL_PROJECTS,
+    CSS: ALL_PROJECTS,
+    ES6: ALL_PROJECTS,
+    HTML: ALL_PROJECTS,
+    GH: 'data-wrapper'.split(' '),
+    JQ: 'joann reformation'.split(' '),
+    JS: ALL_PROJECTS,
+    NOD: [],
+    PG: 'persado'.split(' '),
+    RLS: 'persado'.split(' '),
+    RB: 'persado'.split(' '),
+    RCT: 'parker persado'.split(' '),
+    HKS: 'parker'.split(' '),
+    NXT: 'parker'.split(' '),
+    RDX: 'persado'.split(' '),
+    NPM: 'joann reformation converse persado'.split(' '),
+    WPK: 'joann reformation converse persado'.split(' '),
+    TS: 'data-wrapper parker agora'.split(' '),
+    PRE: 'agora'.split(' '),
+    SIG: 'agora'.split(' '),
+    BUN: 'agora'.split(' '),
+    WC: 'data-wrapper'.split(' '),
+    ESM: 'data-wrapper agora'.split(' '),
+    SCS: 'joann reformation converse'.split(' '),
+    TWD: 'parker agora'.split(' '),
+    ZSH: [],
+    BASH: [],
+    GQL: [],
+  };
+
+  const skills = Object.entries(SKILL_PROJECTS).map(([code, projects], index) => ({
+    id: code.toLowerCase(),
+    code,
+    title: technologyName(code),
+    projects,
+    tone: index % 6 + 1,
+  }));
+
+  export default context => {
+    initPage(context);
+
+    return initProjectEvidence(context, skills, {
+      kind: 'skill',
+      label: 'Skills',
+    });
+  };
+</script>
 
 <ul class="skills__list">
   <template *list="itemView?key=id">

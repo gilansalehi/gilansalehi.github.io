@@ -1,0 +1,197 @@
+<script type="module" data-module="@gilansalehi/projects">
+  import { technologyRows } from 'site/modules/technologyCatalog.js';
+  import initPage from 'site/views/page.js';
+
+  const BASE_TECHS = 'HTML CSS JS ES6 GIT'.split(' ');
+
+  const PROJECTS = [
+    {
+      id: 'data-wrapper',
+      title: 'data-wrapper',
+      type: 'Open source / Alpha',
+      description: 'Zero-dependency, HTML-first reactivity with one custom element, three wiring tokens, and no build step.',
+      href: 'https://data-wrapper.org',
+      mediaClass: 'portfolio-entry__media--data-wrapper',
+      image: {
+        src: '/images/portfolio/data-wrapper.png',
+        alt: 'data-wrapper logo',
+      },
+      technologies: 'TS WC ESM'.split(' '),
+      links: [
+        { label: 'View project', href: 'https://data-wrapper.org' },
+        { label: 'Source', href: 'https://github.com/gilansalehi/data-wrapper' },
+      ],
+    },
+    {
+      id: 'parker',
+      title: 'Parker',
+      type: 'Financial technology / Startup',
+      description: "Built product interfaces for Parker's financial platform with React, TypeScript, Next.js, and Tailwind CSS, introducing CSS custom properties to make the application themeable.",
+      href: 'https://www.getparker.com',
+      image: {
+        src: 'https://picsum.photos/seed/parker-finance/1280/800',
+        alt: "Placeholder image for Parker's financial platform",
+      },
+      technologies: 'RCT TS NXT TWD GQL'.split(' '),
+      links: [
+        { label: 'View site', href: 'https://www.getparker.com' },
+      ],
+    },
+    {
+      id: 'agora',
+      title: 'Agora Finance',
+      type: 'Financial technology',
+      description: "Agora's web app is built with Preact, Signals, TypeScript, and Bun. Styling combines Tailwind and custom CSS, with integrations including Auth0, LogRocket, UserSnap, and Persona.",
+      href: 'https://app.agora.finance',
+      image: {
+        src: '/images/portfolio/AgoraWelcome.png',
+        alt: 'Agora Finance application welcome screen',
+      },
+      technologies: 'PRE TS BUN TWD BEM'.split(' '),
+      links: [
+        { label: 'View site', href: 'https://app.agora.finance' },
+      ],
+    },
+    {
+      id: 'joann',
+      title: 'JOANN Fabrics',
+      type: 'E-commerce',
+      description: 'JOANN Fabrics runs SFRA with a custom front end built on jQuery, SCSS, BEM, atomic classes, and semantic HTML.',
+      href: 'https://www.joann.com',
+      image: {
+        src: '/images/portfolio/Joann001.webp',
+        alt: 'JOANN Fabrics website',
+      },
+      technologies: 'SFRA JQ SCS BEM'.split(' '),
+      links: [
+        { label: 'View site', href: 'https://www.joann.com' },
+      ],
+    },
+    {
+      id: 'reformation',
+      title: 'Reformation',
+      type: 'E-commerce',
+      description: 'Reformation is built on SFRA with a custom front end utilizing jQuery, SCSS, BEM, atomic classes, and HTML5.',
+      href: 'https://www.thereformation.com',
+      image: {
+        src: '/images/portfolio/Reformation001.webp',
+        alt: 'Reformation website',
+      },
+      technologies: 'SFCC JQ SCS HTML5'.split(' '),
+      links: [
+        { label: 'View site', href: 'https://www.thereformation.com' },
+      ],
+    },
+    {
+      id: 'converse',
+      title: 'Converse',
+      type: 'E-commerce',
+      description: 'Converse runs on Magento with a custom front end built with SCSS, Less, BEM, atomic classes, and semantic HTML.',
+      href: 'https://www.converse.com',
+      image: {
+        src: '/images/portfolio/Converse001.webp',
+        alt: 'Converse website',
+      },
+      technologies: 'MAG SCS LESS BEM'.split(' '),
+      links: [
+        { label: 'View site', href: 'https://www.converse.com' },
+      ],
+    },
+    {
+      id: 'born-group',
+      title: 'BORN Group',
+      type: 'Agency',
+      description: "BORN's website runs on WordPress, with CSS3, HTML5, and vanilla JavaScript.",
+      href: 'https://www.borngroup.com',
+      image: {
+        src: '/images/portfolio/BornGroup001.png',
+        alt: 'BORN Group website',
+      },
+      technologies: 'WP CSS3 HTML5 JS'.split(' '),
+      links: [
+        { label: 'View site', href: 'https://www.borngroup.com' },
+      ],
+    },
+    {
+      id: 'persado',
+      title: 'Persado',
+      type: 'Marketing technology',
+      description: "Persado's internal platform is built with Ruby on Rails, React, Backbone, Haml, and CSS-in-JS.",
+      href: 'https://www.persado.com',
+      image: {
+        src: '/images/portfolio/Persado001.jpg',
+        alt: 'Persado platform',
+      },
+      technologies: 'RLS RCT BBN HAML'.split(' '),
+      links: [
+        { label: 'View site', href: 'https://www.persado.com' },
+      ],
+    },
+  ];
+
+  const projects = PROJECTS.map(project => ({
+    ariaLabel: `Visit ${project.title}`,
+    mediaClass: '',
+    ...project,
+    technologies: technologyRows(BASE_TECHS.concat(project.technologies)),
+  }));
+
+  export default context => {
+    const { wrapper } = context;
+
+    initPage(context);
+
+    queueMicrotask(() => {
+      if (!wrapper.isConnected) return;
+
+      wrapper.dispatchEvent(new CustomEvent('portfolio-projects-ready', {
+        bubbles: true,
+      }));
+    });
+
+    return { projects };
+  };
+</script>
+
+<section class="portfolio__work" aria-labelledby="portfolio-title">
+  <div class="portfolio__inner">
+    <header class="portfolio__section-header portfolio__section-header--work" data-scroll-animation="animate__fadeInUp">
+      <p class="portfolio__eyebrow">Selected work</p>
+      <h2 id="portfolio-title">Portfolio</h2>
+    </header>
+
+    <div class="portfolio__list">
+      <template *list="projects?key=id">
+        <section
+          class="portfolio-entry"
+          $data-project="./id"
+          data-scroll-animation="animate__fadeInUp"
+        >
+          <a
+            class="portfolio-entry__media"
+            $class="./mediaClass"
+            $href="./href"
+            $aria-label="./ariaLabel"
+          >
+            <img $src="./image/src" $alt="./image/alt">
+          </a>
+          <div class="portfolio-entry__body">
+            <p class="portfolio-entry__type" $text="./type"></p>
+            <h3 $text="./title"></h3>
+            <p $text="./description"></p>
+            <ul class="portfolio-entry__tools" aria-label="Technologies">
+              <template *list="./technologies?key=code">
+                <li $text="./name"></li>
+              </template>
+            </ul>
+            <div class="portfolio-entry__links">
+              <template *list="./links?key=href">
+                <a $href="./href" $text="./label"></a>
+              </template>
+            </div>
+          </div>
+        </section>
+      </template>
+    </div>
+  </div>
+</section>

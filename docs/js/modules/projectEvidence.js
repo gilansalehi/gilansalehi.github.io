@@ -1,11 +1,6 @@
 import { action, flush } from 'data-wrapper';
 
-const getProjectKey = entry => {
-  const link = entry.querySelector('.portfolio-entry__media[href]');
-  if (!link) return '';
-
-  return new URL(link.href, document.baseURI).hostname.replace(/^www\./, '');
-};
+const getProjectId = entry => entry.dataset.project || '';
 
 const createEvidence = (entry, evidenceItems, options, handlers) => {
   const evidence = document.createElement('div');
@@ -100,16 +95,13 @@ export default function initProjectEvidence(context, evidenceItems, options) {
     applyProjectState();
   };
 
-  queueMicrotask(() => {
-    if (!wrapper.isConnected) return;
-
-    portfolio = wrapper.closest('.portfolio');
-    if (!portfolio) return;
+  const syncEvidence = () => {
+    generatedEvidence.forEach(evidence => evidence.remove());
 
     generatedEvidence = [...portfolio.querySelectorAll('.portfolio-entry')]
       .map(entry => {
-        const projectKey = getProjectKey(entry);
-        const matches = evidenceItems.filter(item => item.projects.includes(projectKey));
+        const projectId = getProjectId(entry);
+        const matches = evidenceItems.filter(item => item.projects.includes(projectId));
 
         return matches.length
           ? createEvidence(entry, matches, options, {
@@ -129,9 +121,22 @@ export default function initProjectEvidence(context, evidenceItems, options) {
           : null;
       })
       .filter(Boolean);
+
+    applyProjectState();
+  };
+
+  queueMicrotask(() => {
+    if (!wrapper.isConnected) return;
+
+    portfolio = wrapper.closest('.portfolio');
+    if (!portfolio) return;
+
+    portfolio.addEventListener('portfolio-projects-ready', syncEvidence);
+    syncEvidence();
   });
 
   cleanup(() => {
+    portfolio?.removeEventListener('portfolio-projects-ready', syncEvidence);
     generatedEvidence.forEach(evidence => evidence.remove());
     portfolio?.querySelectorAll('.portfolio-entry').forEach(entry => {
       entry.classList.remove(`is-${options.kind}-evidence-match`);

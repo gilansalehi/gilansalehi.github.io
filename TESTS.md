@@ -39,6 +39,13 @@
 - Lists TypeScript, zsh, Bash, and GraphQL in the technical-skill inventory
 - Derives gentle evidence colors from the active site theme
 - Keeps the combined Portfolio layout readable across mobile and desktop widths
+- Renders Portfolio entries from one Projects component data array
+- Co-locates Portfolio component data and behavior in inline module scripts
+- Resolves project technology acronyms through the shared technology catalog
+- Accepts project technology lists as arrays of acronym strings
+- Renders project technologies and links through nested lists
+- Alternates Portfolio entry media placement through structural CSS
+- Synchronizes project evidence regardless of sibling component load order
 - Presents Parker with a replaceable placeholder image and its current technology stack
 - Generates Parker evidence from the capability and skill relationship maps
 - Loads the Field Notes index directly from `/notes/`
