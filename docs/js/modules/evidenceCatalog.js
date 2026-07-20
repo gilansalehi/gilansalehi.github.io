@@ -81,7 +81,7 @@ export const SKILL_PROJECTS = {
   TWD: 'lorem-appsum parker agora'.split(' '),
   ZSH: [],
   BASH: [],
-  GQL: [],
+  GQL: 'parker'.split(' '),
 };
 
 export const SKILLS = Object.entries(SKILL_PROJECTS).map(([code, projects], index) => ({
