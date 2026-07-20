@@ -53,6 +53,9 @@
 - Renders professional work and personal projects through one shared entry-list component
 - Presents data-wrapper, Geometric Duality, and Lorem Appsum in the Projects view
 - Omits empty technology and evidence groups from project entries
+- Reserves intrinsic image space before Portfolio and Projects media loads
+- Lazy-loads below-the-fold Portfolio and Projects media
+- Provides dimensions and alternative text for every content image
 - Loads the Field Notes index directly from `/notes/`
 - Loads Geometric Duality directly from `/notes/geometric-duality/`
 - Restores note index and detail documents with browser Back and Forward navigation
