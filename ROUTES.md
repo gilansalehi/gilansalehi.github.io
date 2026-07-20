@@ -142,7 +142,7 @@ modules:
 
 ```html
 <script type="module" data-module="@site/about">
-  import initPageBehavior from '/js/modules/page-behavior.js';
+  import initPageBehavior from 'site/modules/page-behavior.js';
 
   export default context => {
     initPageBehavior(context);
@@ -161,6 +161,20 @@ modules:
 This preserves the component's single module slot for its own bindings while
 allowing shared lifecycle helpers, formatters, and utilities to be composed as
 normal ES modules.
+
+Map application modules through the host document's import map so dynamically
+registered inline view modules resolve them from a stable document URL:
+
+```html
+<script type="importmap">
+  {
+    "imports": {
+      "data-wrapper": "https://data-wrapper.org/dist/data-wrapper.js",
+      "site/": "/js/"
+    }
+  }
+</script>
+```
 
 Avoid assigning a generic external file as every component's module if that
 prevents components from declaring their own exports. Treat generic behavior

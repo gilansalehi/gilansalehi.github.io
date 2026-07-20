@@ -1,0 +1,36 @@
+<script type="module" data-module="@gilansalehi/about">
+  import initPage from 'site/views/page.js';
+
+  export default context => {
+    initPage(context);
+  };
+</script>
+
+<!-- ABOUT -->
+<article id="about" class="about">
+  <div class="about__layout">
+    <figure class="about__media" data-scroll-animation="animate__fadeInLeft">
+      <img src="/images/Damavand.jpg" alt="Snow-covered Mount Damavand rising above the Alborz mountain range">
+    </figure>
+
+    <div class="about__body" data-scroll-animation="animate__fadeInUp">
+      <p class="about__eyebrow">About</p>
+      <h2 class="about__title">Elegant solutions to challenging problems.</h2>
+      <div class="about__text">
+        <p>
+          Hi. I'm a web developer based in New York City. I'm experienced with Ruby, Rails, JavaScript, React, and Node.
+          I love building modular, scalable code, and finding elegant solutions to challenging problems. I live for the
+          perfect puzzle.
+        </p>
+        <p>
+          When I'm not coding, I enjoy
+          <a>hiking</a>,
+          <a>chess</a>, and making
+          <a href="http://www.apricity.nyc">music</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <data-wrapper src="/views/about/contact.html"></data-wrapper>
+</article>

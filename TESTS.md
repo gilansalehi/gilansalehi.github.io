@@ -19,6 +19,10 @@
 - Smoothly scrolls `#scrolltarget` into view after the Home view loads
 - Preserves the Home hero and Resume visual design
 - Presents About and Contact together below the Home hero
+- Loads Contact as an About-owned child component
+- Resolves shared component helpers through the `site/` import-map prefix
+- Inserts zero-width spaces into rendered email and phone labels
+- Keeps the generated email and telephone links functional
 - Recolors the About and Contact composition from all three theme controls
 - Loads About as a standalone routed view
 - Presents Skills above the project entries within the Portfolio view

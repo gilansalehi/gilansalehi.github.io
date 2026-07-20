@@ -1,0 +1,45 @@
+<script type="module" data-module="@gilansalehi/contact">
+  import initPage from 'site/views/page.js';
+
+  const obscure = value => [...value].join('\u200b');
+  const email = ['gilan', 'salehi', '@', 'gmail', '.', 'com'].join('');
+  const phone = ['+1', '540', '239', '4103'].join('');
+  const phoneLabel = ['540', '.', '239', '.', '4103'].join('');
+
+  export default context => {
+    initPage(context);
+
+    return {
+      emailHref: `mailto:${email}`,
+      emailLabel: obscure(email),
+      phoneHref: `tel:${phone}`,
+      phoneLabel: obscure(phoneLabel),
+    };
+  };
+</script>
+
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <header class="contact__header" data-scroll-animation="animate__fadeInUp">
+    <p class="contact__eyebrow">Contact</p>
+    <h2 id="contact-title" class="contact__title">Get in touch.</h2>
+  </header>
+
+  <address class="contact__links" data-scroll-animation="animate__fadeInUp">
+    <a $href="emailHref">
+      <span>Email</span>
+      <strong $text="emailLabel"></strong>
+    </a>
+    <a $href="phoneHref">
+      <span>Phone</span>
+      <strong $text="phoneLabel"></strong>
+    </a>
+    <a href="https://www.github.com/gilansalehi">
+      <span>GitHub</span>
+      <strong>github.com/gilansalehi</strong>
+    </a>
+    <a href="https://www.linkedin.com/in/gilansalehi">
+      <span>LinkedIn</span>
+      <strong>linkedin.com/in/gilansalehi</strong>
+    </a>
+  </address>
+</section>
