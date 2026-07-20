@@ -1,0 +1,32 @@
+<script
+  type="module"
+  data-module="@gilansalehi/skills"
+  src="/js/views/skills.js"
+></script>
+
+<ul class="skills__list">
+  <template *list="itemView?key=id">
+    <li
+      $data-skill="./id"
+      $class="./itemClass"
+      @mouseenter="previewEvidence"
+      @mouseleave="restoreEvidence"
+      data-scroll-animation="animate__fadeInUp"
+    >
+      <button
+        type="button"
+        class="skills__pip"
+        $title="./title"
+        $aria-label="./buttonLabel"
+        $aria-pressed="./pressed"
+        $disabled="./disabled"
+        @focus="previewEvidence"
+        @blur="restoreEvidence"
+        @click="toggleEvidence"
+      >
+        <span $text="./code" aria-hidden="true"></span>
+      </button>
+      <strong $text="./title"></strong>
+    </li>
+  </template>
+</ul>

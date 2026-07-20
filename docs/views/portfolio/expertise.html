@@ -1,0 +1,59 @@
+<script
+  type="module"
+  data-module="@gilansalehi/expertise"
+  src="/js/views/expertise.js"
+></script>
+
+<section class="portfolio__expertise" aria-labelledby="expertise-title">
+  <div class="portfolio__inner">
+    <header class="portfolio__section-header" data-scroll-animation="animate__fadeInUp">
+      <p class="portfolio__eyebrow">What I bring</p>
+      <div class="expertise__heading">
+        <h1 id="expertise-title" $text="activeTitle"></h1>
+        <div class="expertise__tabs" role="tablist" aria-label="Expertise view" @keydown="navigateTabs">
+          <button
+            id="capabilities-tab"
+            type="button"
+            role="tab"
+            aria-controls="capabilities-panel"
+            $aria-selected="capabilitiesSelected"
+            $tabindex="capabilitiesTabIndex"
+            $class="capabilitiesTabClass"
+            @click="showCapabilities"
+          >Capabilities</button>
+          <button
+            id="skills-tab"
+            type="button"
+            role="tab"
+            aria-controls="skills-panel"
+            $aria-selected="skillsSelected"
+            $tabindex="skillsTabIndex"
+            $class="skillsTabClass"
+            @click="showSkills"
+          >Skills</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="expertise__panels">
+      <div
+        id="capabilities-panel"
+        class="expertise__panel"
+        role="tabpanel"
+        aria-labelledby="capabilities-tab"
+        $hidden="capabilitiesHidden"
+      >
+        <data-wrapper src="/views/portfolio/capabilities.html"></data-wrapper>
+      </div>
+      <div
+        id="skills-panel"
+        class="expertise__panel"
+        role="tabpanel"
+        aria-labelledby="skills-tab"
+        $hidden="skillsHidden"
+      >
+        <data-wrapper src="/views/portfolio/skills.html"></data-wrapper>
+      </div>
+    </div>
+  </div>
+</section>

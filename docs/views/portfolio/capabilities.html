@@ -1,0 +1,35 @@
+<script
+  type="module"
+  data-module="@gilansalehi/capabilities"
+  src="/js/views/capabilities.js"
+></script>
+
+<ol class="capabilities__list">
+  <template *list="itemView?key=id">
+    <li
+      $data-capability="./id"
+      $class="./itemClass"
+      @mouseenter="previewEvidence"
+      @mouseleave="restoreEvidence"
+      data-scroll-animation="animate__fadeInUp"
+    >
+      <button
+        type="button"
+        class="capabilities__pip"
+        $title="./title"
+        $aria-label="./buttonLabel"
+        $aria-pressed="./pressed"
+        $disabled="./disabled"
+        @focus="previewEvidence"
+        @blur="restoreEvidence"
+        @click="toggleEvidence"
+      >
+        <span $text="./code" aria-hidden="true"></span>
+      </button>
+      <div>
+        <h2 $text="./title"></h2>
+        <p $text="./description"></p>
+      </div>
+    </li>
+  </template>
+</ol>

@@ -1,32 +1,7 @@
 <script type="module" data-module="@gilansalehi/portfolio" src="/js/views/page.js"></script>
 
 <article id="portfolio" class="portfolio">
-  <section class="portfolio__skills" aria-labelledby="skills-title">
-    <div class="portfolio__inner">
-      <header class="portfolio__section-header" data-scroll-animation="animate__fadeInUp">
-        <p class="portfolio__eyebrow">Capabilities</p>
-        <h1 id="skills-title">Skills</h1>
-      </header>
-
-      <ul class="skills__list">
-        <li><img src="/images/svgs/git-icon.svg" alt=""><span>Git</span></li>
-        <li><img src="/images/svgs/css3.svg" alt=""><span>CSS3</span></li>
-        <li><img src="/images/svgs/es6.svg" alt=""><span>ES6</span></li>
-        <li><img src="/images/svgs/html5.svg" alt=""><span>HTML5</span></li>
-        <li><img src="/images/svgs/github-1.svg" alt=""><span>GitHub</span></li>
-        <li><img src="/images/svgs/jquery-1.svg" alt=""><span>jQuery</span></li>
-        <li><img src="/images/svgs/js.svg" alt=""><span>JavaScript</span></li>
-        <li><img src="/images/svgs/node.svg" alt=""><span>Node.js</span></li>
-        <li><img src="/images/svgs/postgresql.svg" alt=""><span>PostgreSQL</span></li>
-        <li><img src="/images/svgs/rails.svg" alt=""><span>Rails</span></li>
-        <li><img src="/images/svgs/ruby.svg" alt=""><span>Ruby</span></li>
-        <li><img src="/images/svgs/react.svg" alt=""><span>React</span></li>
-        <li><img src="/images/svgs/redux.svg" alt=""><span>Redux</span></li>
-        <li><img src="/images/svgs/npm.svg" alt=""><span>npm</span></li>
-        <li><img src="/images/svgs/webpack-icon.svg" alt=""><span>Webpack</span></li>
-      </ul>
-    </div>
-  </section>
+  <data-wrapper src="/views/portfolio/expertise.html"></data-wrapper>
 
   <section class="portfolio__work" aria-labelledby="portfolio-title">
     <div class="portfolio__inner">
@@ -53,6 +28,24 @@
               <a href="https://data-wrapper.org">View project</a>
               <a href="https://github.com/gilansalehi/data-wrapper">Source</a>
             </div>
+          </div>
+        </section>
+
+        <section class="portfolio-entry" data-scroll-animation="animate__fadeInUp">
+          <a class="portfolio-entry__media" href="https://www.getparker.com" aria-label="Visit Parker">
+            <img src="https://picsum.photos/seed/parker-finance/1280/800" alt="Placeholder image for Parker's financial platform">
+          </a>
+          <div class="portfolio-entry__body">
+            <p class="portfolio-entry__type">Financial technology / Startup</p>
+            <h3>Parker</h3>
+            <p>Built product interfaces for Parker's financial platform with React, TypeScript, Next.js, and Tailwind CSS, introducing CSS custom properties to make the application themeable.</p>
+            <ul class="portfolio-entry__tools" aria-label="Technologies">
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Next.js</li>
+              <li>Tailwind</li>
+            </ul>
+            <div class="portfolio-entry__links"><a href="https://www.getparker.com">View site</a></div>
           </div>
         </section>
 

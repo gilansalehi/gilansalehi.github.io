@@ -25,8 +25,22 @@
 - Keeps the generated email and telephone links functional
 - Recolors the About and Contact composition from all three theme controls
 - Loads About as a standalone routed view
-- Presents Skills above the project entries within the Portfolio view
+- Switches the Expertise section between Capabilities and Skills tabs
+- Supports Arrow, Home, and End keyboard navigation between Expertise tabs
+- Loads Capabilities and Skills as Portfolio-owned child components
+- Presents six durable capabilities and the curated technical-skill inventory
+- Keeps Capability and Skill evidence visible while switching Expertise tabs
+- Orders Capability evidence before Skill evidence on every Portfolio project
+- Marks Portfolio projects from module-owned capability and skill relationship maps
+- Previews matching project evidence from taxonomy and project pip hover or focus
+- Pins and clears an evidence highlight by clicking its acronym pip
+- Keeps project evidence labels available through native title tooltips
+- Fits two- to four-character evidence codes without clipping
+- Lists TypeScript, zsh, Bash, and GraphQL in the technical-skill inventory
+- Derives gentle evidence colors from the active site theme
 - Keeps the combined Portfolio layout readable across mobile and desktop widths
+- Presents Parker with a replaceable placeholder image and its current technology stack
+- Generates Parker evidence from the capability and skill relationship maps
 - Loads the Field Notes index directly from `/notes/`
 - Loads Geometric Duality directly from `/notes/geometric-duality/`
 - Restores note index and detail documents with browser Back and Forward navigation
