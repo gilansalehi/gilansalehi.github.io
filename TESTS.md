@@ -51,6 +51,8 @@
 - Switches between professional Portfolio and personal Projects with a data-wrapper source outlet
 - Uses native keyboard behavior for the Portfolio and Projects mode control
 - Renders professional work and personal projects through one shared entry-list component
+- Renders historical professional work without outbound links or empty link containers
+- Retains linked media and project links for active personal projects
 - Presents data-wrapper, Geometric Duality, and Lorem Appsum in the Projects view
 - Omits empty technology and evidence groups from project entries
 - Reserves intrinsic image space before Portfolio and Projects media loads

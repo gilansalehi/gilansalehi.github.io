@@ -411,6 +411,10 @@
   transform: scale(1.015);
 }
 
+.portfolio-entry__media--static:hover img {
+  transform: none;
+}
+
 .portfolio-entry__media--data-wrapper {
   display: grid;
   place-items: center;

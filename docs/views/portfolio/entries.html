@@ -21,18 +21,24 @@
       entries: () => {
         const source = read(props.entries);
 
-        return (Array.isArray(source) ? source : []).map(entry => ({
-          ariaLabel: `Visit ${entry.title}`,
-          mediaClass: '',
-          ...entry,
-          capabilities: projectEvidenceRows(CAPABILITIES, 'capability', entry.id),
-          entryClass: projectEvidenceClass(entry.id, {
-            capability: CAPABILITIES,
-            skill: SKILLS,
-          }),
-          skills: projectEvidenceRows(SKILLS, 'skill', entry.id),
-          technologies: technologyRows(entry.technologies ?? []),
-        }));
+        return (Array.isArray(source) ? source : []).map(entry => {
+          const hasMediaLink = Boolean(entry.href);
+
+          return {
+            ariaLabel: `Visit ${entry.title}`,
+            mediaClass: '',
+            ...entry,
+            capabilities: projectEvidenceRows(CAPABILITIES, 'capability', entry.id),
+            entryClass: projectEvidenceClass(entry.id, {
+              capability: CAPABILITIES,
+              skill: SKILLS,
+            }),
+            hasMediaLink,
+            hasStaticMedia: !hasMediaLink,
+            skills: projectEvidenceRows(SKILLS, 'skill', entry.id),
+            technologies: technologyRows(entry.technologies ?? []),
+          };
+        });
       },
       previewEvidence,
       restoreEvidence,
@@ -49,21 +55,35 @@
       $data-project="./id"
       data-scroll-animation="animate__fadeInUp"
     >
-      <a
-        class="portfolio-entry__media"
-        $class="./mediaClass"
-        $href="./href"
-        $aria-label="./ariaLabel"
-      >
-        <img
-          $src="./image/src"
-          $alt="./image/alt"
-          $width="./image/width"
-          $height="./image/height"
-          loading="lazy"
-          decoding="async"
+      <template *if="./hasMediaLink">
+        <a
+          class="portfolio-entry__media"
+          $class="./mediaClass"
+          $href="./href"
+          $aria-label="./ariaLabel"
         >
-      </a>
+          <img
+            $src="./image/src"
+            $alt="./image/alt"
+            $width="./image/width"
+            $height="./image/height"
+            loading="lazy"
+            decoding="async"
+          >
+        </a>
+      </template>
+      <template *if="./hasStaticMedia">
+        <figure class="portfolio-entry__media portfolio-entry__media--static" $class="./mediaClass">
+          <img
+            $src="./image/src"
+            $alt="./image/alt"
+            $width="./image/width"
+            $height="./image/height"
+            loading="lazy"
+            decoding="async"
+          >
+        </figure>
+      </template>
       <div class="portfolio-entry__body">
         <p class="portfolio-entry__type" $text="./type"></p>
         <h3 $text="./title"></h3>
@@ -125,11 +145,13 @@
             </ul>
           </div>
         </template>
-        <div class="portfolio-entry__links">
-          <template *list="./links?key=href">
-            <a $href="./href" $text="./label"></a>
-          </template>
-        </div>
+        <template *if="./links?count">
+          <div class="portfolio-entry__links">
+            <template *list="./links?key=href">
+              <a $href="./href" $text="./label"></a>
+            </template>
+          </div>
+        </template>
       </div>
     </section>
   </template>

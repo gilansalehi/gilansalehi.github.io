@@ -77,6 +77,7 @@
 #resume ul li:not(.list-style--none) {
     list-style: none;
     margin-left: 1rem;
+    margin-top: 0.15em;
 }
 
 #resume ul li.italic {
