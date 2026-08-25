@@ -71,6 +71,11 @@
   text-underline-offset: .2em;
 }
 
+.about-contact {
+  padding: clamp(3rem, 7vw, 5rem);
+}
+
+.about-contact,
 .contact {
   display: grid;
   grid-template-columns: minmax(14rem, .7fr) minmax(20rem, 1.3fr);
