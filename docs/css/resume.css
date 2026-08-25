@@ -170,6 +170,7 @@
     }
 
     #resume .year {
+        display: none;
         color: #555;
         font-size: 8.5pt;
         break-inside: avoid;

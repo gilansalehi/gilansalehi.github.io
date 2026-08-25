@@ -78,3 +78,11 @@
 - Keeps Resume headings and individual bullets from breaking awkwardly across pages
 - Includes external profile destinations in printed Resume output
 - Fails closed when the pinned shim artifact fails integrity validation
+- Loads the business card directly from `/contact/`
+- Encodes the canonical site URL in the card's QR code
+- Scales the card QR code legibly on a narrow phone viewport
+- Offers the card's contact details as tappable mail, tel, and vCard actions
+- Links to `/contact/` from the primary navigation on every route
+- Repeats the primary navigation destinations in the site footer
+- Stamps the footer with the document's last-modified date
+- Omits the site footer on the `/contact/` route

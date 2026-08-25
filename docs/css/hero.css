@@ -6,7 +6,7 @@
     linear-gradient(var(--theme-color-1, #fa0),var(--theme-color-2, #808));
   background-size: cover;
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: auto;
   display: flex;
   justify-content: flex-start;

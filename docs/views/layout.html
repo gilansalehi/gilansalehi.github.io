@@ -7,8 +7,12 @@
     { name: 'resume', path: '/resume/' },
     { name: 'portfolio', path: '/portfolio/' },
     { name: 'notes', path: '/notes/' },
+    { name: 'contact', path: '/contact/' },
     { name: 'settings', path: '/settings/' },
   ]);
+
+  const parsedModified = new Date(document.lastModified);
+  const lastModified = Number.isNaN(parsedModified.valueOf()) ? null : parsedModified;
 
   export default ({ wrapper, cleanup }) => {
     const currentPage = wrapper.dataset.page || 'home';
@@ -49,6 +53,11 @@
         menuOpen = !menuOpen;
       }),
 
+      copyright: `\u00a9 ${new Date().getFullYear()} Gilan Salehi`,
+      lastUpdatedISO: lastModified ? lastModified.toISOString().slice(0, 10) : '',
+      lastUpdatedLabel: lastModified
+        ? lastModified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+        : 'recently',
     };
   };
 </script>
@@ -82,3 +91,22 @@
 <main class="page-outlet">
   <template *src="currentView"></template>
 </main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <nav class="footer__nav" aria-label="Footer">
+    <ul class="footer__list">
+      <template *list="pages">
+        <li><a class="footer__link titlecase hover--underline" $href="./path" $text="./name"></a></li>
+      </template>
+    </ul>
+  </nav>
+
+  <div class="footer__meta">
+    <p class="footer__copyright" $text="copyright"></p>
+    <p class="footer__updated">
+      Last updated
+      <time $datetime="lastUpdatedISO" $text="lastUpdatedLabel"></time>
+    </p>
+  </div>
+</footer>

@@ -7,10 +7,12 @@
 @import 'flex.css';
 @import 'flip.css';
 @import 'nav.css';
+@import 'footer.css';
 @import 'hero.css';
 @import 'about.css';
 @import 'portfolio.css';
 @import 'notes.css';
+@import 'card.css';
 @import 'settings.css';
 @import 'not-found.css';
 @import 'accordion.css';
