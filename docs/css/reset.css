@@ -13,8 +13,14 @@ body {
 
 html, body {
   max-width: 100%;
-  overflow-x: hidden;
   scroll-behavior: smooth;
+}
+
+/* Clipped on the root only. html's overflow propagates to the viewport, so the
+   page is still clipped horizontally; setting it on body as well would make body
+   a scroll container and swallow the scroll-snap points declared in pages.css. */
+html {
+  overflow-x: hidden;
 }
 
 ul, li {

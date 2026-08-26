@@ -30,10 +30,8 @@
 
 /* Chevron reveal. Scrolling rests at the end of the page content, leaving the
    chevron just past the fold; a deliberate extra scroll catches again with it
-   fully in view. Declared on both html and body because reset.css sets
-   overflow-x on both, which leaves the scroll container ambiguous. */
-html,
-body {
+   fully in view. */
+html {
   scroll-snap-type: y proximity;
 }
 
@@ -46,7 +44,6 @@ body {
   scroll-snap-stop: always;
 }
 
-html[data-reduce-motion],
-html[data-reduce-motion] body {
+html[data-reduce-motion] {
   scroll-snap-type: none;
 }
