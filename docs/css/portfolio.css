@@ -1,7 +1,7 @@
 .page-outlet .portfolio {
   min-height: 100vh;
   padding: 0;
-  background: var(--theme-color-1);
+  background: var(--page-bg);
 }
 
 .portfolio__inner {

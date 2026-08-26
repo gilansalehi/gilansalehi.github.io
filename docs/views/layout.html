@@ -11,12 +11,21 @@
     { name: 'settings', path: '/settings/' },
   ]);
 
-  const parsedModified = new Date(document.lastModified);
-  const lastModified = Number.isNaN(parsedModified.valueOf()) ? null : parsedModified;
+  // Reading order for the end-of-page chevron. Pages absent from this map end
+  // the tour and render no chevron.
+  const tour = Object.freeze({
+    home: 'about',
+    about: 'contact',
+    contact: 'portfolio',
+    portfolio: 'resume',
+    resume: 'notes',
+    notes: 'home',
+  });
 
   export default ({ wrapper, cleanup }) => {
     const currentPage = wrapper.dataset.page || 'home';
     const currentView = wrapper.dataset.view || '/views/home.html';
+    const nextPage = pages.find(page => page.name === tour[currentPage]) || null;
     let menuOpen = false;
 
     const updateBody = () => {
@@ -53,11 +62,9 @@
         menuOpen = !menuOpen;
       }),
 
-      copyright: `\u00a9 ${new Date().getFullYear()} Gilan Salehi`,
-      lastUpdatedISO: lastModified ? lastModified.toISOString().slice(0, 10) : '',
-      lastUpdatedLabel: lastModified
-        ? lastModified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-        : 'recently',
+      hasNext: Boolean(nextPage),
+      nextPath: nextPage?.path ?? '',
+      nextLabel: nextPage ? `Continue to ${nextPage.name}` : '',
     };
   };
 </script>
@@ -92,21 +99,13 @@
   <template *src="currentView"></template>
 </main>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <nav class="footer__nav" aria-label="Footer">
-    <ul class="footer__list">
-      <template *list="pages">
-        <li><a class="footer__link titlecase hover--underline" $href="./path" $text="./name"></a></li>
-      </template>
-    </ul>
-  </nav>
-
-  <div class="footer__meta">
-    <p class="footer__copyright" $text="copyright"></p>
-    <p class="footer__updated">
-      Last updated
-      <time $datetime="lastUpdatedISO" $text="lastUpdatedLabel"></time>
-    </p>
-  </div>
-</footer>
+<!-- NEXT PAGE -->
+<template *if="hasNext">
+  <a class="chevron" $href="nextPath" $title="nextLabel">
+    <span class="chevron__label" $text="nextLabel"></span>
+    <svg class="chevron__icon" viewBox="0 0 24 10" aria-hidden="true" focusable="false">
+      <path d="M2 3 12 8 22 3" fill="none" stroke="currentColor" stroke-width="1.5"
+        stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </a>
+</template>

@@ -1,0 +1,38 @@
+.chevron {
+  display: grid;
+  justify-items: center;
+  padding: clamp(.75rem, 2vw, 1.25rem) 1.5rem clamp(1rem, 2.5vw, 1.5rem);
+  color: color-mix(in srgb, var(--theme-color-3) 70%, black);
+  background: var(--page-end-bg);
+  text-decoration: none;
+}
+
+/* Reachable by assistive tech; the visible cue is the chevron and its tooltip. */
+.chevron__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.chevron__icon {
+  width: clamp(2rem, 6vw, 2.5rem);
+  height: auto;
+  opacity: .55;
+  transition: transform .25s ease-out, opacity .25s ease-out;
+}
+
+.chevron:hover .chevron__icon,
+.chevron:focus-visible .chevron__icon {
+  transform: translateY(.25rem);
+  opacity: 1;
+}
+
+html[data-reduce-motion] .chevron__icon {
+  transition: none;
+}

@@ -7,21 +7,6 @@
   const phoneLabel = ['540', '.', '239', '.', '4103'].join('');
   const site = 'https://www.gilansalehi.com/';
 
-  const vcard = [
-    'BEGIN:VCARD',
-    'VERSION:3.0',
-    'N:Salehi;Gilan;;;',
-    'FN:Gilan Salehi',
-    'TITLE:Front-End Architect & Team Lead',
-    'ADR;TYPE=WORK:;;;New York;NY;;USA',
-    `EMAIL;TYPE=INTERNET:${email}`,
-    `TEL;TYPE=CELL:${phone}`,
-    `URL:${site}`,
-    'URL:https://www.github.com/gilansalehi',
-    'URL:https://www.linkedin.com/in/gilansalehi',
-    'END:VCARD',
-  ].join('\r\n');
-
   export default context => {
     initPage(context);
 
@@ -31,7 +16,6 @@
       phoneHref: `tel:${phone}`,
       phoneLabel: obscure(phoneLabel),
       siteHref: site,
-      vcardHref: `data:text/vcard;charset=utf-8,${encodeURIComponent(vcard)}`,
     };
   };
 </script>
@@ -71,6 +55,6 @@
       </a>
     </address>
 
-    <a class="card__save" $href="vcardHref" download="gilan-salehi.vcf">Save contact</a>
+    <a class="card__save" href="/contact/gilan-salehi.vcf" type="text/vcard" download>Save contact</a>
   </div>
 </article>

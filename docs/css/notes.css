@@ -2,7 +2,7 @@
   min-height: 100vh;
   padding: 0;
   color: color-mix(in srgb, var(--theme-color-3) 62%, black);
-  background: var(--theme-color-1);
+  background: var(--page-bg);
 }
 
 .notes__inner {

@@ -4,7 +4,7 @@
   min-height: 100vh;
   padding: 5rem 1.5rem;
   color: var(--theme-color-1);
-  background: var(--theme-color-3);
+  background: var(--page-bg);
   border-bottom: .75rem solid var(--theme-color-2);
 }
 

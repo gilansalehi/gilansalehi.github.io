@@ -1,11 +1,11 @@
 .resume__wrapper {
     color: var(--theme-color-1);
-    background-color: var(--theme-color-3);
+    background-color: var(--page-bg);
 }
 
 #resume {
     color: var(--theme-color-1);
-    background-color: var(--theme-color-3);
+    background-color: var(--page-bg);
     font-family: Arial, Helvetica, sans-serif;
     max-width: 960px;
 }
@@ -105,7 +105,8 @@
         font-size: 10pt;
     }
 
-    .nav {
+    .nav,
+    .chevron {
         display: none;
     }
 

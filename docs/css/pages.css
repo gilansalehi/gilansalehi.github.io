@@ -1,6 +1,52 @@
+/* Per-route surfaces.
+   --page-bg      the route's own background
+   --page-end-bg  the surface the route *ends* on, which the chevron matches;
+                  defaults to --page-bg for routes that end on their own surface. */
+[data-page] {
+  --page-bg: var(--theme-color-1);
+  --page-end-bg: var(--page-bg);
+}
+
+[data-page="home"] {
+  --page-bg: var(--theme-color-3);
+}
+
+[data-page="resume"],
+[data-page="not-found"] {
+  --page-bg: var(--theme-color-3);
+}
+
+[data-page="about"],
+[data-page="portfolio"] {
+  --page-end-bg: var(--theme-color-3);
+}
+
 .page-outlet article {
     margin: auto;
     min-height: 100vh;
     padding: 4rem 0;
     transition: height .15s ease-out;
+}
+
+/* Chevron reveal. Scrolling rests at the end of the page content, leaving the
+   chevron just past the fold; a deliberate extra scroll catches again with it
+   fully in view. Declared on both html and body because reset.css sets
+   overflow-x on both, which leaves the scroll container ambiguous. */
+html,
+body {
+  scroll-snap-type: y proximity;
+}
+
+.page-outlet,
+.chevron {
+  scroll-snap-align: end;
+}
+
+.chevron {
+  scroll-snap-stop: always;
+}
+
+html[data-reduce-motion],
+html[data-reduce-motion] body {
+  scroll-snap-type: none;
 }

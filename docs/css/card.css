@@ -2,8 +2,10 @@
   display: grid;
   place-items: center;
   padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
   color: color-mix(in srgb, var(--theme-color-3) 58%, black);
-  background: var(--theme-color-1);
+  background: var(--page-bg);
 }
 
 .card__face {
@@ -59,7 +61,7 @@
 
 .card__qr svg {
   display: block;
-  width: min(15rem, 62vw);
+  width: min(20rem, 85%);
   height: auto;
   shape-rendering: crispEdges;
 }
@@ -146,6 +148,19 @@
 .card__save:focus {
   color: var(--theme-color-1);
   background: var(--theme-color-3);
+}
+
+@media screen and (max-width: 480px) {
+  .card__face {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    align-content: space-between;
+    padding: clamp(2.5rem, 9vw, 4rem) 1.5rem clamp(2rem, 7vw, 3rem);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 
 @media screen and (max-width: 380px) {

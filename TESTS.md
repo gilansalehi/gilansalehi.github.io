@@ -83,6 +83,6 @@
 - Scales the card QR code legibly on a narrow phone viewport
 - Offers the card's contact details as tappable mail, tel, and vCard actions
 - Links to `/contact/` from the primary navigation on every route
-- Repeats the primary navigation destinations in the site footer
-- Stamps the footer with the document's last-modified date
-- Omits the site footer on the `/contact/` route
+- Ends each page with a chevron linking to the next page in the reading order
+- Omits the chevron on pages that end the reading order
+- Excludes the chevron from printed Resume output
