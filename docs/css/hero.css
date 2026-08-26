@@ -58,11 +58,12 @@
   padding: 0.5em 0;
   font-family: 'Bellefair', serif;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .profile__subtitle strong {
   font-size: 1.125rem;
+  font-weight: 400;
 }
 
 .profile__resume-link--icon:visited {
