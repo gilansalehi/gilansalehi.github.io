@@ -84,5 +84,6 @@
 - Offers the card's contact details as tappable mail, tel, and vCard actions
 - Links to `/contact/` from the primary navigation on every route
 - Ends each page with a chevron linking to the next page in the reading order
+- Opens the next reading-order page at its start on iPhone
 - Omits the chevron on pages that end the reading order
 - Excludes the chevron from printed Resume output

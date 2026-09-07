@@ -35,7 +35,10 @@ html {
   scroll-snap-type: y proximity;
 }
 
-.page-outlet,
+.page-outlet {
+  scroll-snap-align: start;
+}
+
 .chevron {
   scroll-snap-align: end;
 }
