@@ -50,3 +50,9 @@ html {
 html[data-reduce-motion] {
   scroll-snap-type: none;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-snap-type: none;
+  }
+}

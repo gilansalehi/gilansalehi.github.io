@@ -14,7 +14,11 @@
 - Applies Original, Harbor, and Garden theme presets
 - Resets theme, menu position, and motion to their defaults
 - Reduces site animation when the motion setting is enabled
+- Reduces site animation when the operating system prefers reduced motion
 - Closes the navigation menu with Escape and the page overlay
+- Exposes the navigation's expanded and current-page states to assistive technology
+- Moves focus into the open navigation and returns it to the menu button when closed
+- Keeps route content inert while the navigation is open
 - Initializes scroll animations after each view loads
 - Smoothly scrolls `#scrolltarget` into view after the Home view loads
 - Preserves the Home hero and Resume visual design
@@ -27,6 +31,7 @@
 - Loads About as a standalone routed view
 - Switches the Expertise section between Capabilities and Skills tabs
 - Supports Arrow, Home, and End keyboard navigation between Expertise tabs
+- Reads native keyboard input from data-wrapper event details in the Expertise tabs
 - Loads Capabilities and Skills as Portfolio-owned child components
 - Presents six durable capabilities and the curated technical-skill inventory
 - Keeps Capability and Skill evidence visible while switching Expertise tabs

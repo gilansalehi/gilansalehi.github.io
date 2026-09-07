@@ -25,15 +25,41 @@
   export default ({ wrapper, cleanup }) => {
     const currentPage = wrapper.dataset.page || 'home';
     const currentView = wrapper.dataset.view || '/views/home.html';
+    const pageLinks = pages.map(page => ({
+      ...page,
+      ariaCurrent: page.name === currentPage ? 'page' : 'false',
+    }));
     const nextPage = pages.find(page => page.name === tour[currentPage]) || null;
     let menuOpen = false;
+    let focusFrame = 0;
 
     const updateBody = () => {
       document.body.dataset.currentPage = currentPage;
     };
 
+    const scheduleMenuFocus = open => {
+      cancelAnimationFrame(focusFrame);
+      focusFrame = requestAnimationFrame(() => {
+        focusFrame = 0;
+        if (!wrapper.isConnected || menuOpen !== open) return;
+
+        const target = open
+          ? wrapper.querySelector('.nav__menu a[aria-current="page"]')
+            || wrapper.querySelector('.nav__menu a')
+          : wrapper.querySelector('.nav__icon');
+
+        target?.focus({ preventScroll: true });
+      });
+    };
+
+    const setMenuOpen = open => {
+      if (menuOpen === open) return;
+      menuOpen = open;
+      scheduleMenuFocus(open);
+    };
+
     const closeMenu = action(() => {
-      menuOpen = false;
+      setMenuOpen(false);
     });
 
     const handleKeyUp = event => {
@@ -44,6 +70,7 @@
 
     document.body.addEventListener('keyup', handleKeyUp);
     cleanup(() => {
+      cancelAnimationFrame(focusFrame);
       document.body.removeEventListener('keyup', handleKeyUp);
       delete document.body.dataset.currentPage;
     });
@@ -51,16 +78,26 @@
     updateBody();
 
     return {
-      pages,
+      pages: pageLinks,
       currentView,
+
+      get menuExpanded() {
+        return String(menuOpen);
+      },
+
+      get menuOpen() {
+        return menuOpen;
+      },
 
       get headerStateClass() {
         return `${currentPage}${menuOpen ? ' open' : ''}`;
       },
 
       toggleMenu: action(() => {
-        menuOpen = !menuOpen;
+        setMenuOpen(!menuOpen);
       }),
+
+      closeMenu,
 
       hasNext: Boolean(nextPage),
       nextPath: nextPage?.path ?? '',
@@ -79,29 +116,38 @@
     class="nav__icon hover--shine"
     @click="toggleMenu"
     tabindex="0"
+    aria-controls="site-navigation"
+    $aria-expanded="menuExpanded"
     aria-label="Toggle navigation"
   >
     <hr>
     <hr>
     <hr>
   </button>
-  <nav class="nav__menu" data-ref="nav:menu">
+  <nav id="site-navigation" class="nav__menu" data-ref="nav:menu" aria-label="Primary">
     <ul class="nav__menu__list">
       <template *list="pages">
-        <li><a $href="./path" class="animate hover--underline" $text="./name"></a></li>
+        <li>
+          <a
+            $href="./path"
+            $aria-current="./ariaCurrent"
+            class="animate hover--underline"
+            $text="./name"
+          ></a>
+        </li>
       </template>
     </ul>
   </nav>
-  <span class="nav__close" @click="toggleMenu"></span>
+  <span class="nav__close" @click="closeMenu" aria-hidden="true"></span>
 </header>
 
-<main class="page-outlet">
+<main class="page-outlet" $inert="menuOpen">
   <template *src="currentView"></template>
 </main>
 
 <!-- NEXT PAGE -->
 <template *if="hasNext">
-  <a class="chevron" $href="nextPath" $title="nextLabel">
+  <a class="chevron" $href="nextPath" $title="nextLabel" $inert="menuOpen">
     <span class="chevron__label" $text="nextLabel"></span>
     <svg class="chevron__icon" viewBox="0 0 24 10" aria-hidden="true" focusable="false">
       <path d="M2 3 12 8 22 3" fill="none" stroke="currentColor" stroke-width="1.5"

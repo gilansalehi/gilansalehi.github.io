@@ -13,6 +13,8 @@
     },
   };
 
+  const sourceEvent = event => event.detail?.originalEvent || event;
+
   export default context => {
     let activePanel = 'capabilities';
 
@@ -35,15 +37,16 @@
       showCapabilities: action(() => selectPanel('capabilities')),
       showSkills: action(() => selectPanel('skills')),
       navigateTabs: action(event => {
+        const keyboardEvent = sourceEvent(event);
         const keys = 'ArrowLeft ArrowRight Home End'.split(' ');
-        if (!keys.includes(event.key)) return;
+        if (!keys.includes(keyboardEvent.key)) return;
 
-        event.preventDefault();
-        const showSkills = event.key === 'ArrowRight' || event.key === 'End';
+        keyboardEvent.preventDefault();
+        const showSkills = keyboardEvent.key === 'ArrowRight' || keyboardEvent.key === 'End';
         const nextPanel = showSkills ? 'skills' : 'capabilities';
 
         selectPanel(nextPanel);
-        event.target.closest('[role="tablist"]')
+        keyboardEvent.target.closest('[role="tablist"]')
           ?.querySelector(`#${PANELS[nextPanel].tabId}`)
           ?.focus();
       }),

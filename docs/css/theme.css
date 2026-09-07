@@ -29,3 +29,18 @@ html[data-reduce-motion] *::after {
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
 }
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    html *,
+    html *::before,
+    html *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
