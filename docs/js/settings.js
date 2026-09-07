@@ -11,6 +11,22 @@
   const colorPattern = /^#[0-9a-f]{6}$/i;
   const menuPositions = new Set(['top-left', 'top-right', 'bottom-left', 'bottom-right']);
 
+  const initPageLoading = () => {
+    const loading = document.querySelector('[data-page-loading]');
+    if (!loading) return;
+
+    loading.hidden = false;
+    setTimeout(() => {
+      if (!loading.isConnected) return;
+
+      const message = loading.querySelector('[data-page-loading-message]');
+      const retry = loading.querySelector('[data-page-loading-retry]');
+
+      if (message) message.textContent = 'This page is taking longer than expected.';
+      if (retry) retry.hidden = false;
+    }, 8000);
+  };
+
   const normalize = value => ({
     themeColor1: colorPattern.test(value?.themeColor1) ? value.themeColor1 : defaults.themeColor1,
     themeColor2: colorPattern.test(value?.themeColor2) ? value.themeColor2 : defaults.themeColor2,
@@ -60,4 +76,10 @@
 
   window.siteSettings = Object.freeze({ defaults, read, apply, save, reset });
   apply();
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPageLoading, { once: true });
+  } else {
+    initPageLoading();
+  }
 })();

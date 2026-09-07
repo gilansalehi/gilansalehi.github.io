@@ -1,6 +1,8 @@
 # Test Backlog
 
 - Loads each page directly from its physical route URL
+- Displays a loading state until the root layout replaces the route shell content
+- Offers a reload action when the root layout takes longer than expected
 - Returns the host's normal 404 response for an unknown physical route
 - Loads the correct data-wrapper view from every ordinary navigation link
 - Displays Field Note articles from their own physical routes

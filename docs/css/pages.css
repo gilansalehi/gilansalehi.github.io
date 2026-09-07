@@ -21,6 +21,46 @@
   --page-end-bg: var(--theme-color-3);
 }
 
+.page-bootstrap {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  place-content: center;
+  justify-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  color: var(--theme-color-3);
+  background: var(--theme-color-1);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.page-bootstrap[hidden],
+.page-bootstrap [hidden] {
+  display: none;
+}
+
+[data-page="home"] .page-bootstrap,
+[data-page="resume"] .page-bootstrap,
+[data-page="not-found"] .page-bootstrap {
+  color: var(--theme-color-1);
+  background: var(--theme-color-3);
+}
+
+.page-bootstrap p {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.page-bootstrap a {
+  padding-bottom: .2rem;
+  border-bottom: 1px solid currentColor;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 .page-outlet article {
     margin: auto;
     min-height: 100vh;

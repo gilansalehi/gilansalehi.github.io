@@ -57,7 +57,12 @@
     src="/views/layout.html"
     data-page="notes"
     data-view="/views/notes/index.html"
-  ></data-wrapper>
+  >
+    <div class="page-bootstrap" data-page-loading hidden>
+      <p role="status" data-page-loading-message>Loading page…</p>
+      <a href="" data-page-loading-retry hidden>Reload this page</a>
+    </div>
+  </data-wrapper>
 </body>
 
 </html>
