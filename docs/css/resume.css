@@ -1,4 +1,5 @@
 .resume__wrapper {
+    position: relative;
     color: var(--theme-color-1);
     background-color: var(--page-bg);
 }
@@ -84,6 +85,58 @@
     padding: .5rem 0;
 }
 
+.resume__print {
+    padding: .85rem 2rem;
+    color: var(--theme-color-3-dark);
+    background: transparent;
+    border: 1px solid var(--theme-color-3);
+    border-radius: 2rem;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+/* Parked in the page's top corner, out of the resume's document flow. */
+.resume__print--corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: .5em;
+}
+
+/* Clear the menu button when the reader parks the menu in this corner. */
+:root[data-menu-position="top-right"] .resume__print--corner {
+    right: 4.5rem;
+}
+
+/* Second chance at the end of the resume, for readers who scrolled past the corner. */
+.resume__actions {
+    display: grid;
+    justify-items: center;
+    padding: 0 1rem 4rem;
+}
+
+.resume__print:hover,
+.resume__print:focus-visible {
+    color: var(--theme-color-1);
+    background: var(--theme-color-3);
+}
+
+.resume__print:focus-visible {
+    outline: 2px solid var(--theme-color-2);
+    outline-offset: 3px;
+}
+
+@media screen and (max-width: 600px) {
+    .resume__print {
+        padding: .6rem 1.1rem;
+        font-size: .7rem;
+    }
+}
+
 #resume ul li:not(.list-style--none)::marker {
     content: '◆  ';
     display: block;
@@ -106,7 +159,9 @@
     }
 
     .nav,
-    .chevron {
+    .chevron,
+    .resume__actions,
+    .resume__print {
         display: none;
     }
 

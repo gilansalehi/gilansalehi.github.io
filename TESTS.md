@@ -84,6 +84,9 @@
 - Preserves readable Resume contrast when background printing is disabled
 - Keeps Resume headings and individual bullets from breaking awkwardly across pages
 - Includes external profile destinations in printed Resume output
+- Opens the browser print dialog from either Resume download control
+- Offers a Resume download control at the top corner and at the end of the resume
+- Excludes the Resume download controls from printed Resume output
 - Fails closed when the pinned shim artifact fails integrity validation
 - Loads the business card directly from `/contact/`
 - Encodes the canonical site URL in the card's QR code

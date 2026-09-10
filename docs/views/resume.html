@@ -1,6 +1,19 @@
-<script type="module" data-module="@gilansalehi/resume" src="/js/views/page.js"></script>
+<script type="module" data-module="@gilansalehi/resume">
+  import { action } from 'data-wrapper';
+  import initPage from 'site/views/page.js';
+
+  export default context => {
+    initPage(context);
+
+    return {
+      printResume: action(() => window.print()),
+    };
+  };
+</script>
 
 <div class="resume__wrapper">
+    <button type="button" class="resume__print resume__print--corner" @click="printResume">Download PDF</button>
+
     <article id="resume" class="slide">
         <h1 class="centered font-serif" data-scroll-animation="animate__fadeInUp">Gilan Salehi</h1>
         <p class="centered" data-scroll-animation="animate__fadeInUp">Front-End Architect & Team Lead</p>
@@ -237,4 +250,8 @@
                     title="https://www.linkedin.com/in/gilansalehi">LinkedIn</a></p>
         </section>
     </article>
+
+    <div class="resume__actions">
+        <button type="button" class="resume__print" @click="printResume">Download PDF</button>
+    </div>
 </div>
