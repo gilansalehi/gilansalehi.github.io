@@ -225,7 +225,12 @@
         break-after: avoid;
     }
 
-    #resume .year {
+    /* Keep this entry whole instead of letting a break land under its title. */
+    #resume .layout--resume-grid.break-before--page {
+        break-before: page;
+    }
+
+    #resume .layout--resume-grid .year {
         display: none;
         color: #555;
         font-size: 8.5pt;
